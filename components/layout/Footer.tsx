@@ -68,15 +68,15 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="#home" className="inline-flex items-center gap-2.5 mb-4">
-              <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-rose-500 via-fuchsia-500 to-violet-600 flex items-center justify-center shadow-[0_0_18px_rgba(236,72,153,0.55)]">
+              <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 flex items-center justify-center shadow-[0_0_18px_rgba(251,146,60,0.6)]">
                 <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
               </div>
               <span className="text-lg font-bold">
-                <span className="bg-gradient-to-r from-rose-400 to-fuchsia-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
                   Orbitex
                 </span>
                 <span className="text-gray-900 dark:text-white">Ind</span>
-                <span className="text-fuchsia-400">.</span>
+                <span className="text-orange-400">.</span>
               </span>
             </a>
             <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed max-w-xs">

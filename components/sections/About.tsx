@@ -93,7 +93,7 @@ const About = () => {
                 {/* Avatar circle */}
                 <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
                   <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
-                    <span className="text-5xl font-extrabold bg-gradient-to-r from-rose-400 via-fuchsia-400 to-violet-500 bg-clip-text text-transparent tracking-tighter">
+                    <span className="text-5xl font-extrabold bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 bg-clip-text text-transparent tracking-tighter">
                       OI
                     </span>
                     <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
