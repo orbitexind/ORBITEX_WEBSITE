@@ -65,15 +65,15 @@ const Navbar = () => {
         <div className="container mx-auto px-6 flex items-center justify-between max-w-7xl">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2.5">
-            <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-violet-600 via-purple-500 to-cyan-400 flex items-center justify-center shadow-[0_0_18px_rgba(124,58,237,0.55)]">
+            <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-rose-500 via-fuchsia-500 to-violet-600 flex items-center justify-center shadow-[0_0_18px_rgba(236,72,153,0.55)]">
               <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
             </div>
             <span className="text-lg font-bold">
-              <span className="bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-rose-500 to-fuchsia-500 dark:from-rose-400 dark:to-fuchsia-400 bg-clip-text text-transparent">
                 Orbitex
               </span>
               <span className="text-gray-900 dark:text-white">Ind</span>
-              <span className="text-violet-600 dark:text-violet-400">.</span>
+              <span className="text-fuchsia-500 dark:text-fuchsia-400">.</span>
             </span>
           </a>
 

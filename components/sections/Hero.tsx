@@ -162,7 +162,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/8 text-violet-300 text-sm font-medium mb-8 backdrop-blur-sm"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-fuchsia-500/30 bg-fuchsia-500/8 text-fuchsia-300 text-sm font-medium mb-8 backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -181,12 +181,12 @@ const Hero = () => {
         >
           <span className="text-gray-900 dark:text-white">We are </span>
           <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-400 via-fuchsia-400 to-violet-500 bg-clip-text text-transparent">
               OrbitexInd
             </span>
             {/* Underline accent */}
             <motion.span
-              className="absolute -bottom-2 left-0 h-[3px] rounded-full bg-gradient-to-r from-violet-500 to-cyan-400"
+              className="absolute -bottom-2 left-0 h-[3px] rounded-full bg-gradient-to-r from-rose-500 to-violet-500"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 0.9, delay: 0.7, ease: "easeOut" }}
@@ -267,7 +267,7 @@ const Hero = () => {
                 className="text-center p-3 sm:p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
                 intensity={14}
               >
-                <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-rose-400 via-fuchsia-400 to-violet-500 bg-clip-text text-transparent">
                   {stat.number}
                 </div>
                 <div className="text-gray-500 dark:text-gray-500 text-xs mt-1 font-medium">
