@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 import {
   Check,
   X,
@@ -11,6 +12,26 @@ import {
   Wrench,
   Clock,
   RefreshCw,
+  Zap,
+  Star,
+  Crown,
+  Megaphone,
+  User,
+  PenLine,
+  Search,
+  CalendarDays,
+  MessageCircle,
+  Film,
+  Sparkles,
+  BarChart2,
+  TrendingUp,
+  Shield,
+  Target,
+  Bot,
+  Mic,
+  CreditCard,
+  BadgeCheck,
+  Handshake,
 } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
@@ -18,11 +39,16 @@ import { cn } from "@/lib/utils";
 type Tab = "packages" | "services" | "smm";
 type Currency = "INR" | "USD";
 
-const mobilePackages = [
+const mobilePackages: {
+  id: string; name: string; icon: LucideIcon; tagline: string;
+  delivery: string; revisions: string; priceUSD: string; priceINR: string;
+  color: string; glow: string; popular: boolean;
+  includes: string[]; excludes: string[];
+}[] = [
   {
     id: "basic",
     name: "Starter App",
-    emoji: "🟢",
+    icon: Zap,
     tagline: "Ideal for MVPs & small businesses",
     delivery: "3 Days",
     revisions: "2 Revisions",
@@ -45,7 +71,7 @@ const mobilePackages = [
   {
     id: "standard",
     name: "Business App",
-    emoji: "🔵",
+    icon: Star,
     tagline: "Professional Android for businesses",
     delivery: "5–7 Days",
     revisions: "3 Revisions",
@@ -68,7 +94,7 @@ const mobilePackages = [
   {
     id: "premium",
     name: "Full App Solution",
-    emoji: "🟣",
+    icon: Crown,
     tagline: "Android + iOS, store-ready delivery",
     delivery: "10–14 Days",
     revisions: "15–20 Revisions",
@@ -137,11 +163,14 @@ const serviceGroups = [
   },
 ];
 
-const smmModules = [
+const smmModules: {
+  id: string; name: string; icon: LucideIcon; color: string; glow: string;
+  options: { tier: string; price: string; desc: string }[];
+}[] = [
   {
     id: "account-mgmt",
     name: "Account Management",
-    icon: "👤",
+    icon: User,
     color: "from-blue-500 to-cyan-500",
     glow: "rgba(6,182,212,0.18)",
     options: [
@@ -152,7 +181,7 @@ const smmModules = [
   {
     id: "content-creation",
     name: "Content Creation",
-    icon: "✍️",
+    icon: PenLine,
     color: "from-violet-500 to-purple-600",
     glow: "rgba(124,58,237,0.18)",
     options: [
@@ -165,7 +194,7 @@ const smmModules = [
   {
     id: "curated-content",
     name: "Curated Content",
-    icon: "🔍",
+    icon: Search,
     color: "from-teal-500 to-emerald-500",
     glow: "rgba(20,184,166,0.18)",
     options: [
@@ -175,7 +204,7 @@ const smmModules = [
   {
     id: "content-calendar",
     name: "Content Calendar",
-    icon: "📅",
+    icon: CalendarDays,
     color: "from-amber-500 to-orange-500",
     glow: "rgba(245,158,11,0.18)",
     options: [
@@ -188,7 +217,7 @@ const smmModules = [
   {
     id: "dm-management",
     name: "DM Management",
-    icon: "💬",
+    icon: MessageCircle,
     color: "from-pink-500 to-rose-500",
     glow: "rgba(236,72,153,0.18)",
     options: [
@@ -200,7 +229,7 @@ const smmModules = [
   {
     id: "video-editing",
     name: "Video Editing",
-    icon: "🎬",
+    icon: Film,
     color: "from-red-500 to-orange-600",
     glow: "rgba(239,68,68,0.18)",
     options: [
@@ -211,7 +240,7 @@ const smmModules = [
   {
     id: "motion-graphics",
     name: "Motion Graphics",
-    icon: "✨",
+    icon: Sparkles,
     color: "from-indigo-500 to-violet-600",
     glow: "rgba(99,102,241,0.18)",
     options: [
@@ -223,7 +252,7 @@ const smmModules = [
   {
     id: "analytics",
     name: "Analytics & Reporting",
-    icon: "📊",
+    icon: BarChart2,
     color: "from-cyan-500 to-blue-600",
     glow: "rgba(6,182,212,0.18)",
     options: [
@@ -235,7 +264,7 @@ const smmModules = [
   {
     id: "competitor-analysis",
     name: "Competitor Analysis",
-    icon: "🔬",
+    icon: TrendingUp,
     color: "from-lime-500 to-green-600",
     glow: "rgba(132,204,22,0.18)",
     options: [
@@ -247,7 +276,7 @@ const smmModules = [
   {
     id: "crisis-management",
     name: "Crisis Management",
-    icon: "🛡️",
+    icon: Shield,
     color: "from-red-600 to-rose-700",
     glow: "rgba(220,38,38,0.18)",
     options: [
@@ -258,7 +287,7 @@ const smmModules = [
   {
     id: "lead-gen",
     name: "Lead Generation",
-    icon: "🎯",
+    icon: Target,
     color: "from-yellow-500 to-amber-600",
     glow: "rgba(234,179,8,0.18)",
     options: [
@@ -268,7 +297,7 @@ const smmModules = [
   {
     id: "community-scheduling",
     name: "Community Scheduling",
-    icon: "⏰",
+    icon: Clock,
     color: "from-sky-500 to-blue-500",
     glow: "rgba(14,165,233,0.18)",
     options: [
@@ -278,7 +307,7 @@ const smmModules = [
   {
     id: "ai-automation",
     name: "AI Automation Complete",
-    icon: "🤖",
+    icon: Bot,
     color: "from-violet-600 to-indigo-600",
     glow: "rgba(124,58,237,0.18)",
     options: [
@@ -288,7 +317,7 @@ const smmModules = [
   {
     id: "strategy-session",
     name: "1-on-1 Strategy Session",
-    icon: "🎙️",
+    icon: Mic,
     color: "from-emerald-500 to-teal-600",
     glow: "rgba(16,185,129,0.18)",
     options: [
@@ -360,11 +389,11 @@ const Pricing = () => {
                 className={cn(
                   "px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300",
                   currency === c
-                    ? "bg-violet-600 text-white shadow-lg"
+                    ? "bg-sky-600 text-white shadow-lg"
                     : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
                 )}
               >
-                {c === "INR" ? "🇮🇳 ₹ INR" : "🇺🇸 $ USD"}
+                {c === "INR" ? "₹ INR" : "$ USD"}
               </button>
             ))}
           </div>
@@ -378,12 +407,11 @@ const Pricing = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex items-center justify-center gap-2 mb-14 overflow-x-auto pb-1 -mx-2 px-2 scrollbar-hide"
         >
-          {(
-            [
-              { id: "packages", label: "📱 Mobile App Packages" },
-              { id: "services", label: "🛠️ Service Rates" },
-              { id: "smm", label: "📣 SMM Services" },
-            ] as { id: Tab; label: string }[]
+          {([
+              { id: "packages", Icon: Smartphone, label: "Mobile App Packages" },
+              { id: "services", Icon: Wrench, label: "Service Rates" },
+              { id: "smm", Icon: Megaphone, label: "SMM Services" },
+            ] as { id: Tab; Icon: LucideIcon; label: string }[]
           ).map((tab) => (
               <button
               key={tab.id}
@@ -398,11 +426,14 @@ const Pricing = () => {
               {activeTab === tab.id && (
                 <motion.span
                   layoutId="pricing-tab-pill"
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600 to-purple-600"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-600 to-blue-600"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
-              <span className="relative z-10">{tab.label}</span>
+              <span className="relative z-10 flex items-center gap-2">
+                <tab.Icon size={15} />
+                {tab.label}
+              </span>
             </button>
           ))}
         </motion.div>
@@ -424,7 +455,9 @@ const Pricing = () => {
                 animate={isInView ? "visible" : "hidden"}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
               >
-                {mobilePackages.map((pkg) => (
+                {mobilePackages.map((pkg) => {
+                  const PkgIcon = pkg.icon;
+                  return (
                   <motion.div
                     key={pkg.id}
                     variants={cardVariants}
@@ -432,7 +465,7 @@ const Pricing = () => {
                     className={cn(
                       "relative rounded-3xl overflow-hidden transition-all duration-300 border",
                       pkg.popular
-                        ? "border-violet-500/50 bg-gradient-to-b from-violet-100/80 to-white dark:from-violet-950/60 dark:to-[#0a0a14]"
+                        ? "border-sky-500/50 bg-gradient-to-b from-sky-100/80 to-white dark:from-sky-950/60 dark:to-[#0a0a14]"
                         : "border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
                     )}
                     style={{
@@ -450,15 +483,17 @@ const Pricing = () => {
 
                     {/* Popular badge */}
                     {pkg.popular && (
-                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-violet-600 text-white text-[10px] font-bold tracking-wider uppercase">
+                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-sky-600 text-white text-[10px] font-bold tracking-wider uppercase">
                         Most Popular
                       </div>
                     )}
 
                     <div className="p-7 md:p-8">
-                      {/* Emoji + name */}
+                      {/* Icon + name */}
                       <div className="mb-4">
-                        <div className="text-2xl mb-2">{pkg.emoji}</div>
+                        <div className={`mb-3 w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${pkg.color}`}>
+                          <PkgIcon size={20} className="text-white" />
+                        </div>
                         <div className="font-bold text-gray-900 dark:text-white text-xl">
                           {pkg.name}
                         </div>
@@ -504,7 +539,7 @@ const Pricing = () => {
                         ) : (
                           <a
                             href="#contact"
-                            className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-violet-400 dark:hover:border-white/30 hover:bg-violet-50 dark:hover:bg-white/5 transition-all duration-300"
+                            className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-sky-400 dark:hover:border-white/30 hover:bg-sky-50 dark:hover:bg-white/5 transition-all duration-300"
                           >
                             Get Started →
                           </a>
@@ -529,7 +564,7 @@ const Pricing = () => {
                               className={cn(
                                 "shrink-0 mt-0.5",
                                 pkg.popular
-                                  ? "text-violet-400"
+                                  ? "text-sky-400"
                                   : "text-emerald-400"
                               )}
                             />
@@ -548,7 +583,8 @@ const Pricing = () => {
                       </ul>
                     </div>
                   </motion.div>
-                ))}
+                  );
+                })}
               </motion.div>
             </motion.div>
           )}
@@ -638,7 +674,9 @@ const Pricing = () => {
                 All prices are <span className="text-gray-900 dark:text-white font-semibold">INR/Month, Excl. GST</span>. Mix &amp; match modules to build a plan that fits your brand perfectly.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {smmModules.map((mod, mi) => (
+                {smmModules.map((mod, mi) => {
+                  const ModIcon = mod.icon;
+                  return (
                   <motion.div
                     key={mod.id}
                     initial={{ opacity: 0, y: 30 }}
@@ -656,7 +694,9 @@ const Pricing = () => {
                     <div className={`h-[3px] w-full bg-gradient-to-r ${mod.color}`} />
                     <div className="px-5 pt-5 pb-4">
                       <div className="flex items-center gap-2.5 mb-3">
-                        <span className="text-xl">{mod.icon}</span>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br ${mod.color} shrink-0`}>
+                          <ModIcon size={15} className="text-white" />
+                        </div>
                         <span className="text-gray-900 dark:text-white font-bold text-[15px]">{mod.name}</span>
                       </div>
                       <ul className="space-y-3">
@@ -674,12 +714,13 @@ const Pricing = () => {
                       </ul>
                     </div>
                   </motion.div>
-                ))}
+                  );
+                })}
               </div>
               <div className="mt-8 text-center">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-violet-400/40 dark:border-violet-500/40 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-600/15 hover:border-violet-500/60 dark:hover:border-violet-400/60 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-sky-400/40 dark:border-sky-500/40 text-sky-700 dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-sky-600/15 hover:border-sky-500/60 dark:hover:border-sky-400/60 transition-all duration-300"
                 >
                   Build a custom SMM plan →
                 </a>
@@ -697,18 +738,18 @@ const Pricing = () => {
           className="mt-14 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
           {[
-            { emoji: "🤝", text: "Free discovery call" },
-            { emoji: "💳", text: "50% upfront, 50% on delivery" },
-            { emoji: "🔄", text: "Unlimited scope clarification" },
-            { emoji: "✅", text: "Satisfaction guarantee" },
-          ].map((item) => (
+            { Icon: Handshake, text: "Free discovery call" },
+            { Icon: CreditCard, text: "50% upfront, 50% on delivery" },
+            { Icon: RefreshCw, text: "Unlimited scope clarification" },
+            { Icon: BadgeCheck, text: "Satisfaction guarantee" },
+          ].map(({ Icon: GuaranteeIcon, text }) => (
             <div
-              key={item.text}
+              key={text}
               className="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
             >
-              <span className="text-xl">{item.emoji}</span>
+              <GuaranteeIcon size={20} className="text-sky-500 shrink-0" />
               <span className="text-gray-600 dark:text-gray-400 text-xs font-medium">
-                {item.text}
+                {text}
               </span>
             </div>
           ))}
@@ -725,7 +766,7 @@ const Pricing = () => {
           Need something custom?{" "}
           <a
             href="#contact"
-            className="text-violet-400 hover:text-violet-300 font-medium underline underline-offset-2 decoration-violet-500/40"
+              className="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2 decoration-sky-500/40"
           >
             Let&apos;s build a custom quote for your project →
           </a>

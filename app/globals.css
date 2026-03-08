@@ -57,11 +57,11 @@ body {
 @layer utilities {
   /* Gradient text */
   .text-gradient {
-    @apply bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent;
   }
 
   .text-gradient-alt {
-    @apply bg-gradient-to-r from-rose-500 via-orange-400 to-amber-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400 bg-clip-text text-transparent;
   }
 
   /* Glass morphism */

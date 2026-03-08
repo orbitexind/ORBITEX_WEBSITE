@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { ArrowDown, Github, Linkedin, Twitter, Sparkles, MessageCircle } from "lucide-react";
+import { ArrowDown, ArrowRight, Github, Linkedin, Twitter, Sparkles, MessageCircle } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 import TiltCard from "@/components/ui/TiltCard";
 
@@ -162,7 +162,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-orange-400/30 bg-orange-400/8 text-orange-300 text-sm font-medium mb-8 backdrop-blur-sm"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sky-400/30 bg-sky-400/8 text-sky-300 text-sm font-medium mb-8 backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -181,12 +181,12 @@ const Hero = () => {
         >
           <span className="text-gray-900 dark:text-white">We are </span>
           <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
               OrbitexInd
             </span>
             {/* Underline accent */}
             <motion.span
-              className="absolute -bottom-2 left-0 h-[3px] rounded-full bg-gradient-to-r from-amber-400 to-rose-500"
+              className="absolute -bottom-2 left-0 h-[3px] rounded-full bg-gradient-to-r from-sky-400 to-indigo-600"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 0.9, delay: 0.7, ease: "easeOut" }}
@@ -241,10 +241,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full px-2 sm:px-0"
         >
           <GlowButton href="https://wa.me/919503144168" variant="primary" size="lg" className="w-full sm:w-auto">
-            💬 WhatsApp Us
+            <MessageCircle size={16} className="inline mr-2 -mt-0.5" /> WhatsApp Us
           </GlowButton>
           <GlowButton href="#portfolio" variant="secondary" size="lg" className="w-full sm:w-auto">
-            View Our Work →
+            View Our Work <ArrowRight size={16} className="inline ml-1.5 -mt-0.5" />
           </GlowButton>
         </motion.div>
 
@@ -267,7 +267,7 @@ const Hero = () => {
                 className="text-center p-3 sm:p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
                 intensity={14}
               >
-                <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 bg-clip-text text-transparent">
+                <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
                   {stat.number}
                 </div>
                 <div className="text-gray-500 dark:text-gray-500 text-xs mt-1 font-medium">

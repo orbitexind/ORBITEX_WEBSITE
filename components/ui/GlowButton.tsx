@@ -33,25 +33,25 @@ const GlowButton = ({
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:from-violet-500 hover:to-purple-500",
+      "bg-gradient-to-r from-sky-500 to-blue-600 text-white hover:from-sky-400 hover:to-blue-500",
     secondary:
-      "border border-cyan-500/50 text-cyan-600 dark:text-cyan-400 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 bg-transparent",
+      "border border-sky-500/50 text-sky-600 dark:text-sky-400 hover:border-sky-500 dark:hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 bg-transparent",
     outline:
-      "border border-violet-500/40 text-violet-600 dark:text-violet-300 hover:border-violet-500 dark:hover:border-violet-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 bg-transparent",
+      "border border-sky-500/40 text-sky-600 dark:text-sky-300 hover:border-sky-500 dark:hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-500/10 bg-transparent",
   };
 
   const glowOnHover = {
     primary: {
       boxShadow:
-        "0 0 25px rgba(124, 58, 237, 0.55), 0 0 60px rgba(124, 58, 237, 0.25)",
+        "0 0 25px rgba(14, 165, 233, 0.55), 0 0 60px rgba(14, 165, 233, 0.25)",
     },
     secondary: {
       boxShadow:
-        "0 0 20px rgba(6, 182, 212, 0.45), 0 0 50px rgba(6, 182, 212, 0.2)",
+        "0 0 20px rgba(14, 165, 233, 0.45), 0 0 50px rgba(14, 165, 233, 0.2)",
     },
     outline: {
       boxShadow:
-        "0 0 20px rgba(124, 58, 237, 0.4), 0 0 50px rgba(124, 58, 237, 0.15)",
+        "0 0 20px rgba(14, 165, 233, 0.4), 0 0 50px rgba(14, 165, 233, 0.15)",
     },
   };
 

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, CheckCircle2 } from "lucide-react";
+import { MapPin, CheckCircle2, Sparkles } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 
 const skills = [
@@ -93,7 +93,7 @@ const About = () => {
                 {/* Avatar circle */}
                 <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
                   <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
-                    <span className="text-5xl font-extrabold bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 bg-clip-text text-transparent tracking-tighter">
+                    <span className="text-5xl font-extrabold bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent tracking-tighter">
                       OI
                     </span>
                     <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
@@ -106,9 +106,9 @@ const About = () => {
               <motion.div
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-500 dark:text-emerald-400 text-xs font-semibold backdrop-blur-sm"
+                className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-500 dark:text-emerald-400 text-xs font-semibold backdrop-blur-sm flex items-center gap-1.5"
               >
-                ✦ Available for Hire
+                <Sparkles size={12} /> Available for Hire
               </motion.div>
             </div>
 
