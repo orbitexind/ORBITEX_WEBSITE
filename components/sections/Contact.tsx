@@ -111,11 +111,23 @@ const Contact = () => {
 
     setFormState("loading");
 
+    const payload = {
+      _subject: `[OrbitexInd] New Inquiry from ${form.name}`,
+      _replyto: form.email,
+      "📋 INQUIRY DETAILS": "─────────────────────────────",
+      "👤 Customer Name": form.name,
+      "📧 Customer Email": form.email,
+      "📌 Subject / Project Type": form.subject || "Not provided",
+      "💰 Budget Range": form.budget || "Not provided",
+      "─────────────────────────────": "MESSAGE",
+      "💬 Message": form.message,
+    };
+
     try {
       const res = await fetch("https://formspree.io/f/maqpnaze", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Failed");
       setFormState("success");
