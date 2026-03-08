@@ -77,6 +77,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-white dark:bg-[#030712] text-gray-900 dark:text-white antialiased transition-colors duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={false}>
