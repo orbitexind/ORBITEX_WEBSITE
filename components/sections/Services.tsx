@@ -10,6 +10,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import TiltCard from "@/components/ui/TiltCard";
 
 const services = [
   {
@@ -150,19 +151,15 @@ const Services = () => {
               <motion.div
                 key={service.title}
                 variants={cardVariants}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="group relative p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 overflow-hidden cursor-default shadow-sm dark:shadow-none"
-                style={{
-                  transition: "border-color 0.3s, box-shadow 0.3s",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 50px ${service.glow}, 0 8px 32px rgba(0,0,0,0.4)`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "";
-                }}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                style={{ perspective: "1200px" }}
               >
+                <TiltCard
+                  className="group relative p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 overflow-hidden cursor-default shadow-sm dark:shadow-none transition-[border-color,box-shadow] duration-300 h-full"
+                  glowColor={service.glow}
+                  intensity={8}
+                >
                 {/* Top gradient accent */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.color} opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
@@ -226,6 +223,7 @@ const Services = () => {
                     className={`text-violet-400 group-hover:translate-x-1 transition-transform`}
                   />
                 </a>
+                </TiltCard>
               </motion.div>
             );
           })}

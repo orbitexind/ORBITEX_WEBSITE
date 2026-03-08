@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { ArrowDown, Github, Linkedin, Twitter, Sparkles, MessageCircle } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
+import TiltCard from "@/components/ui/TiltCard";
 
 const stats = [
   { number: "10+", label: "Projects Delivered" },
@@ -96,6 +97,56 @@ const Hero = () => {
               repeat: Infinity,
               ease: "easeInOut",
               delay: i * 0.2,
+            }}
+          />
+        ))}
+
+        {/* 3D orbit rings */}
+        <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: "700px" }}>
+          <motion.div
+            className="absolute w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] rounded-full border border-violet-400/20 dark:border-violet-500/25"
+            animate={{ rotateZ: 360 }}
+            style={{ rotateX: 72 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute w-[580px] h-[580px] sm:w-[780px] sm:h-[780px] rounded-full border-[0.5px] border-cyan-400/15 dark:border-cyan-500/18"
+            animate={{ rotateZ: -360 }}
+            style={{ rotateX: 72 }}
+            transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
+          />
+        </div>
+
+        {/* Floating 3D diamond shapes */}
+        {[
+          { w: 14, h: 14, left: "11%", top: "22%", delay: 0,   color: "rgba(139,92,246,0.55)" },
+          { w: 10, h: 10, left: "83%", top: "18%", delay: 0.9, color: "rgba(6,182,212,0.5)" },
+          { w: 15, h: 15, left: "87%", top: "65%", delay: 1.6, color: "rgba(167,139,250,0.45)" },
+          { w: 8,  h: 8,  left: "8%",  top: "72%", delay: 0.4, color: "rgba(34,211,238,0.45)" },
+          { w: 12, h: 12, left: "60%", top: "10%", delay: 1.2, color: "rgba(196,181,253,0.5)" },
+        ].map((shape, i) => (
+          <motion.div
+            key={`diamond-${i}`}
+            className="absolute border rounded-sm"
+            style={{
+              width: shape.w,
+              height: shape.h,
+              left: shape.left,
+              top: shape.top,
+              borderColor: shape.color,
+              boxShadow: `0 0 8px ${shape.color}`,
+              rotate: 45,
+            }}
+            animate={{
+              y: [0, -22, 0],
+              rotate: [45, 100, 45],
+              opacity: [0.4, 0.9, 0.4],
+            }}
+            transition={{
+              duration: 3 + i * 0.6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: shape.delay,
             }}
           />
         ))}
@@ -210,14 +261,19 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.7 + i * 0.08 }}
-              className="text-center p-3 sm:p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
+              style={{ perspective: "600px" }}
             >
-              <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                {stat.number}
-              </div>
-              <div className="text-gray-500 dark:text-gray-500 text-xs mt-1 font-medium">
-                {stat.label}
-              </div>
+              <TiltCard
+                className="text-center p-3 sm:p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
+                intensity={14}
+              >
+                <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                  {stat.number}
+                </div>
+                <div className="text-gray-500 dark:text-gray-500 text-xs mt-1 font-medium">
+                  {stat.label}
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </motion.div>

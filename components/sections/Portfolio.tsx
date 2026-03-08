@@ -5,6 +5,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Eye } from "lucide-react";
 import ProjectModal, { type Project } from "@/components/ui/ProjectModal";
 import LiveAccessModal from "@/components/ui/LiveAccessModal";
+import TiltCard from "@/components/ui/TiltCard";
 import { cn } from "@/lib/utils";
 
 const projects: Project[] = [
@@ -228,18 +229,16 @@ const Portfolio = () => {
                 key={project.id}
                 variants={cardVariants}
                 layout
-                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 cursor-pointer shadow-sm dark:shadow-none"
                 onClick={() => setSelectedProject(project)}
-                whileHover={{ y: -4 }}
-                style={{ transition: "border-color 0.3s, box-shadow 0.3s" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.boxShadow =
-                    "0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,58,237,0.2)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "";
-                }}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                style={{ perspective: "1200px" }}
               >
+                <TiltCard
+                  className="group relative rounded-3xl overflow-hidden bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 cursor-pointer shadow-sm dark:shadow-none transition-[border-color,box-shadow] duration-300 h-full"
+                  glowColor="rgba(124,58,237,0.25)"
+                  intensity={6}
+                >
                 {/* Project thumbnail */}
                 <div
                   className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
@@ -311,6 +310,7 @@ const Portfolio = () => {
                     )}
                   </div>
                 </div>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>
