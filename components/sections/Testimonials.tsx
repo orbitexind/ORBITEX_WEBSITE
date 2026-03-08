@@ -13,7 +13,7 @@ const testimonials = [
     avatar: "RM",
     avatarGradient: "from-violet-500 to-purple-600",
     stars: 5,
-    text: "OrbitexInd built our business website in just 4 days. The design is modern, loads super fast, and our clients keep complimenting it. The team was responsive on WhatsApp throughout and delivered exactly what we discussed. Will definitely hire again!",
+    text: "Orbitex built our business website in just 4 days. The design is modern, loads super fast, and our clients keep complimenting it. The team was responsive on WhatsApp throughout and delivered exactly what we discussed. Will definitely hire again!",
     project: "Startup Business Website",
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     avatar: "PS",
     avatarGradient: "from-cyan-500 to-blue-600",
     stars: 5,
-    text: "I needed a complete college project with documentation and presentation in a week. OrbitexInd delivered a fully working Android app with clean code and all documents. The team explained every part so I could present it confidently. Highly recommended for college projects!",
+    text: "I needed a complete college project with documentation and presentation in a week. Orbitex delivered a fully working Android app with clean code and all documents. The team explained every part so I could present it confidently. Highly recommended for college projects!",
     project: "Android College Project + Docs",
   },
   {
@@ -35,7 +35,7 @@ const testimonials = [
     avatar: "AJ",
     avatarGradient: "from-emerald-500 to-green-600",
     stars: 5,
-    text: "I wanted a simple Android app for my shop to manage inventory and orders. OrbitexInd built it in a week at a very affordable price. Even after delivery they helped me with a few small changes without any extra charge. Very professional and reliable.",
+    text: "I wanted a simple Android app for my shop to manage inventory and orders. Orbitex built it in a week at a very affordable price. Even after delivery they helped me with a few small changes without any extra charge. Very professional and reliable.",
     project: "Shop Inventory Android App",
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     avatar: "SK",
     avatarGradient: "from-amber-500 to-orange-600",
     stars: 5,
-    text: "We needed an AI chatbot for our customer support that could answer queries in both English and Marathi. OrbitexInd understood our requirement perfectly and delivered a smart, working chatbot in just 10 days. Our team is saving hours every week now.",
+    text: "We needed an AI chatbot for our customer support that could answer queries in both English and Marathi. Orbitex understood our requirement perfectly and delivered a smart, working chatbot in just 10 days. Our team is saving hours every week now.",
     project: "Bilingual AI Customer Chatbot",
   },
   {
@@ -57,7 +57,7 @@ const testimonials = [
     avatar: "NP",
     avatarGradient: "from-pink-500 to-rose-600",
     stars: 5,
-    text: "OrbitexInd helped me build a complete data analysis dashboard for my internship project in Python. The visualizations were excellent and my manager was impressed. The team also explained the code clearly so I could present it myself. Great value for money!",
+    text: "Orbitex helped me build a complete data analysis dashboard for my internship project in Python. The visualizations were excellent and my manager was impressed. The team also explained the code clearly so I could present it myself. Great value for money!",
     project: "Python Data Analysis Dashboard",
   },
 ];

@@ -69,13 +69,12 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <a href="#home" className="inline-flex items-center gap-2.5 mb-4">
               <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center shadow-[0_0_18px_rgba(14,165,233,0.6)]">
-                <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
+                <span className="text-white text-[13px] font-black tracking-tighter select-none">O</span>
               </div>
               <span className="text-lg font-bold">
                 <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
                   Orbitex
                 </span>
-                <span className="text-gray-900 dark:text-white">Ind</span>
                 <span className="text-sky-400">.</span>
               </span>
             </a>
@@ -123,7 +122,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 dark:text-gray-600 text-sm">
-            © {new Date().getFullYear()} OrbitexInd. All rights reserved. Built
+            © {new Date().getFullYear()} Orbitex. All rights reserved. Built
             with Next.js & ❤️
           </p>
           <button

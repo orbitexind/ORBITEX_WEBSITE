@@ -182,7 +182,7 @@ const Hero = () => {
           <span className="text-gray-900 dark:text-white">We are </span>
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              OrbitexInd
+              Orbitex
             </span>
             {/* Underline accent */}
             <motion.span

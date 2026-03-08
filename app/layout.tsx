@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OrbitexInd | Android, Web & AI Developer — Maharashtra, India",
+  title: "Orbitex | Android, Web & AI Developer — Maharashtra, India",
   description:
     "Freelance developer from Maharashtra, India. I build Android apps, modern websites, AI chatbots & data dashboards at affordable Indian pricing. Fast delivery, clean code.",
   keywords: [
@@ -30,21 +30,21 @@ export const metadata: Metadata = {
     "flutter developer",
     "orbitexind",
   ],
-  authors: [{ name: "OrbitexInd" }],
-  creator: "OrbitexInd",
+  authors: [{ name: "Orbitex" }],
+  creator: "Orbitex",
   metadataBase: new URL("https://satvikrokadeportfolio.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://satvikrokadeportfolio.vercel.app",
-    title: "OrbitexInd | Android, Web & AI Developer",
+    title: "Orbitex | Android, Web & AI Developer",
     description:
       "Freelance developer from Maharashtra, India. Android apps, websites, AI chatbots & dashboards at affordable Indian pricing.",
-    siteName: "OrbitexInd Portfolio",
+    siteName: "Orbitex Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OrbitexInd | Android, Web & AI Developer",
+    title: "Orbitex | Android, Web & AI Developer",
     description:
       "Freelance developer from Maharashtra, India. Android apps, websites, AI chatbots & dashboards at affordable Indian pricing.",
     creator: "@orbitexind",

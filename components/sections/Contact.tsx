@@ -112,7 +112,7 @@ const Contact = () => {
     setFormState("loading");
 
     const payload = {
-      _subject: `[OrbitexInd] New Inquiry from ${form.name}`,
+      _subject: `[Orbitex] New Inquiry from ${form.name}`,
       _replyto: form.email,
       "📋 INQUIRY DETAILS": "─────────────────────────────",
       "👤 Customer Name": form.name,
@@ -445,7 +445,7 @@ const Contact = () => {
                   </motion.button>
 
                   <p className="text-center text-gray-600 text-xs">
-                    By submitting, you agree to receive a reply from OrbitexInd.
+                    By submitting, you agree to receive a reply from Orbitex.
                     No spam, ever.
                   </p>
 

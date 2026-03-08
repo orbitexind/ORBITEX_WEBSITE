@@ -114,7 +114,7 @@ const About = () => {
 
             {/* Name & location */}
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">OrbitexInd</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Orbitex</h3>
               <p className="flex items-center gap-1.5 text-gray-500 text-sm justify-center lg:justify-start">
                 <MapPin size={13} className="text-violet-400" />
                 Maharashtra, India • Remote Worldwide

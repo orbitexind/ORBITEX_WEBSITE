@@ -7,10 +7,10 @@ import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
   { name: "Pricing", href: "#pricing" },
+  { name: "About", href: "#about" },
+  { name: "Portfolio", href: "#portfolio" },
   { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
 ];
@@ -66,13 +66,12 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2.5">
             <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center shadow-[0_0_18px_rgba(14,165,233,0.6)]">
-              <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
+              <span className="text-white text-[13px] font-black tracking-tighter select-none">O</span>
             </div>
             <span className="text-lg font-bold">
               <span className="bg-gradient-to-r from-sky-500 to-blue-500 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent">
                 Orbitex
               </span>
-              <span className="text-gray-900 dark:text-white">Ind</span>
               <span className="text-sky-500 dark:text-sky-400">.</span>
             </span>
           </a>
