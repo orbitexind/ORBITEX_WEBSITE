@@ -34,7 +34,7 @@ const Hero = () => {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#030712]"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-white dark:bg-[#030712]"
       aria-label="Hero section"
     >
       {/* ─── Animated background layer ─── */}
@@ -104,7 +104,7 @@ const Hero = () => {
       {/* ─── Main content ─── */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 container mx-auto px-6 max-w-5xl text-center pt-24"
+        className="relative z-10 container mx-auto px-4 sm:px-6 max-w-5xl text-center pt-20 pb-10 sm:pt-24 sm:pb-0"
       >
         {/* Availability badge */}
         <motion.div
@@ -126,7 +126,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-extrabold leading-[1.1] tracking-tight mb-5"
+          className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[82px] font-extrabold leading-[1.1] tracking-tight mb-5"
         >
           <span className="text-gray-900 dark:text-white">We are </span>
           <span className="relative inline-block">
@@ -187,7 +187,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 w-full px-2 sm:px-0"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full px-2 sm:px-0"
         >
           <GlowButton href="https://wa.me/919503144168" variant="primary" size="lg" className="w-full sm:w-auto">
             💬 WhatsApp Us
@@ -250,7 +250,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-600 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-gray-400 dark:text-gray-600 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
         aria-label="Scroll to about section"
       >
         <span className="text-[10px] tracking-[0.2em] uppercase font-semibold">
