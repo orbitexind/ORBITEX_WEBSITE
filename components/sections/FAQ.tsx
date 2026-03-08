@@ -8,23 +8,23 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "How do I get started with a project?",
-    a: "Simply send me a WhatsApp message or fill out the contact form with your project details — what you need, your budget, and deadline. I'll reply within a few hours with a quote and timeline.",
+    a: "Simply send us a WhatsApp message or fill out the contact form with your project details — what you need, your budget, and deadline. We'll reply within a few hours with a quote and timeline.",
   },
   {
     q: "What are your pricing rates in India?",
-    a: "My rates are designed to be affordable for Indian clients. Website development starts from ₹6,000, Android apps from ₹5,000, and AI chatbots from ₹8,000. Check the Pricing section for full details or contact me for a custom quote.",
+    a: "Our rates are designed to be affordable for Indian clients. Website development starts from ₹6,000, Android apps from ₹5,000, and AI chatbots from ₹8,000. Check the Pricing section for full details or contact us for a custom quote.",
   },
   {
     q: "Do you work on college projects?",
-    a: "Yes! I specialize in college project development with complete documentation, reports, and presentation support. Projects typically start from ₹3,000 depending on complexity.",
+    a: "Yes! We specialize in college project development with complete documentation, reports, and presentation support. Projects typically start from ₹3,000 depending on complexity.",
   },
   {
     q: "How long does it take to build an Android app?",
-    a: "A basic Android app takes 3–5 days, a business app with login/database takes 5–10 days, and a full-featured app with iOS support takes 10–14 days. I share regular updates throughout development.",
+    a: "A basic Android app takes 3–5 days, a business app with login/database takes 5–10 days, and a full-featured app with iOS support takes 10–14 days. We share regular updates throughout development.",
   },
   {
     q: "What payment methods do you accept?",
-    a: "I accept UPI (GPay, PhonePe, Paytm), bank transfer (NEFT/IMPS), and Razorpay for online payments. International clients can pay via PayPal or Wise. Payment is split 50% upfront and 50% on delivery.",
+    a: "We accept UPI (GPay, PhonePe, Paytm), bank transfer (NEFT/IMPS), and Razorpay for online payments. International clients can pay via PayPal or Wise. Payment is split 50% upfront and 50% on delivery.",
   },
   {
     q: "Do you provide source code after project completion?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Can you maintain my project after delivery?",
-    a: "Absolutely. I offer optional monthly maintenance plans for all service types. Website maintenance starts from ₹500/month, Android app maintenance from ₹500/month. Covers bug fixes, minor updates, and server monitoring.",
+    a: "Absolutely. We offer optional monthly maintenance plans for all service types. Website maintenance starts from ₹500/month, Android app maintenance from ₹500/month. Covers bug fixes, minor updates, and server monitoring.",
   },
   {
     q: "Do you offer revisions?",
@@ -149,7 +149,7 @@ const FAQ = () => {
           className="mt-12 text-center p-6 rounded-2xl border border-white/8 bg-white/[0.02]"
         >
           <p className="text-gray-400 text-sm mb-4">
-            Still have questions? I reply within a few hours.
+            Still have questions? We reply within a few hours.
           </p>
           <a
             href="https://wa.me/919503144168"

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Youtube, Zap, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Twitter, Youtube, ArrowUp } from "lucide-react";
 
 const footerLinks = {
   Services: [
@@ -18,7 +18,7 @@ const footerLinks = {
   ],
   Contact: [
     { name: "Start a Project", href: "#contact" },
-    { name: "satvikrokade@gmail.com", href: "mailto:satvikrokade@gmail.com" },
+    { name: "orbitexind@gmail.com", href: "mailto:orbitexind@gmail.com" },
     { name: "+91 95031 44168", href: "tel:+919503144168" },
   ],
 };
@@ -67,15 +67,15 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#home" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
-                <Zap size={14} className="text-white" />
+            <a href="#home" className="inline-flex items-center gap-2.5 mb-4">
+              <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-violet-600 via-purple-500 to-cyan-400 flex items-center justify-center shadow-[0_0_18px_rgba(124,58,237,0.55)]">
+                <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
               </div>
               <span className="text-lg font-bold">
                 <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                  Satvik
+                  Orbitex
                 </span>
-                <span className="text-white">Rokade</span>
+                <span className="text-white">Ind</span>
                 <span className="text-violet-400">.</span>
               </span>
             </a>
@@ -123,7 +123,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()} Satvik Rokade. All rights reserved. Built
+            © {new Date().getFullYear()} OrbitexInd. All rights reserved. Built
             with Next.js & ❤️
           </p>
           <button

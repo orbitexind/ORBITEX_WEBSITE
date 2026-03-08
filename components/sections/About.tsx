@@ -21,7 +21,7 @@ const techTags = [
 ];
 
 const highlights = [
-  "Full-stack Web, Android & AI Developer",
+  "Full-stack Web, Android & AI Development Team",
   "Delivered 10+ projects for clients across India",
   "Specializing in Android apps, chatbots & data dashboards",
   "Fast delivery · Clean code · Affordable pricing",
@@ -54,13 +54,13 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-tag">About Me</span>
+          <span className="section-tag">About Us</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5">
             Passionate about{" "}
             <span className="text-gradient">great software</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            I turn complex problems into elegant, high-performance digital products
+            We turn complex problems into elegant, high-performance digital products
             that users love and businesses depend on.
           </p>
         </motion.div>
@@ -93,10 +93,10 @@ const About = () => {
               <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
                 <div className="w-full h-full rounded-full bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
                   <span className="text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tighter">
-                    SR
+                    OI
                   </span>
                   <span className="text-[10px] text-gray-500 tracking-widest uppercase">
-                    Developer
+                    Team
                   </span>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const About = () => {
 
             {/* Name & location */}
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-1">Satvik Rokade</h3>
+              <h3 className="text-2xl font-bold text-white mb-1">OrbitexInd</h3>
               <p className="flex items-center gap-1.5 text-gray-500 text-sm justify-center lg:justify-start">
                 <MapPin size={13} className="text-violet-400" />
                 Maharashtra, India • Remote Worldwide
@@ -121,9 +121,9 @@ const About = () => {
 
             {/* Bio */}
             <p className="text-gray-400 leading-relaxed text-sm text-center lg:text-left">
-              I&apos;m a passionate developer from Maharashtra, India,
+              We are a passionate development team from Maharashtra, India,
               specializing in Android app development, full-stack web apps, and
-              AI-powered solutions. I build fast, clean, and affordable products
+              AI-powered solutions. We build fast, clean, and affordable products
               for startups, small businesses, and students — from MVP to
               deployment.
             </p>
@@ -141,7 +141,7 @@ const About = () => {
             {/* CTA */}
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 w-full lg:w-auto">
               <GlowButton href="#contact" variant="primary" size="sm" className="w-full xs:w-auto justify-center">
-                Hire Me
+                Hire Us
               </GlowButton>
               <GlowButton href="#" variant="outline" size="sm" className="w-full xs:w-auto justify-center">
                 <Download size={14} />

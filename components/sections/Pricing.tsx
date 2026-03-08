@@ -15,7 +15,7 @@ import {
 import GlowButton from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
 
-type Tab = "packages" | "services";
+type Tab = "packages" | "services" | "smm";
 type Currency = "INR" | "USD";
 
 const mobilePackages = [
@@ -137,6 +137,166 @@ const serviceGroups = [
   },
 ];
 
+const smmModules = [
+  {
+    id: "account-mgmt",
+    name: "Account Management",
+    icon: "👤",
+    color: "from-blue-500 to-cyan-500",
+    glow: "rgba(6,182,212,0.18)",
+    options: [
+      { tier: "Basic (Shared)", price: "₹2,000/mo", desc: "Junior team member handles accounts part-time — posting, monitoring & responses across 1-2 platforms. Ideal for startups with simple needs." },
+      { tier: "Dedicated", price: "₹4,000/mo", desc: "Dedicated expert full-time: faster responses, strategy input & proactive engagement on up to 3-4 platforms." },
+    ],
+  },
+  {
+    id: "content-creation",
+    name: "Content Creation",
+    icon: "✍️",
+    color: "from-violet-500 to-purple-600",
+    glow: "rgba(124,58,237,0.18)",
+    options: [
+      { tier: "12 Posts/mo", price: "₹5,000/mo", desc: "12 high-quality posts/month — graphics, captions & Reels scripts tailored to your brand voice." },
+      { tier: "16 Posts/mo", price: "₹7,000/mo", desc: "16 posts/month with more variety and platform optimization." },
+      { tier: "20 Posts/mo", price: "₹9,000/mo", desc: "20 posts/month including advanced visuals and trending formats." },
+      { tier: "Unlimited Posts", price: "₹12,000/mo", desc: "No cap on custom posts — perfect for high-volume brands needing daily activity." },
+    ],
+  },
+  {
+    id: "curated-content",
+    name: "Curated Content",
+    icon: "🔍",
+    color: "from-teal-500 to-emerald-500",
+    glow: "rgba(20,184,166,0.18)",
+    options: [
+      { tier: "Any Volume", price: "₹1,500/mo", desc: "Professional sourcing, adaptation & integration of trending/relevant content (memes, industry news) to boost engagement without full custom creation." },
+    ],
+  },
+  {
+    id: "content-calendar",
+    name: "Content Calendar",
+    icon: "📅",
+    color: "from-amber-500 to-orange-500",
+    glow: "rgba(245,158,11,0.18)",
+    options: [
+      { tier: "Basic", price: "₹1,000/mo", desc: "Simple monthly plan with 10-15 post ideas, basic hashtags, and posting schedule." },
+      { tier: "Detailed", price: "₹2,000/mo", desc: "In-depth calendar with 20+ ideas, theme planning, and 2 strategy check-ins." },
+      { tier: "Advanced", price: "₹3,000/mo", desc: "Comprehensive plan including seasonal trends, competitor-inspired themes, and detailed timelines." },
+      { tier: "AI-Optimized", price: "₹4,000/mo", desc: "AI-driven calendar with auto-suggested best posting times, performance predictions, and dynamic adjustments." },
+    ],
+  },
+  {
+    id: "dm-management",
+    name: "DM Management",
+    icon: "💬",
+    color: "from-pink-500 to-rose-500",
+    glow: "rgba(236,72,153,0.18)",
+    options: [
+      { tier: "Basic", price: "₹3,000/mo", desc: "Manual DM handling (up to 30 min/day), quick replies, and basic lead capture." },
+      { tier: "Advanced", price: "₹5,000/mo", desc: "Deeper engagement with personalized responses, conversation tracking, and conversion-focused follow-ups." },
+      { tier: "AI Automated", price: "₹6,000/mo", desc: "AI-powered chatbot + human oversight for 24/7 responses, auto-replies, and smart lead qualification." },
+    ],
+  },
+  {
+    id: "video-editing",
+    name: "Video Editing",
+    icon: "🎬",
+    color: "from-red-500 to-orange-600",
+    glow: "rgba(239,68,68,0.18)",
+    options: [
+      { tier: "30-Sec Videos", price: "₹1,000 each", desc: "Short Reels or Stories videos with script, editing, music & captions. Available in bundles of 1-4/mo." },
+      { tier: "60-Sec Videos", price: "₹1,500 each", desc: "Longer format videos for storytelling, tutorials, or product demos with full editing. Bundles of 1-4/mo." },
+    ],
+  },
+  {
+    id: "motion-graphics",
+    name: "Motion Graphics",
+    icon: "✨",
+    color: "from-indigo-500 to-violet-600",
+    glow: "rgba(99,102,241,0.18)",
+    options: [
+      { tier: "4 Pieces/mo", price: "₹3,500/mo", desc: "Animated text overlays, transitions, or simple infographics for Reels." },
+      { tier: "8 Pieces/mo", price: "₹6,000/mo", desc: "Higher volume for dynamic posts and Stories." },
+      { tier: "12+ Pieces/mo", price: "₹8,000/mo", desc: "Unlimited-scale motion assets for premium visual content." },
+    ],
+  },
+  {
+    id: "analytics",
+    name: "Analytics & Reporting",
+    icon: "📊",
+    color: "from-cyan-500 to-blue-600",
+    glow: "rgba(6,182,212,0.18)",
+    options: [
+      { tier: "Basic Monthly", price: "₹1,500/mo", desc: "Standard end-of-month report with key metrics — reach, engagement, growth." },
+      { tier: "Bi-Weekly", price: "₹2,500/mo", desc: "More frequent updates for quicker insights and faster adjustments." },
+      { tier: "Weekly", price: "₹3,500/mo", desc: "Detailed weekly dashboards with trends, recommendations, and performance deep-dives." },
+    ],
+  },
+  {
+    id: "competitor-analysis",
+    name: "Competitor Analysis",
+    icon: "🔬",
+    color: "from-lime-500 to-green-600",
+    glow: "rgba(132,204,22,0.18)",
+    options: [
+      { tier: "Basic", price: "₹2,000/mo", desc: "Monthly overview of 2-3 competitors' posting patterns, engagement, and top content." },
+      { tier: "Advanced", price: "₹3,500/mo", desc: "In-depth benchmarking — content themes, hashtags, and performance gaps." },
+      { tier: "In-Depth", price: "₹5,000/mo", desc: "Comprehensive AI-assisted analysis with SWOT, trend spotting, and actionable strategy recommendations." },
+    ],
+  },
+  {
+    id: "crisis-management",
+    name: "Crisis Management",
+    icon: "🛡️",
+    color: "from-red-600 to-rose-700",
+    glow: "rgba(220,38,38,0.18)",
+    options: [
+      { tier: "Basic", price: "₹4,000/mo", desc: "Monitoring + alert system for negative mentions with simple response templates." },
+      { tier: "Advanced", price: "₹6,000/mo", desc: "Proactive reputation handling, full response strategy, escalation protocols, and post-crisis review." },
+    ],
+  },
+  {
+    id: "lead-gen",
+    name: "Lead Generation",
+    icon: "🎯",
+    color: "from-yellow-500 to-amber-600",
+    glow: "rgba(234,179,8,0.18)",
+    options: [
+      { tier: "Standard", price: "₹2,500/mo", desc: "Targeted lead capture via optimized CTAs, forms in Stories/posts, polls, and follow-up funnels." },
+    ],
+  },
+  {
+    id: "community-scheduling",
+    name: "Community Scheduling",
+    icon: "⏰",
+    color: "from-sky-500 to-blue-500",
+    glow: "rgba(14,165,233,0.18)",
+    options: [
+      { tier: "Standard", price: "₹1,000/mo", desc: "Automated publishing, scheduling across platforms, and basic engagement queuing." },
+    ],
+  },
+  {
+    id: "ai-automation",
+    name: "AI Automation Complete",
+    icon: "🤖",
+    color: "from-violet-600 to-indigo-600",
+    glow: "rgba(124,58,237,0.18)",
+    options: [
+      { tier: "Full Suite", price: "₹10,000/mo", desc: "Full AI suite: auto-posting, content suggestions, chatbots, sentiment analysis, and workflow automation." },
+    ],
+  },
+  {
+    id: "strategy-session",
+    name: "1-on-1 Strategy Session",
+    icon: "🎙️",
+    color: "from-emerald-500 to-teal-600",
+    glow: "rgba(16,185,129,0.18)",
+    options: [
+      { tier: "Per Session", price: "₹500 / session", desc: "45-60 min personalized strategy call with an expert — one-off or as an add-on to any plan." },
+    ],
+  },
+];
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -222,6 +382,7 @@ const Pricing = () => {
             [
               { id: "packages", label: "📱 Mobile App Packages" },
               { id: "services", label: "🛠️ Service Rates" },
+              { id: "smm", label: "📣 SMM Services" },
             ] as { id: Tab; label: string }[]
           ).map((tab) => (
               <button
@@ -462,6 +623,67 @@ const Pricing = () => {
                   </motion.div>
                 );
               })}
+            </motion.div>
+          )}
+          {/* ── SMM TAB ──────────────────────────────────────── */}
+          {activeTab === "smm" && (
+            <motion.div
+              key="smm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35 }}
+            >
+              <p className="text-center text-gray-400 text-sm mb-8 max-w-2xl mx-auto">
+                All prices are <span className="text-white font-semibold">INR/Month, Excl. GST</span>. Mix &amp; match modules to build a plan that fits your brand perfectly.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {smmModules.map((mod, mi) => (
+                  <motion.div
+                    key={mod.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: mi * 0.04 }}
+                    className="rounded-2xl border border-white/8 bg-white/[0.03] overflow-hidden flex flex-col"
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px ${mod.glow}`;
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = "";
+                    }}
+                  >
+                    {/* top accent bar */}
+                    <div className={`h-[3px] w-full bg-gradient-to-r ${mod.color}`} />
+                    <div className="px-5 pt-5 pb-4">
+                      <div className="flex items-center gap-2.5 mb-3">
+                        <span className="text-xl">{mod.icon}</span>
+                        <span className="text-white font-bold text-[15px]">{mod.name}</span>
+                      </div>
+                      <ul className="space-y-3">
+                        {mod.options.map((opt) => (
+                          <li key={opt.tier} className="rounded-xl border border-white/6 bg-white/[0.025] px-4 py-3">
+                            <div className="flex items-center justify-between gap-2 flex-wrap mb-1">
+                              <span className="text-xs font-semibold text-gray-300">{opt.tier}</span>
+                              <span className={`text-sm font-extrabold bg-gradient-to-r ${mod.color} bg-clip-text text-transparent whitespace-nowrap`}>
+                                {opt.price}
+                              </span>
+                            </div>
+                            <p className="text-[11px] text-gray-500 leading-relaxed">{opt.desc}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-violet-500/40 text-violet-300 hover:bg-violet-600/15 hover:border-violet-400/60 transition-all duration-300"
+                >
+                  Build a custom SMM plan →
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -59,15 +59,15 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between max-w-7xl">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
-              <Zap size={14} className="text-white" />
+          <a href="#home" className="flex items-center gap-2.5">
+            <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-violet-600 via-purple-500 to-cyan-400 flex items-center justify-center shadow-[0_0_18px_rgba(124,58,237,0.55)]">
+              <span className="text-white text-[13px] font-black tracking-tighter select-none">OI</span>
             </div>
             <span className="text-lg font-bold">
               <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                Satvik
+                Orbitex
               </span>
-              <span className="text-white">Rokade</span>
+              <span className="text-white">Ind</span>
               <span className="text-violet-400">.</span>
             </span>
           </a>
@@ -105,7 +105,7 @@ const Navbar = () => {
               href="#contact"
               className="px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white text-sm font-semibold transition-all duration-300 hover:from-violet-500 hover:to-purple-500 hover:shadow-[0_0_24px_rgba(124,58,237,0.5)] active:scale-95"
             >
-              Hire Me
+              Hire Us
             </a>
           </div>
 

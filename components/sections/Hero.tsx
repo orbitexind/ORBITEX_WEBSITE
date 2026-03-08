@@ -128,10 +128,10 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-extrabold leading-[1.1] tracking-tight mb-5"
         >
-          <span className="text-white">Hi, I&apos;m </span>
+          <span className="text-white">We are </span>
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
-              Satvik Rokade
+              OrbitexInd
             </span>
             {/* Underline accent */}
             <motion.span
@@ -177,7 +177,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          I build high-quality Android apps, modern websites, AI chatbots &
+          We build high-quality Android apps, modern websites, AI chatbots &
           data dashboards — at affordable Indian pricing. From idea to
           deployment, fast and hassle-free.
         </motion.p>
@@ -190,10 +190,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 w-full px-2 sm:px-0"
         >
           <GlowButton href="https://wa.me/919503144168" variant="primary" size="lg" className="w-full sm:w-auto">
-            💬 WhatsApp Me
+            💬 WhatsApp Us
           </GlowButton>
           <GlowButton href="#portfolio" variant="secondary" size="lg" className="w-full sm:w-auto">
-            View My Work →
+            View Our Work →
           </GlowButton>
         </motion.div>
 

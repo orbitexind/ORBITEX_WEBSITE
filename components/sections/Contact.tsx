@@ -38,8 +38,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "satvikrokade@gmail.com",
-    href: "mailto:satvikrokade@gmail.com",
+    value: "orbitexind@gmail.com",
+    href: "mailto:orbitexind@gmail.com",
     gradient: "from-violet-500 to-purple-600",
   },
   {
@@ -112,7 +112,7 @@ const Contact = () => {
     setFormState("loading");
 
     try {
-      const res = await fetch("https://formspree.io/f/xzdjzjbv", {
+      const res = await fetch("https://formspree.io/f/maqpnaze", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(form),
@@ -163,8 +163,8 @@ const Contact = () => {
             <span className="text-gradient">amazing</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-lg">
-            Have a project in mind? I&apos;d love to hear about it. Send me a
-            message and I&apos;ll get back to you within 24 hours.
+            Have a project in mind? We&apos;d love to hear about it. Send us a
+            message and we&apos;ll get back to you within 24 hours.
           </p>
         </motion.div>
 
@@ -183,7 +183,7 @@ const Contact = () => {
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Whether you need a full-stack web app, a slick UI redesign, or
-                an AI feature added to your product — I&apos;m here to help you
+                an AI feature added to your product — we&apos;re here to help you
                 ship something great.
               </p>
             </div>
@@ -219,7 +219,7 @@ const Contact = () => {
             {/* Social links */}
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-4">
-                Follow me
+                Follow us
               </p>
               <div className="flex items-center gap-3">
                 {socials.map(({ icon: Icon, href, label }) => (
@@ -273,7 +273,7 @@ const Contact = () => {
                       Message Sent! 🎉
                     </h3>
                     <p className="text-gray-400 text-sm max-w-xs">
-                      Thanks for reaching out! I&apos;ll review your project
+                      Thanks for reaching out! We&apos;ll review your project
                       details and get back to you within 24 hours.
                     </p>
                   </div>
@@ -433,7 +433,7 @@ const Contact = () => {
                   </motion.button>
 
                   <p className="text-center text-gray-600 text-xs">
-                    By submitting, you agree to receive a reply from Satvik Rokade.
+                    By submitting, you agree to receive a reply from OrbitexInd.
                     No spam, ever.
                   </p>
 

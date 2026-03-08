@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satvik Rokade | Android, Web & AI Developer — Maharashtra, India",
+  title: "OrbitexInd | Android, Web & AI Developer — Maharashtra, India",
   description:
     "Freelance developer from Maharashtra, India. I build Android apps, modern websites, AI chatbots & data dashboards at affordable Indian pricing. Fast delivery, clean code.",
   keywords: [
@@ -27,26 +27,26 @@ export const metadata: Metadata = {
     "full-stack developer india",
     "affordable app development",
     "flutter developer",
-    "satvik rokade",
+    "orbitexind",
   ],
-  authors: [{ name: "Satvik Rokade" }],
-  creator: "Satvik Rokade",
+  authors: [{ name: "OrbitexInd" }],
+  creator: "OrbitexInd",
   metadataBase: new URL("https://satvikrokadeportfolio.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://satvikrokadeportfolio.vercel.app",
-    title: "Satvik Rokade | Android, Web & AI Developer",
+    title: "OrbitexInd | Android, Web & AI Developer",
     description:
       "Freelance developer from Maharashtra, India. Android apps, websites, AI chatbots & dashboards at affordable Indian pricing.",
-    siteName: "Satvik Rokade Portfolio",
+    siteName: "OrbitexInd Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Satvik Rokade | Android, Web & AI Developer",
+    title: "OrbitexInd | Android, Web & AI Developer",
     description:
       "Freelance developer from Maharashtra, India. Android apps, websites, AI chatbots & dashboards at affordable Indian pricing.",
-    creator: "@satvikrokade",
+    creator: "@orbitexind",
   },
   robots: {
     index: true,

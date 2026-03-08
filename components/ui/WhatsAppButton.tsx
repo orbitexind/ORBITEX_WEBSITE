@@ -21,7 +21,7 @@ const WhatsAppButton = () => {
           >
             <div>
               <p className="text-white text-xs font-semibold leading-tight">
-                Chat with Satvik
+                Chat with OrbitexInd
               </p>
               <p className="text-gray-400 text-[10px]">
                 Typically replies in minutes

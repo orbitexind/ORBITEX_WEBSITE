@@ -125,13 +125,13 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-tag">What I Do</span>
+          <span className="section-tag">What We Do</span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
             Services that{" "}
             <span className="text-gradient">drive results</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            From concept to launch, I provide end-to-end solutions that are
+            From concept to launch, we provide end-to-end solutions that are
             engineered for performance, designed for delight, and built to scale.
           </p>
         </motion.div>
