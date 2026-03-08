@@ -75,36 +75,38 @@ const About = () => {
             className="lg:col-span-2 flex flex-col items-center lg:items-start gap-8"
           >
             {/* Avatar */}
-            <div className="relative inline-flex items-center justify-center">
-              {/* Outer glow */}
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 blur-2xl" />
-              {/* Rotating ring */}
-              <motion.div
-                className="absolute -inset-2 rounded-full"
-                style={{
-                  background:
-                    "conic-gradient(from 0deg, #7c3aed, #06b6d4, #7c3aed)",
-                  opacity: 0.4,
-                }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-              />
-              {/* Avatar circle */}
-              <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
-                <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
-                  <span className="text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tighter">
-                    OI
-                  </span>
-                  <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
-                    Team
-                  </span>
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative inline-flex items-center justify-center">
+                {/* Outer glow */}
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 blur-2xl" />
+                {/* Rotating ring */}
+                <motion.div
+                  className="absolute -inset-2 rounded-full"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, #7c3aed, #06b6d4, #7c3aed)",
+                    opacity: 0.4,
+                  }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                />
+                {/* Avatar circle */}
+                <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
+                  <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
+                    <span className="text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tighter">
+                      OI
+                    </span>
+                    <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
+                      Team
+                    </span>
+                  </div>
                 </div>
               </div>
-              {/* Floating badge */}
+              {/* Floating badge — below avatar, not overlapping */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
+                animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -right-2 px-3 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-semibold backdrop-blur-sm"
+                className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-500 dark:text-emerald-400 text-xs font-semibold backdrop-blur-sm"
               >
                 ✦ Available for Hire
               </motion.div>
