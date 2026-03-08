@@ -104,7 +104,7 @@ const Hero = () => {
       {/* ─── Main content ─── */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 container mx-auto px-6 max-w-5xl text-center"
+        className="relative z-10 container mx-auto px-6 max-w-5xl text-center pt-24"
       >
         {/* Availability badge */}
         <motion.div

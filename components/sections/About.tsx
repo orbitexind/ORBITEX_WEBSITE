@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Download, MapPin, CheckCircle2 } from "lucide-react";
+import { MapPin, CheckCircle2 } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 
 const skills = [
@@ -142,10 +142,6 @@ const About = () => {
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 w-full lg:w-auto">
               <GlowButton href="#contact" variant="primary" size="sm" className="w-full xs:w-auto justify-center">
                 Contact Us
-              </GlowButton>
-              <GlowButton href="#" variant="outline" size="sm" className="w-full xs:w-auto justify-center">
-                <Download size={14} />
-                Download CV
               </GlowButton>
             </div>
           </motion.div>
