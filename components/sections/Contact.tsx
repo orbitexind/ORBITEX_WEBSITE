@@ -127,16 +127,16 @@ const Contact = () => {
 
   const inputClass = (field: keyof FormData) =>
     cn(
-      "w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border text-white placeholder-gray-600 text-sm transition-all duration-200 focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/30 outline-none",
+      "w-full px-4 py-3.5 rounded-xl bg-gray-50 dark:bg-white/[0.04] border text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm transition-all duration-200 focus:bg-violet-50/50 dark:focus:bg-violet-500/5 focus:ring-2 focus:ring-violet-500/30 outline-none",
       errors[field]
         ? "border-red-500/60 focus:border-red-500/60"
-        : "border-white/10 focus:border-violet-500/50"
+        : "border-gray-300 dark:border-white/10 focus:border-violet-500/50"
     );
 
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-[#030712]"
       aria-label="Contact section"
     >
       {/* Background */}
@@ -158,11 +158,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <span className="section-tag">Contact</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Let&apos;s build something{" "}
             <span className="text-gradient">amazing</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">
             Have a project in mind? We&apos;d love to hear about it. Send us a
             message and we&apos;ll get back to you within 24 hours.
           </p>
@@ -178,10 +178,10 @@ const Contact = () => {
           >
             {/* Intro */}
             <div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                 Get in touch
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 Whether you need a full-stack web app, a slick UI redesign, or
                 an AI feature added to your product — we&apos;re here to help you
                 ship something great.
@@ -196,7 +196,7 @@ const Contact = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-2xl glass border-white/5 hover:border-white/12 hover:bg-white/[0.06] transition-all duration-200 group"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 hover:border-violet-300 dark:hover:border-white/12 hover:bg-violet-50 dark:hover:bg-white/[0.06] transition-all duration-200 group shadow-sm dark:shadow-none"
                   >
                     <div
                       className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0`}
@@ -204,10 +204,10 @@ const Contact = () => {
                       <Icon size={16} className="text-white" />
                     </div>
                     <div>
-                      <div className="text-gray-500 text-[11px] uppercase tracking-widest font-semibold">
+                      <div className="text-gray-500 dark:text-gray-500 text-[11px] uppercase tracking-widest font-semibold">
                         {item.label}
                       </div>
-                      <div className="text-gray-200 text-sm font-medium group-hover:text-white transition-colors">
+                      <div className="text-gray-700 dark:text-gray-200 text-sm font-medium group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                         {item.value}
                       </div>
                     </div>
@@ -218,7 +218,7 @@ const Contact = () => {
 
             {/* Social links */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-600 mb-4">
                 Follow us
               </p>
               <div className="flex items-center gap-3">
@@ -227,7 +227,7 @@ const Contact = () => {
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-violet-600/20 hover:border-violet-500/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-violet-600/20 hover:border-violet-500/40 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white transition-all duration-300"
                   >
                     <Icon size={16} />
                   </a>
@@ -257,7 +257,7 @@ const Contact = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="p-5 sm:p-7 md:p-9 rounded-3xl glass-dark border border-white/8">
+            <div className="p-5 sm:p-7 md:p-9 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 shadow-md dark:shadow-none">
               {formState === "success" ? (
                 // ── Success state ──
                 <motion.div
@@ -269,10 +269,10 @@ const Contact = () => {
                     <CheckCircle size={28} className="text-emerald-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       Message Sent! 🎉
                     </h3>
-                    <p className="text-gray-400 text-sm max-w-xs">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm max-w-xs">
                       Thanks for reaching out! We&apos;ll review your project
                       details and get back to you within 24 hours.
                     </p>
@@ -292,7 +292,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2"
+                        className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
                       >
                         Your Name *
                       </label>
@@ -315,7 +315,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2"
+                        className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
                       >
                         Email Address *
                       </label>
@@ -341,7 +341,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2"
+                      className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
                     >
                       Subject
                     </label>
@@ -360,7 +360,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="budget"
-                      className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2"
+                      className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
                     >
                       Project Budget
                     </label>
@@ -371,11 +371,11 @@ const Contact = () => {
                       onChange={handleChange}
                       className={cn(inputClass("budget"), "cursor-pointer")}
                     >
-                      <option value="" disabled className="bg-[#0a0a14]">
+                      <option value="" disabled className="bg-white dark:bg-[#0a0a14]">
                         Select budget range…
                       </option>
                       {budgets.map((b) => (
-                        <option key={b} value={b} className="bg-[#0a0a14]">
+                        <option key={b} value={b} className="bg-white dark:bg-[#0a0a14]">
                           {b}
                         </option>
                       ))}
@@ -386,7 +386,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2"
+                      className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
                     >
                       Message *
                     </label>

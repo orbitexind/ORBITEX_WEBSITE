@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#030712",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -67,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -75,9 +76,11 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#030712] text-white antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-white dark:bg-[#030712] text-gray-900 dark:text-white antialiased transition-colors duration-300`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

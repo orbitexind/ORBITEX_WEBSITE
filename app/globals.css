@@ -18,11 +18,16 @@ html {
 }
 
 body {
-  background-color: #030712;
-  color: #f9fafb;
+  background-color: #ffffff;
+  color: #111827;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: #030712;
+  color: #f9fafb;
 }
 
 /* Custom scrollbar */
@@ -30,6 +35,9 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
   background: #030712;
 }
 ::-webkit-scrollbar-thumb {
@@ -58,17 +66,31 @@ body {
 
   /* Glass morphism */
   .glass {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .glass {
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
   }
 
   .glass-dark {
-    background: rgba(3, 7, 18, 0.7);
+    background: rgba(248, 250, 252, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .glass-dark {
+    background: rgba(3, 7, 18, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: none;
   }
 
   /* Glow effects */
@@ -84,8 +106,11 @@ body {
   /* Gradient border */
   .gradient-border {
     position: relative;
-    background: #0f0f1a;
+    background: #f8fafc;
     border-radius: 16px;
+  }
+  .dark .gradient-border {
+    background: #0f0f1a;
   }
   .gradient-border::before {
     content: "";
@@ -103,6 +128,15 @@ body {
 
   /* Grid pattern background */
   .bg-grid {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .dark .bg-grid {
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.03) 1px,
         transparent 1px
@@ -150,14 +184,20 @@ body {
   display: inline-block;
   padding: 4px 16px;
   border-radius: 100px;
-  background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(124, 58, 237, 0.3);
-  color: #a78bfa;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #7c3aed;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.dark .section-tag {
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #a78bfa;
 }
 
 /* Input focus ring override */

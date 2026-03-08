@@ -323,7 +323,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-white dark:bg-[#030712]"
       aria-label="Pricing section"
     >
       {/* Background */}
@@ -343,11 +343,11 @@ const Pricing = () => {
           className="text-center mb-10"
         >
           <span className="section-tag">Pricing</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Transparent, flexible{" "}
             <span className="text-gradient">pricing</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">
             No hidden fees. Flat project rates so you always know what
             you&apos;re investing. Every project includes a free discovery call.
           </p>
@@ -361,7 +361,7 @@ const Pricing = () => {
                   "px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300",
                   currency === c
                     ? "bg-violet-600 text-white shadow-lg"
-                    : "text-gray-400 hover:text-gray-200"
+                    : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
                 )}
               >
                 {c === "INR" ? "🇮🇳 ₹ INR" : "🇺🇸 $ USD"}
@@ -392,7 +392,7 @@ const Pricing = () => {
                 "relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap min-h-[44px]",
                 activeTab === tab.id
                   ? "text-white"
-                  : "text-gray-400 hover:text-gray-200"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
               )}
             >
               {activeTab === tab.id && (
@@ -432,8 +432,8 @@ const Pricing = () => {
                     className={cn(
                       "relative rounded-3xl overflow-hidden transition-all duration-300 border",
                       pkg.popular
-                        ? "border-violet-500/50 bg-gradient-to-b from-violet-950/60 to-[#0a0a14]"
-                        : "border-white/8 bg-white/[0.03]"
+                        ? "border-violet-500/50 bg-gradient-to-b from-violet-100/80 to-white dark:from-violet-950/60 dark:to-[#0a0a14]"
+                        : "border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
                     )}
                     style={{
                       transform: pkg.popular ? "scale(1.02)" : undefined,
@@ -459,7 +459,7 @@ const Pricing = () => {
                       {/* Emoji + name */}
                       <div className="mb-4">
                         <div className="text-2xl mb-2">{pkg.emoji}</div>
-                        <div className="font-bold text-white text-xl">
+                        <div className="font-bold text-gray-900 dark:text-white text-xl">
                           {pkg.name}
                         </div>
                         <div className="text-gray-500 text-sm mt-0.5">
@@ -504,7 +504,7 @@ const Pricing = () => {
                         ) : (
                           <a
                             href="#contact"
-                            className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-white/15 text-gray-300 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+                            className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-violet-400 dark:hover:border-white/30 hover:bg-violet-50 dark:hover:bg-white/5 transition-all duration-300"
                           >
                             Get Started →
                           </a>
@@ -512,17 +512,17 @@ const Pricing = () => {
                       </div>
 
                       {/* Divider */}
-                      <div className="w-full h-px bg-white/8 mb-5" />
+                      <div className="w-full h-px bg-gray-200 dark:bg-white/8 mb-5" />
 
                       {/* Includes */}
-                      <p className="text-[10px] uppercase tracking-widest text-gray-600 font-semibold mb-3">
+                      <p className="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-600 font-semibold mb-3">
                         Includes
                       </p>
                       <ul className="space-y-2.5 mb-4">
                         {pkg.includes.map((feat) => (
                           <li
                             key={feat}
-                            className="flex items-start gap-2.5 text-sm text-gray-300"
+                            className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300"
                           >
                             <Check
                               size={14}
@@ -575,13 +575,13 @@ const Pricing = () => {
                       ease: [0.22, 1, 0.36, 1],
                       delay: gi * 0.1,
                     }}
-                    className="rounded-3xl border border-white/8 bg-white/[0.03] overflow-hidden"
+                    className="rounded-3xl border border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] overflow-hidden shadow-sm dark:shadow-none"
                   >
                     {/* Category header */}
                     <div
                       className={`h-1 w-full bg-gradient-to-r ${group.color}`}
                     />
-                    <div className="px-6 pt-6 pb-4 border-b border-white/8 flex items-center gap-3">
+                    <div className="px-6 pt-6 pb-4 border-b border-gray-200 dark:border-white/8 flex items-center gap-3">
                       <div
                         className={cn(
                           "w-9 h-9 rounded-xl border flex items-center justify-center",
@@ -590,19 +590,19 @@ const Pricing = () => {
                       >
                         <Icon size={16} className={group.iconColor} />
                       </div>
-                      <span className="text-white font-bold text-base">
+                      <span className="text-gray-900 dark:text-white font-bold text-base">
                         {group.label}
                       </span>
                     </div>
 
                     {/* Service rows */}
-                    <ul className="divide-y divide-white/5">
+                    <ul className="divide-y divide-gray-100 dark:divide-white/5">
                       {group.services.map((svc) => (
                         <li
                           key={svc.name}
-                          className="px-6 py-4 flex flex-col gap-1 hover:bg-white/[0.03] transition-colors"
+                          className="px-6 py-4 flex flex-col gap-1 hover:bg-gray-50 dark:hover:bg-white/[0.03] transition-colors"
                         >
-                          <span className="text-sm font-medium text-gray-200">
+                          <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
                             {svc.name}
                           </span>
                           <div className="flex items-center flex-wrap gap-2 mt-0.5">
@@ -612,7 +612,7 @@ const Pricing = () => {
                               {svc.price}
                             </span>
                             {svc.maintenance && (
-                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/8 text-gray-500 font-medium">
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-500 font-medium">
                                 Maintenance: {svc.maintenance}
                               </span>
                             )}
@@ -634,8 +634,8 @@ const Pricing = () => {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35 }}
             >
-              <p className="text-center text-gray-400 text-sm mb-8 max-w-2xl mx-auto">
-                All prices are <span className="text-white font-semibold">INR/Month, Excl. GST</span>. Mix &amp; match modules to build a plan that fits your brand perfectly.
+              <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-8 max-w-2xl mx-auto">
+                All prices are <span className="text-gray-900 dark:text-white font-semibold">INR/Month, Excl. GST</span>. Mix &amp; match modules to build a plan that fits your brand perfectly.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {smmModules.map((mod, mi) => (
@@ -644,7 +644,7 @@ const Pricing = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: mi * 0.04 }}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] overflow-hidden flex flex-col"
+                    className="rounded-2xl border border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] overflow-hidden flex flex-col shadow-sm dark:shadow-none"
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 40px ${mod.glow}`;
                     }}
@@ -657,13 +657,13 @@ const Pricing = () => {
                     <div className="px-5 pt-5 pb-4">
                       <div className="flex items-center gap-2.5 mb-3">
                         <span className="text-xl">{mod.icon}</span>
-                        <span className="text-white font-bold text-[15px]">{mod.name}</span>
+                        <span className="text-gray-900 dark:text-white font-bold text-[15px]">{mod.name}</span>
                       </div>
                       <ul className="space-y-3">
                         {mod.options.map((opt) => (
-                          <li key={opt.tier} className="rounded-xl border border-white/6 bg-white/[0.025] px-4 py-3">
+                          <li key={opt.tier} className="rounded-xl border border-gray-200 dark:border-white/6 bg-gray-50 dark:bg-white/[0.025] px-4 py-3">
                             <div className="flex items-center justify-between gap-2 flex-wrap mb-1">
-                              <span className="text-xs font-semibold text-gray-300">{opt.tier}</span>
+                              <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">{opt.tier}</span>
                               <span className={`text-sm font-extrabold bg-gradient-to-r ${mod.color} bg-clip-text text-transparent whitespace-nowrap`}>
                                 {opt.price}
                               </span>
@@ -679,7 +679,7 @@ const Pricing = () => {
               <div className="mt-8 text-center">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-violet-500/40 text-violet-300 hover:bg-violet-600/15 hover:border-violet-400/60 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-violet-400/40 dark:border-violet-500/40 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-600/15 hover:border-violet-500/60 dark:hover:border-violet-400/60 transition-all duration-300"
                 >
                   Build a custom SMM plan →
                 </a>
@@ -704,10 +704,10 @@ const Pricing = () => {
           ].map((item) => (
             <div
               key={item.text}
-              className="flex items-center gap-3 p-4 rounded-2xl glass border-white/5"
+              className="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
             >
               <span className="text-xl">{item.emoji}</span>
-              <span className="text-gray-400 text-xs font-medium">
+              <span className="text-gray-600 dark:text-gray-400 text-xs font-medium">
                 {item.text}
               </span>
             </div>

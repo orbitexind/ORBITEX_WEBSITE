@@ -34,7 +34,7 @@ const Hero = () => {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#030712]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#030712]"
       aria-label="Hero section"
     >
       {/* ─── Animated background layer ─── */}
@@ -128,7 +128,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-extrabold leading-[1.1] tracking-tight mb-5"
         >
-          <span className="text-white">We are </span>
+          <span className="text-gray-900 dark:text-white">We are </span>
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
               OrbitexInd
@@ -148,7 +148,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-lg sm:text-2xl md:text-3xl text-gray-400 mb-7 min-h-[2.5rem] font-light"
+          className="text-lg sm:text-2xl md:text-3xl text-gray-500 dark:text-gray-400 mb-7 min-h-[2.5rem] font-light"
         >
           <TypeAnimation
             sequence={[
@@ -175,7 +175,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           We build high-quality Android apps, modern websites, AI chatbots &
           data dashboards — at affordable Indian pricing. From idea to
@@ -210,12 +210,12 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.7 + i * 0.08 }}
-              className="text-center p-3 sm:p-4 rounded-2xl glass border-white/5"
+              className="text-center p-3 sm:p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none"
             >
               <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                 {stat.number}
               </div>
-              <div className="text-gray-500 text-xs mt-1 font-medium">
+              <div className="text-gray-500 dark:text-gray-500 text-xs mt-1 font-medium">
                 {stat.label}
               </div>
             </motion.div>
@@ -236,7 +236,7 @@ const Hero = () => {
             key={label}
             href={href}
             aria-label={label}
-            className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:border-violet-500/50 hover:bg-violet-500/10 flex items-center justify-center text-gray-500 hover:text-violet-300 transition-all duration-300"
+            className="w-9 h-9 rounded-full border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 hover:border-violet-400 dark:hover:border-violet-500/50 hover:bg-violet-50 dark:hover:bg-violet-500/10 flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-300 transition-all duration-300"
           >
             <Icon size={15} />
           </a>
@@ -250,7 +250,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-violet-400 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-600 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
         aria-label="Scroll to about section"
       >
         <span className="text-[10px] tracking-[0.2em] uppercase font-semibold">
@@ -259,7 +259,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-8 h-12 rounded-full border border-white/10 flex items-start justify-center pt-2"
+          className="w-8 h-12 rounded-full border border-gray-300 dark:border-white/10 flex items-start justify-center pt-2"
         >
           <span className="w-1 h-3 rounded-full bg-violet-400/80" />
         </motion.div>

@@ -106,7 +106,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-white dark:bg-[#030712]"
       aria-label="Services section"
     >
       {/* Background */}
@@ -126,11 +126,11 @@ const Services = () => {
           className="text-center mb-16"
         >
           <span className="section-tag">What We Do</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Services that{" "}
             <span className="text-gradient">drive results</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             From concept to launch, we provide end-to-end solutions that are
             engineered for performance, designed for delight, and built to scale.
           </p>
@@ -152,7 +152,7 @@ const Services = () => {
                 variants={cardVariants}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="group relative p-7 rounded-3xl bg-white/[0.03] border border-white/8 hover:border-white/15 overflow-hidden cursor-default"
+                className="group relative p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 overflow-hidden cursor-default shadow-sm dark:shadow-none"
                 style={{
                   transition: "border-color 0.3s, box-shadow 0.3s",
                 }}
@@ -191,11 +191,11 @@ const Services = () => {
                   >
                     {service.tag}
                   </span>
-                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
                   {service.description}
                 </p>
 
@@ -204,7 +204,7 @@ const Services = () => {
                   {service.features.map((feat) => (
                     <li
                       key={feat}
-                      className="flex items-center gap-2.5 text-sm text-gray-400"
+                      className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400"
                     >
                       <CheckCircle
                         size={13}
@@ -239,7 +239,7 @@ const Services = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             Need something custom?{" "}
             <a
               href="#contact"

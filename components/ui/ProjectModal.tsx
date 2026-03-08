@@ -27,22 +27,22 @@ interface ProjectModalProps {
 }
 
 const tagColors: Record<string, string> = {
-  "Next.js": "bg-black/40 text-white border-white/20",
-  React: "bg-cyan-950/50 text-cyan-300 border-cyan-500/30",
-  TypeScript: "bg-blue-950/50 text-blue-300 border-blue-500/30",
-  "Node.js": "bg-green-950/50 text-green-300 border-green-500/30",
-  "Tailwind CSS": "bg-sky-950/50 text-sky-300 border-sky-500/30",
-  PostgreSQL: "bg-indigo-950/50 text-indigo-300 border-indigo-500/30",
-  MongoDB: "bg-green-950/50 text-green-300 border-green-500/30",
-  Python: "bg-yellow-950/50 text-yellow-300 border-yellow-500/30",
-  OpenAI: "bg-emerald-950/50 text-emerald-300 border-emerald-500/30",
-  Stripe: "bg-violet-950/50 text-violet-300 border-violet-500/30",
-  Redis: "bg-red-950/50 text-red-300 border-red-500/30",
-  Docker: "bg-blue-950/50 text-blue-300 border-blue-500/30",
+  "Next.js": "bg-gray-100 dark:bg-black/40 text-gray-800 dark:text-white border-gray-300 dark:border-white/20",
+  React: "bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-500/30",
+  TypeScript: "bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-500/30",
+  "Node.js": "bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-300 dark:border-green-500/30",
+  "Tailwind CSS": "bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border-sky-300 dark:border-sky-500/30",
+  PostgreSQL: "bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border-indigo-300 dark:border-indigo-500/30",
+  MongoDB: "bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-300 dark:border-green-500/30",
+  Python: "bg-yellow-50 dark:bg-yellow-950/50 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-500/30",
+  OpenAI: "bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-500/30",
+  Stripe: "bg-violet-50 dark:bg-violet-950/50 text-violet-700 dark:text-violet-300 border-violet-300 dark:border-violet-500/30",
+  Redis: "bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border-red-300 dark:border-red-500/30",
+  Docker: "bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-500/30",
 };
 
 const getTagClass = (tag: string) =>
-  tagColors[tag] || "bg-white/10 text-gray-300 border-white/10";
+  tagColors[tag] || "bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-white/10";
 
 const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
   // Close on Escape key
@@ -86,7 +86,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
             className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 pointer-events-none"
           >
             <motion.div
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0a0a14] border border-white/10 shadow-2xl pointer-events-auto"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white dark:bg-[#0a0a14] border border-gray-200 dark:border-white/10 shadow-2xl pointer-events-auto"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -133,7 +133,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                     <span className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-2 block">
                       {project.category}
                     </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
                   </div>
@@ -143,7 +143,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                      className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-all"
                       aria-label="View on GitHub"
                     >
                       <Github size={16} />
@@ -160,20 +160,20 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                   {project.longDescription}
                 </p>
 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-3">
+                  <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
                     Key Features
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {project.features.map((feature) => (
                       <div
                         key={feature}
-                        className="flex items-center gap-2 text-sm text-gray-300"
+                        className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
                       >
                         <CheckCircle
                           size={14}
@@ -187,7 +187,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
 
                 {/* Tech stack */}
                 <div>
-                  <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-3">
+                  <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
                     Tech Stack
                   </h4>
                   <div className="flex flex-wrap gap-2">

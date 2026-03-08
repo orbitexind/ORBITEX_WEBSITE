@@ -37,7 +37,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-[#030712]"
       aria-label="About section"
     >
       {/* Background accent */}
@@ -55,11 +55,11 @@ const About = () => {
           className="text-center mb-16"
         >
           <span className="section-tag">About Us</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Passionate about{" "}
             <span className="text-gradient">great software</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
             We turn complex problems into elegant, high-performance digital products
             that users love and businesses depend on.
           </p>
@@ -91,11 +91,11 @@ const About = () => {
               />
               {/* Avatar circle */}
               <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
-                <div className="w-full h-full rounded-full bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
+                <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
                   <span className="text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent tracking-tighter">
                     OI
                   </span>
-                  <span className="text-[10px] text-gray-500 tracking-widest uppercase">
+                  <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
                     Team
                   </span>
                 </div>
@@ -112,7 +112,7 @@ const About = () => {
 
             {/* Name & location */}
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-white mb-1">OrbitexInd</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">OrbitexInd</h3>
               <p className="flex items-center gap-1.5 text-gray-500 text-sm justify-center lg:justify-start">
                 <MapPin size={13} className="text-violet-400" />
                 Maharashtra, India • Remote Worldwide
@@ -120,7 +120,7 @@ const About = () => {
             </div>
 
             {/* Bio */}
-            <p className="text-gray-400 leading-relaxed text-sm text-center lg:text-left">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm text-center lg:text-left">
               We are a passionate development team from Maharashtra, India,
               specializing in Android app development, full-stack web apps, and
               AI-powered solutions. We build fast, clean, and affordable products
@@ -131,7 +131,7 @@ const About = () => {
             {/* Highlights */}
             <ul className="space-y-2 w-full">
               {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-400">
+                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
                   <CheckCircle2 size={15} className="text-violet-400 shrink-0 mt-0.5" />
                   {item}
                 </li>
@@ -141,7 +141,7 @@ const About = () => {
             {/* CTA */}
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 w-full lg:w-auto">
               <GlowButton href="#contact" variant="primary" size="sm" className="w-full xs:w-auto justify-center">
-                Hire Us
+                Contact Us
               </GlowButton>
               <GlowButton href="#" variant="outline" size="sm" className="w-full xs:w-auto justify-center">
                 <Download size={14} />
@@ -158,14 +158,14 @@ const About = () => {
               animate={sectionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-500 mb-4">
                 Tech Stack
               </h4>
               <div className="flex flex-wrap gap-2">
                 {techTags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300 hover:border-violet-500/40 hover:text-violet-300 hover:bg-violet-500/10 transition-all duration-200 cursor-default"
+                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:border-violet-400 dark:hover:border-violet-500/40 hover:text-violet-700 dark:hover:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-all duration-200 cursor-default"
                   >
                     {tag}
                   </span>
@@ -180,14 +180,14 @@ const About = () => {
               animate={sectionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-6">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-500 mb-6">
                 Expertise Level
               </h4>
               <div className="space-y-5">
                 {skills.map((skill, i) => (
                   <div key={skill.name}>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {skill.name}
                       </span>
                       <motion.span
@@ -200,7 +200,7 @@ const About = () => {
                       </motion.span>
                     </div>
                     {/* Track */}
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div className="h-2 rounded-full bg-gray-200 dark:bg-white/5 overflow-hidden">
                       <motion.div
                         className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
                         initial={{ width: 0 }}
@@ -232,14 +232,14 @@ const About = () => {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="p-4 rounded-2xl glass border-white/5 flex items-center gap-3"
+                  className="p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none flex items-center gap-3"
                 >
                   <span className="text-2xl">{stat.emoji}</span>
                   <div>
-                    <div className="font-bold text-white text-base leading-none">
+                    <div className="font-bold text-gray-900 dark:text-white text-base leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-gray-500 text-xs mt-0.5">{stat.label}</div>
+                    <div className="text-gray-500 dark:text-gray-500 text-xs mt-0.5">{stat.label}</div>
                   </div>
                 </div>
               ))}

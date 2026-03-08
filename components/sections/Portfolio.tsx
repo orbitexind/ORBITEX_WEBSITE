@@ -153,7 +153,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-[#030712]"
       aria-label="Portfolio section"
     >
       {/* Background */}
@@ -173,10 +173,10 @@ const Portfolio = () => {
           className="text-center mb-12"
         >
           <span className="section-tag">Portfolio</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Recent <span className="text-gradient">Work</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">
             A selection of projects I&apos;ve built for clients and personal
             exploration across web development, design, and AI.
           </p>
@@ -198,7 +198,7 @@ const Portfolio = () => {
                 "relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
                 activeCategory === cat
                   ? "text-white"
-                  : "text-gray-400 hover:text-gray-200"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
               )}
             >
               {activeCategory === cat && (
@@ -228,7 +228,7 @@ const Portfolio = () => {
                 key={project.id}
                 variants={cardVariants}
                 layout
-                className="group relative rounded-3xl overflow-hidden bg-white/[0.03] border border-white/8 hover:border-white/15 cursor-pointer"
+                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 cursor-pointer shadow-sm dark:shadow-none"
                 onClick={() => setSelectedProject(project)}
                 whileHover={{ y: -4 }}
                 style={{ transition: "border-color 0.3s, box-shadow 0.3s" }}
@@ -288,10 +288,10 @@ const Portfolio = () => {
 
                 {/* Card body */}
                 <div className="p-5">
-                  <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-violet-300 transition-colors">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5 group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   {/* Tags */}
@@ -299,13 +299,13 @@ const Portfolio = () => {
                     {project.tags.slice(0, 4).map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/5 border border-white/8 text-gray-400"
+                        className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-500 dark:text-gray-400"
                       >
                         {tag}
                       </span>
                     ))}
                     {project.tags.length > 4 && (
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white/5 border border-white/8 text-gray-500">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-400 dark:text-gray-500">
                         +{project.tags.length - 4}
                       </span>
                     )}
@@ -326,7 +326,7 @@ const Portfolio = () => {
         >
           <a
             href="#contact"
-            className="text-sm text-gray-500 hover:text-violet-400 transition-colors font-medium"
+            className="text-sm text-gray-500 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors font-medium"
           >
             Want to see more? Let&apos;s talk about your project →
           </a>

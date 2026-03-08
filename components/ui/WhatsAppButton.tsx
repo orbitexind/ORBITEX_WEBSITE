@@ -17,25 +17,25 @@ const WhatsAppButton = () => {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 10, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#111827] border border-white/10 shadow-xl"
+            className="relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 shadow-xl"
           >
             <div>
-              <p className="text-white text-xs font-semibold leading-tight">
+              <p className="text-gray-900 dark:text-white text-xs font-semibold leading-tight">
                 Chat with OrbitexInd
               </p>
-              <p className="text-gray-400 text-[10px]">
+              <p className="text-gray-500 dark:text-gray-400 text-[10px]">
                 Typically replies in minutes
               </p>
             </div>
             <button
               onClick={() => setTooltip(false)}
               aria-label="Close"
-              className="w-5 h-5 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors ml-1"
+              className="w-5 h-5 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center transition-colors ml-1"
             >
               <X size={10} className="text-gray-400" />
             </button>
             {/* Arrow */}
-            <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#111827] border-r border-b border-white/10 rotate-[-45deg]" />
+            <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-white dark:bg-[#111827] border-r border-b border-gray-200 dark:border-white/10 rotate-[-45deg]" />
           </motion.div>
         )}
       </AnimatePresence>

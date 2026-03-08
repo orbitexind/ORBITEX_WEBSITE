@@ -48,7 +48,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-white dark:bg-[#030712]"
       aria-label="FAQ section"
     >
       {/* Background */}
@@ -68,11 +68,11 @@ const FAQ = () => {
           className="text-center mb-14"
         >
           <span className="section-tag">FAQ</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Frequently Asked{" "}
             <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Everything you need to know before we start working together.
           </p>
         </motion.div>
@@ -89,8 +89,8 @@ const FAQ = () => {
               className={cn(
                 "rounded-2xl border transition-all duration-300 overflow-hidden",
                 openIndex === i
-                  ? "border-violet-500/40 bg-violet-500/5"
-                  : "border-white/8 bg-white/[0.03] hover:border-white/15"
+                  ? "border-violet-500/40 bg-violet-50 dark:bg-violet-500/5"
+                  : "border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] hover:border-violet-300 dark:hover:border-white/15"
               )}
             >
               <button
@@ -101,7 +101,7 @@ const FAQ = () => {
                 <span
                   className={cn(
                     "font-semibold text-sm md:text-base transition-colors",
-                    openIndex === i ? "text-violet-300" : "text-gray-200"
+                    openIndex === i ? "text-violet-700 dark:text-violet-300" : "text-gray-800 dark:text-gray-200"
                   )}
                 >
                   {faq.q}
@@ -130,7 +130,7 @@ const FAQ = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <p className="px-6 pb-5 text-gray-400 text-sm leading-relaxed">
+                    <p className="px-6 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                       {faq.a}
                     </p>
                   </motion.div>
@@ -146,9 +146,9 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 text-center p-6 rounded-2xl border border-white/8 bg-white/[0.02]"
+          className="mt-12 text-center p-6 rounded-2xl border border-gray-200 dark:border-white/8 bg-gray-50 dark:bg-white/[0.02]"
         >
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
             Still have questions? We reply within a few hours.
           </p>
           <a

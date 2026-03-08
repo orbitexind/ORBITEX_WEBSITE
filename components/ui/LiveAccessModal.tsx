@@ -112,7 +112,7 @@ const LiveAccessModal = ({
             className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none"
           >
             <motion.div
-              className="relative w-full max-w-md rounded-2xl bg-[#0a0a14] border border-white/10 shadow-2xl pointer-events-auto overflow-hidden"
+              className="relative w-full max-w-md rounded-2xl bg-white dark:bg-[#0a0a14] border border-gray-200 dark:border-white/10 shadow-2xl pointer-events-auto overflow-hidden"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -123,16 +123,16 @@ const LiveAccessModal = ({
               <div className="h-px w-full bg-gradient-to-r from-transparent via-violet-500/60 to-transparent" />
 
               {/* Header */}
-              <div className="relative px-6 pt-6 pb-4 border-b border-white/8">
+              <div className="relative px-6 pt-6 pb-4 border-b border-gray-200 dark:border-white/8">
                 <div className="flex items-start gap-3">
                   <div className="w-11 h-11 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
                     <Lock size={18} className="text-violet-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                       Access Live Project
                     </h3>
-                    <p className="text-sm text-gray-400 mt-0.5">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                       Leave your details to view{" "}
                       <span className="text-violet-300 font-medium">
                         {projectTitle}
@@ -143,7 +143,7 @@ const LiveAccessModal = ({
 
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
                   aria-label="Close"
                 >
                   <X size={16} />
@@ -161,10 +161,10 @@ const LiveAccessModal = ({
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4">
                       <ShieldCheck size={28} className="text-emerald-400" />
                     </div>
-                    <p className="text-white font-semibold text-lg">
+                    <p className="text-gray-900 dark:text-white font-semibold text-lg">
                       Access granted!
                     </p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                       Opening the live demo in a new tab…
                     </p>
                   </motion.div>
@@ -172,7 +172,7 @@ const LiveAccessModal = ({
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Name */}
                     <div>
-                      <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
                         Your Name
                       </label>
                       <div className="relative">
@@ -188,14 +188,14 @@ const LiveAccessModal = ({
                             setError("");
                           }}
                           placeholder="John Doe"
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 pl-9 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-violet-500/60 focus:bg-white/[0.07] transition-all"
+                          className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 pl-9 text-gray-900 dark:text-white text-sm placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-violet-500 dark:focus:border-violet-500/60 focus:bg-white dark:focus:bg-white/[0.07] transition-all"
                         />
                       </div>
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
                         Email Address
                       </label>
                       <div className="relative">
@@ -211,7 +211,7 @@ const LiveAccessModal = ({
                             setError("");
                           }}
                           placeholder="john@example.com"
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 pl-9 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-violet-500/60 focus:bg-white/[0.07] transition-all"
+                          className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 pl-9 text-gray-900 dark:text-white text-sm placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-violet-500 dark:focus:border-violet-500/60 focus:bg-white dark:focus:bg-white/[0.07] transition-all"
                         />
                       </div>
                     </div>
@@ -222,7 +222,7 @@ const LiveAccessModal = ({
                     )}
 
                     {/* Disclaimer */}
-                    <p className="text-gray-600 text-xs">
+                    <p className="text-gray-400 dark:text-gray-600 text-xs">
                       Your details help track demo access. No spam, ever.
                     </p>
 

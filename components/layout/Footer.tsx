@@ -34,7 +34,7 @@ const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="relative bg-[#030712] border-t border-white/[0.06] overflow-hidden">
+    <footer className="relative bg-gray-50 dark:bg-[#030712] border-t border-gray-200 dark:border-white/[0.06] overflow-hidden">
       {/* Glow accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
 
@@ -45,13 +45,13 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-gradient-to-r from-violet-600/20 to-cyan-500/10 border border-violet-500/20 mb-14"
+          className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-gradient-to-r from-violet-100 to-cyan-50 dark:from-violet-600/20 dark:to-cyan-500/10 border border-violet-200 dark:border-violet-500/20 mb-14"
         >
           <div>
-            <h3 className="text-xl font-bold text-white mb-1">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
               Have a project in mind?
             </h3>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               Let&apos;s build something amazing together.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                 <span className="text-violet-400">.</span>
               </span>
             </a>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed max-w-xs">
               Crafting digital experiences that inspire, convert, and scale.
               Available for freelance work worldwide.
             </p>
@@ -90,7 +90,7 @@ const Footer = () => {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-violet-600/30 border border-white/8 hover:border-violet-500/40 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-violet-100 dark:hover:bg-violet-600/30 border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-violet-500/40 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-white transition-all duration-300"
                 >
                   <Icon size={15} />
                 </a>
@@ -101,7 +101,7 @@ const Footer = () => {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4">
                 {title}
               </h4>
               <ul className="space-y-2.5">
@@ -109,7 +109,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors duration-200 hover:underline underline-offset-2 decoration-violet-500/60"
+                      className="text-sm text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-white transition-colors duration-200 hover:underline underline-offset-2 decoration-violet-500/60"
                     >
                       {link.name}
                     </a>
@@ -121,17 +121,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">
+        <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 dark:text-gray-600 text-sm">
             © {new Date().getFullYear()} OrbitexInd. All rights reserved. Built
             with Next.js & ❤️
           </p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-gray-500 hover:text-violet-400 transition-colors group"
+            className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors group"
           >
             Back to top
-            <span className="w-7 h-7 rounded-full bg-white/5 group-hover:bg-violet-500/20 border border-white/8 flex items-center justify-center transition-all">
+              <span className="w-7 h-7 rounded-full bg-gray-100 dark:bg-white/5 group-hover:bg-violet-100 dark:group-hover:bg-violet-500/20 border border-gray-200 dark:border-white/8 flex items-center justify-center transition-all">
               <ArrowUp size={12} />
             </span>
           </button>

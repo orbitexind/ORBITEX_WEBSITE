@@ -89,7 +89,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#030712]"
+      className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-[#030712]"
       aria-label="Testimonials section"
     >
       {/* Background */}
@@ -108,11 +108,11 @@ const Testimonials = () => {
           className="text-center mb-14"
         >
           <span className="section-tag">Testimonials</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             What clients{" "}
             <span className="text-gradient">say about me</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">
             Don&apos;t take my word for it. Here&apos;s what the people I&apos;ve worked
             with have to say.
           </p>
@@ -131,7 +131,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: -60, scale: 0.98 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="relative p-8 md:p-12 rounded-3xl bg-white/[0.04] border border-white/10 overflow-hidden"
+              className="relative p-8 md:p-12 rounded-3xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 overflow-hidden shadow-sm dark:shadow-none"
             >
               {/* Top gradient accent */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
@@ -156,7 +156,7 @@ const Testimonials = () => {
               </div>
 
               {/* Quote text */}
-              <blockquote className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 relative z-10 font-light">
+              <blockquote className="text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed mb-8 relative z-10 font-light">
                 &ldquo;{testimonials[current].text}&rdquo;
               </blockquote>
 
@@ -170,7 +170,7 @@ const Testimonials = () => {
                     {testimonials[current].avatar}
                   </div>
                   <div>
-                    <div className="font-bold text-white text-sm">
+                    <div className="font-bold text-gray-900 dark:text-white text-sm">
                       {testimonials[current].name}
                     </div>
                     <div className="text-gray-500 text-xs">
@@ -192,14 +192,14 @@ const Testimonials = () => {
           {/* Navigation buttons */}
           <button
             onClick={() => { pauseAuto(); prev(); }}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-violet-500/40 transition-all z-10 hidden md:flex"
+            className="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-violet-400 dark:hover:border-violet-500/40 shadow-sm dark:shadow-none transition-all z-10 hidden md:flex"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={18} />
           </button>
           <button
             onClick={() => { pauseAuto(); next(); }}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-violet-500/40 transition-all z-10 hidden md:flex"
+            className="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-violet-400 dark:hover:border-violet-500/40 shadow-sm dark:shadow-none transition-all z-10 hidden md:flex"
             aria-label="Next testimonial"
           >
             <ChevronRight size={18} />
@@ -211,7 +211,7 @@ const Testimonials = () => {
           {/* Mobile prev */}
           <button
             onClick={() => { pauseAuto(); prev(); }}
-            className="md:hidden w-9 h-9 rounded-full glass border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+            className="md:hidden w-9 h-9 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={16} />
@@ -241,7 +241,7 @@ const Testimonials = () => {
           {/* Mobile next */}
           <button
             onClick={() => { pauseAuto(); next(); }}
-            className="md:hidden w-9 h-9 rounded-full glass border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+            className="md:hidden w-9 h-9 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={16} />
@@ -264,15 +264,15 @@ const Testimonials = () => {
                 className={`w-8 h-8 rounded-full bg-gradient-to-br ${t.avatarGradient} border-2 transition-all ${
                   current === i
                     ? "border-violet-500 scale-110 z-10"
-                    : "border-[#030712] opacity-60 hover:opacity-100"
+                    : "border-gray-100 dark:border-[#030712] opacity-60 hover:opacity-100"
                 } text-white text-[9px] font-bold flex items-center justify-center`}
               >
                 {t.avatar}
               </button>
             ))}
           </div>
-          <span className="text-gray-500 text-sm">
-            <span className="text-white font-semibold">30+</span> happy clients
+          <span className="text-gray-500 dark:text-gray-500 text-sm">
+            <span className="text-gray-900 dark:text-white font-semibold">30+</span> happy clients
             worldwide
           </span>
         </motion.div>

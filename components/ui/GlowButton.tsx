@@ -35,9 +35,9 @@ const GlowButton = ({
     primary:
       "bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:from-violet-500 hover:to-purple-500",
     secondary:
-      "border border-cyan-500/50 text-cyan-400 hover:border-cyan-400 hover:bg-cyan-500/10 bg-transparent",
+      "border border-cyan-500/50 text-cyan-600 dark:text-cyan-400 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-500/10 bg-transparent",
     outline:
-      "border border-violet-500/40 text-violet-300 hover:border-violet-400 hover:bg-violet-500/10 bg-transparent",
+      "border border-violet-500/40 text-violet-600 dark:text-violet-300 hover:border-violet-500 dark:hover:border-violet-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 bg-transparent",
   };
 
   const glowOnHover = {
