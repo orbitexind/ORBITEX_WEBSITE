@@ -45,8 +45,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone / WhatsApp",
-    value: "+91 95031 44168",
-    href: "tel:+919503144168",
+    value: "+91 94228 80355",
+    href: "tel:+919422880355",
     gradient: "from-cyan-500 to-blue-600",
   },
   {
@@ -452,7 +452,7 @@ const Contact = () => {
                   {formState === "error" && (
                     <p className="text-center text-red-400 text-xs">
                       Something went wrong. Please try again or{" "}
-                      <a href="https://wa.me/919503144168" className="underline hover:text-red-300">
+                      <a href="https://wa.me/919422880355" className="underline hover:text-red-300">
                         message on WhatsApp
                       </a>
                       .
