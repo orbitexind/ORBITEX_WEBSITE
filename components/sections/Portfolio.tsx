@@ -101,6 +101,75 @@ const projects: Project[] = [
       "Shareable pattern links",
     ],
   },
+  {
+    id: 5,
+    title: "NinjaH2R",
+    description:
+      "High-performance landing page for a Kawasaki Ninja H2R fan community with immersive visuals and smooth animations.",
+    longDescription:
+      "NinjaH2R is a visually stunning web experience built for motorcycle enthusiasts. The site features full-viewport hero sections, cinematic scroll animations, spec showcases, and a gallery — all optimized for performance and mobile responsiveness. Demonstrates advanced CSS and animation techniques in a real-world client deployment.",
+    gradient: "from-green-500 via-emerald-600 to-teal-600",
+    iconBg: "bg-green-500/20",
+    tags: ["HTML", "CSS", "JavaScript", "Animations"],
+    category: "Web Apps",
+    liveUrl: "https://ninjah2r.vercel.app/",
+    githubUrl: "#",
+    year: "2025",
+    features: [
+      "Cinematic full-viewport hero",
+      "Smooth scroll animations",
+      "Motorcycle spec showcase",
+      "Responsive gallery section",
+      "Performance optimized",
+      "Deployed on Vercel",
+    ],
+  },
+  {
+    id: 6,
+    title: "WizardZ",
+    description:
+      "Interactive magic-themed web experience with dynamic effects, card reveals, and immersive UI.",
+    longDescription:
+      "WizardZ is a creative web project delivering a magic and fantasy themed interactive experience. Built with pure HTML, CSS and JavaScript, it showcases advanced DOM manipulation, card-flip animations, particle effects, and a polished UI that keeps users engaged. A strong example of creative front-end development without any framework.",
+    gradient: "from-purple-600 via-violet-600 to-indigo-600",
+    iconBg: "bg-purple-500/20",
+    tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
+    category: "Web Apps",
+    liveUrl: "https://brave98git.github.io/WizardZ/",
+    githubUrl: "https://brave98git.github.io/WizardZ/",
+    year: "2025",
+    features: [
+      "Magic-themed interactive UI",
+      "Card flip & reveal animations",
+      "Particle effect system",
+      "Pure JS — no framework",
+      "Responsive design",
+      "Creative DOM manipulation",
+    ],
+  },
+  {
+    id: 7,
+    title: "Lazarev Agency Clone",
+    description:
+      "Pixel-perfect recreation of the award-winning Lazarev design agency website with advanced GSAP animations.",
+    longDescription:
+      "A high-fidelity clone of the Lazarev digital agency website, built from scratch to demonstrate mastery of advanced web animation techniques. Implements GSAP ScrollTrigger, smooth cursor effects, magnetic buttons, horizontal scroll sections, and fluid page transitions — matching the feel of top-tier agency websites used by global brands.",
+    gradient: "from-slate-600 via-gray-700 to-zinc-800",
+    iconBg: "bg-slate-500/20",
+    tags: ["HTML", "CSS", "JavaScript", "GSAP"],
+    category: "Web Apps",
+    liveUrl: "https://brave98git.github.io/lazarev/",
+    githubUrl: "https://brave98git.github.io/lazarev/",
+    year: "2025",
+    features: [
+      "GSAP ScrollTrigger animations",
+      "Custom smooth cursor effects",
+      "Magnetic button interactions",
+      "Horizontal scroll sections",
+      "Fluid page transitions",
+      "Agency-grade visual polish",
+    ],
+  },
 ];
 
 const categories = ["All", "Web Apps", "AI Projects"];
