@@ -60,6 +60,17 @@ const testimonials = [
     text: "Orbitex helped me build a complete data analysis dashboard for my internship project in Python. The visualizations were excellent and my manager was impressed. The team also explained the code clearly so I could present it myself. Great value for money!",
     project: "Python Data Analysis Dashboard",
   },
+  {
+    id: 6,
+    name: "Management Team",
+    role: "Operations",
+    company: "PPD Solar Pvt. Limited",
+    avatar: "PP",
+    avatarGradient: "from-yellow-400 to-orange-500",
+    stars: 5,
+    text: "We approached Orbitex to build a professional website for our solar business and the result exceeded our expectations. The site clearly presents our services, project portfolio and contact details in a clean, trustworthy layout. Our clients now find us easily online and the enquiries have noticeably increased since launch. The team was prompt, understood our industry requirements without much back-and-forth, and delivered on time. Highly satisfied with the quality and professionalism.",
+    project: "Business Website — PPD Solar Pvt. Limited",
+  },
 ];
 
 const Testimonials = () => {
