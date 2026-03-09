@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Orbitex | Android, Web & AI Developer — Maharashtra, India",
@@ -78,7 +65,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-white dark:bg-[#030712] text-gray-900 dark:text-white antialiased transition-colors duration-300`}
+        className={`font-sans bg-white dark:bg-[#030712] text-gray-900 dark:text-white antialiased transition-colors duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange={false}>
           {children}

@@ -42,7 +42,7 @@ const WhatsAppButton = () => {
 
       {/* WhatsApp button */}
       <motion.a
-        href="https://wa.me/919503144168"
+        href="https://wa.me/919422880355"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

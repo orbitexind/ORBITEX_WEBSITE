@@ -19,7 +19,7 @@ const footerLinks = {
   Contact: [
     { name: "Start a Project", href: "#contact" },
     { name: "orbitexind@gmail.com", href: "mailto:orbitexind@gmail.com" },
-    { name: "+91 95031 44168", href: "tel:+919503144168" },
+    { name: "+91 94228 80355", href: "tel:+919422880355" },
   ],
 };
 

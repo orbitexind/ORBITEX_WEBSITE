@@ -18,7 +18,7 @@ const socials = [
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: MessageCircle, href: "https://wa.me/919503144168", label: "WhatsApp" },
+  { icon: MessageCircle, href: "https://wa.me/919422880355", label: "WhatsApp" },
 ];
 
 const Hero = () => {
@@ -207,6 +207,8 @@ const Hero = () => {
               2200,
               "Full-Stack Web Developer",
               2200,
+              "Social Media Manager",
+              2200,
               "AI & Chatbot Builder",
               2200,
               "Python Developer",
@@ -240,7 +242,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full px-2 sm:px-0"
         >
-          <GlowButton href="https://wa.me/919503144168" variant="primary" size="lg" className="w-full sm:w-auto">
+          <GlowButton href="https://wa.me/919422880355" variant="primary" size="lg" className="w-full sm:w-auto">
             <MessageCircle size={16} className="inline mr-2 -mt-0.5" /> WhatsApp Us
           </GlowButton>
           <GlowButton href="#portfolio" variant="secondary" size="lg" className="w-full sm:w-auto">
