@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Eye } from "lucide-react";
 import ProjectModal, { type Project } from "@/components/ui/ProjectModal";
@@ -8,10 +9,13 @@ import LiveAccessModal from "@/components/ui/LiveAccessModal";
 import TiltCard from "@/components/ui/TiltCard";
 import { cn } from "@/lib/utils";
 
+const thumb = (url: string) =>
+  `https://s0.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=600&h=400`;
+
 const projects: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Demo 1",
     description:
       "A modern, animated developer portfolio showcasing projects, skills, and services.",
     longDescription:
@@ -19,10 +23,11 @@ const projects: Project[] = [
     gradient: "from-violet-600 via-purple-600 to-indigo-700",
     iconBg: "bg-violet-500/20",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Web Apps",
+    category: "Portfolios",
     liveUrl: "https://satvikrokadeportfolio.vercel.app",
     githubUrl: "#",
     year: "2024",
+    thumbnail: thumb("https://satvikrokadeportfolio.vercel.app"),
     features: [
       "Smooth Framer Motion animations",
       "Fully responsive design",
@@ -34,6 +39,30 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Demo 2",
+    description:
+      "A sleek, modern developer portfolio for Samarth Pawar with smooth animations and an elegant layout.",
+    longDescription:
+      "A polished personal portfolio website for Samarth Pawar, built with modern web technologies. Features fluid scroll animations, a projects showcase, skills section, and a fully responsive design — presenting the developer's work and experience in a compelling visual format.",
+    gradient: "from-rose-500 via-pink-500 to-fuchsia-600",
+    iconBg: "bg-rose-500/20",
+    tags: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    category: "Portfolios",
+    liveUrl: "https://portfolio-samarth-pawar.vercel.app",
+    githubUrl: "#",
+    year: "2025",
+    thumbnail: thumb("https://portfolio-samarth-pawar.vercel.app"),
+    features: [
+      "Smooth scroll animations",
+      "Projects showcase grid",
+      "Skills & experience section",
+      "Fully responsive design",
+      "Clean, minimal UI",
+      "Deployed on Vercel",
+    ],
+  },
+  {
+    id: 3,
     title: "Waste Management Platform",
     description:
       "Smart waste collection and tracking system with route optimization and analytics.",
@@ -46,6 +75,7 @@ const projects: Project[] = [
     liveUrl: "https://wastemanagement-2aa.pages.dev/",
     githubUrl: "#",
     year: "2025",
+    thumbnail: thumb("https://wastemanagement-2aa.pages.dev/"),
     features: [
       "Real-time collection tracking",
       "Route optimization engine",
@@ -56,7 +86,7 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "AI Interview Conductor",
     description:
       "AI-powered interview simulation that conducts and evaluates technical interviews.",
@@ -69,6 +99,7 @@ const projects: Project[] = [
     liveUrl: "https://interview-conductor-python.pages.dev",
     githubUrl: "#",
     year: "2025",
+    thumbnail: thumb("https://interview-conductor-python.pages.dev"),
     features: [
       "AI-driven Q&A sessions",
       "Real-time response evaluation",
@@ -79,12 +110,12 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 4,
-    title: "Cloud Regex",
+    id: 5,
+    title: "Management System for Municipal Complaints",
     description:
-      "Cloud-based regex pattern builder, live tester, and shareable pattern library.",
+      "A comprehensive platform for submitting, tracking, and resolving municipal complaints efficiently.",
     longDescription:
-      "Cloud Regex is a developer productivity tool providing an intuitive interface for building, testing, and sharing regular expressions. Features a live regex tester with match highlighting, a curated library of common patterns, and cloud sync so your patterns follow you everywhere.",
+      "Management System for Municipal Complaints is a robust web platform that streamlines the process of submitting and managing citizen complaints. Features a user-friendly complaint submission portal, real-time status tracking, departmental routing, and an admin dashboard for efficient resolution and reporting.",
     gradient: "from-amber-500 via-orange-500 to-yellow-500",
     iconBg: "bg-amber-500/20",
     tags: ["Python", "TypeScript", "React"],
@@ -92,6 +123,7 @@ const projects: Project[] = [
     liveUrl: "https://project-cloudregex.pages.dev/",
     githubUrl: "#",
     year: "2025",
+    thumbnail: thumb("https://project-cloudregex.pages.dev/"),
     features: [
       "Live regex testing",
       "Match highlighting",
@@ -102,7 +134,7 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "NinjaH2R",
     description:
       "High-performance landing page for a Kawasaki Ninja H2R fan community with immersive visuals and smooth animations.",
@@ -111,10 +143,11 @@ const projects: Project[] = [
     gradient: "from-green-500 via-emerald-600 to-teal-600",
     iconBg: "bg-green-500/20",
     tags: ["HTML", "CSS", "JavaScript", "Animations"],
-    category: "Web Apps",
+    category: "3D Websites",
     liveUrl: "https://ninjah2r.vercel.app/",
     githubUrl: "#",
     year: "2025",
+    thumbnail: thumb("https://ninjah2r.vercel.app/"),
     features: [
       "Cinematic full-viewport hero",
       "Smooth scroll animations",
@@ -125,7 +158,7 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "WizardZ",
     description:
       "Interactive magic-themed web experience with dynamic effects, card reveals, and immersive UI.",
@@ -138,6 +171,7 @@ const projects: Project[] = [
     liveUrl: "https://brave98git.github.io/WizardZ/",
     githubUrl: "https://brave98git.github.io/WizardZ/",
     year: "2025",
+    thumbnail: thumb("https://brave98git.github.io/WizardZ/"),
     features: [
       "Magic-themed interactive UI",
       "Card flip & reveal animations",
@@ -148,7 +182,7 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Lazarev Agency Clone",
     description:
       "Pixel-perfect recreation of the award-winning Lazarev design agency website with advanced GSAP animations.",
@@ -158,9 +192,10 @@ const projects: Project[] = [
     iconBg: "bg-slate-500/20",
     tags: ["HTML", "CSS", "JavaScript", "GSAP"],
     category: "Web Apps",
-    liveUrl: "https://brave98git.github.io/lazarev/",
+    liveUrl: "https://lazarevco.vercel.app",
     githubUrl: "https://brave98git.github.io/lazarev/",
     year: "2025",
+    thumbnail: thumb("https://lazarevco.vercel.app"),
     features: [
       "GSAP ScrollTrigger animations",
       "Custom smooth cursor effects",
@@ -170,9 +205,33 @@ const projects: Project[] = [
       "Agency-grade visual polish",
     ],
   },
+  {
+    id: 9,
+    title: "Government Document Assist",
+    description:
+      "AI-powered chatbot that helps citizens navigate and understand government documents instantly.",
+    longDescription:
+      "Government Document Assist is an intelligent conversational AI built to simplify complex government paperwork for everyday citizens. Users can upload or paste documents and receive plain-language explanations, step-by-step guidance, and quick answers to compliance questions. Powered by a modern LLM backend and deployed on Vercel for sub-second response times.",
+    gradient: "from-blue-600 via-blue-500 to-indigo-600",
+    iconBg: "bg-blue-500/20",
+    tags: ["AI", "Chatbot", "Next.js", "LLM"],
+    category: "AI Projects",
+    liveUrl: "https://chatbot-1-orpin-one.vercel.app/",
+    githubUrl: "#",
+    year: "2025",
+    thumbnail: thumb("https://chatbot-1-orpin-one.vercel.app/"),
+    features: [
+      "Plain-language document explanations",
+      "Step-by-step compliance guidance",
+      "Instant AI-powered Q&A",
+      "Supports multiple document types",
+      "Fast Vercel edge deployment",
+      "Accessible, mobile-friendly UI",
+    ],
+  },
 ];
 
-const categories = ["All", "Web Apps", "AI Projects"];
+const categories = ["All", "Portfolios", "Web Apps", "AI Projects", "3D Websites"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -312,19 +371,22 @@ const Portfolio = () => {
                 <div
                   className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
                 >
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
-                  <div className="absolute bottom-2 -left-4 w-24 h-24 rounded-full bg-black/20" />
-                  {/* Emoji icon */}
-                  <div className="absolute inset-0 flex items-center justify-center text-5xl">
-                    {project.id === 1
-                      ? "🎨"
-                      : project.id === 2
-                      ? "♻️"
-                      : project.id === 3
-                      ? "🎤"
-                      : "☁️"}
-                  </div>
+                  {/* Screenshot image or gradient fallback */}
+                  {project.thumbnail ? (
+                    <Image
+                      src={project.thumbnail}
+                      alt={`${project.title} preview`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      unoptimized
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
+                      <div className="absolute bottom-2 -left-4 w-24 h-24 rounded-full bg-black/20" />
+                    </>
+                  )}
                   {/* Hover overlay */}
                   <motion.div
                     className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center gap-3"

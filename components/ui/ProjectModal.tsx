@@ -18,6 +18,7 @@ export interface Project {
   githubUrl: string;
   features: string[];
   year: string;
+  thumbnail?: string;
 }
 
 interface ProjectModalProps {
