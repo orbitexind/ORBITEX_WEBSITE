@@ -2,25 +2,18 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  Code2,
-  Smartphone,
-  Brain,
-  BarChart2,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { HiCommandLine, HiPhone, HiCpuChip, HiChartBar, HiArrowLongRight, HiCheckBadge } from "react-icons/hi2";
 import TiltCard from "@/components/ui/TiltCard";
 
 const services = [
   {
-    icon: Code2,
+    icon: HiCommandLine,
     title: "Web Development",
     tag: "Full-Stack",
     color: "from-violet-500 to-indigo-500",
     glow: "rgba(124,58,237,0.35)",
     description:
-      "Modern, fast websites and full-stack web applications built with React, Next.js, and Node.js — from portfolios to e-commerce to SaaS platforms.",
+      "Modern, fast websites and full-stack web applications built with React, OrbitexInd, and Node.js — from portfolios to e-commerce to SaaS platforms.",
     features: [
       "Responsive website & landing pages",
       "E-commerce with payment gateway",
@@ -31,7 +24,7 @@ const services = [
     ],
   },
   {
-    icon: Smartphone,
+    icon: HiPhone,
     title: "Android Development",
     tag: "Java / Flutter",
     color: "from-emerald-500 to-teal-500",
@@ -48,7 +41,7 @@ const services = [
     ],
   },
   {
-    icon: Brain,
+    icon: HiCpuChip,
     title: "AI & Chatbot Development",
     tag: "Python / OpenAI",
     color: "from-cyan-500 to-blue-500",
@@ -65,7 +58,7 @@ const services = [
     ],
   },
   {
-    icon: BarChart2,
+    icon: HiChartBar,
     title: "Data Analysis & Dashboards",
     tag: "Python / Power BI",
     color: "from-amber-500 to-orange-500",
@@ -160,69 +153,69 @@ const Services = () => {
                   glowColor={service.glow}
                   intensity={8}
                 >
-                {/* Top gradient accent */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.color} opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
-                />
-
-                {/* Background glow on hover */}
-                <div
-                  className={`absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`}
-                />
-
-                {/* Icon */}
-                <div
-                  className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 shadow-lg`}
-                >
-                  <Icon size={24} className="text-white" />
-                  {/* Glow blob under icon */}
+                  {/* Top gradient accent */}
                   <div
-                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} blur-lg opacity-60 -z-10 scale-110`}
+                    className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.color} opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
                   />
-                </div>
 
-                {/* Tag + Title */}
-                <div className="mb-3">
-                  <span
-                    className={`inline-block text-[10px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-1.5`}
+                  {/* Background glow on hover */}
+                  <div
+                    className={`absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`}
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 shadow-lg`}
                   >
-                    {service.tag}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
-                </div>
+                    <Icon size={24} className="text-white" />
+                    {/* Glow blob under icon */}
+                    <div
+                      className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} blur-lg opacity-60 -z-10 scale-110`}
+                    />
+                  </div>
 
-                {/* Description */}
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
-                  {service.description}
-                </p>
-
-                {/* Feature list */}
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feat) => (
-                    <li
-                      key={feat}
-                      className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400"
+                  {/* Tag + Title */}
+                  <div className="mb-3">
+                    <span
+                      className={`inline-block text-[10px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-1.5`}
                     >
-                      <CheckCircle
-                        size={13}
-                        className="text-emerald-400 shrink-0"
-                      />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
+                      {service.tag}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h3>
+                  </div>
 
-                {/* CTA link */}
-                <a
-                  href="#contact"
-                  className={`inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:gap-3 transition-all duration-200`}
-                >
-                  Get Started
-                  <ArrowRight
-                    size={14}
-                    className={`text-violet-400 group-hover:translate-x-1 transition-transform`}
-                  />
-                </a>
+                  {/* Description */}
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
+                    {service.description}
+                  </p>
+
+                  {/* Feature list */}
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feat) => (
+                      <li
+                        key={feat}
+                        className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400"
+                      >
+                        <HiCheckBadge
+                          size={13}
+                          className="text-emerald-400 shrink-0"
+                        />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA link */}
+                  <a
+                    href="#contact"
+                    className={`inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:gap-3 transition-all duration-200`}
+                  >
+                    Get Started
+                    <HiArrowLongRight
+                      size={14}
+                      className={`text-violet-400 group-hover:translate-x-1 transition-transform`}
+                    />
+                  </a>
                 </TiltCard>
               </motion.div>
             );
@@ -243,7 +236,7 @@ const Services = () => {
               href="#contact"
               className="text-violet-400 hover:text-violet-300 font-medium underline underline-offset-2 decoration-violet-500/40"
             >
-              Let&apos;s talk about your project →
+              Let&apos;s talk about your project <HiArrowLongRight className="inline ml-1" />
             </a>
           </p>
         </motion.div>

@@ -3,7 +3,8 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { HiArrowTopRightOnSquare, HiEye, HiArrowLongRight } from "react-icons/hi2";
+import { FaGithub } from "react-icons/fa";
 import ProjectModal, { type Project } from "@/components/ui/ProjectModal";
 import LiveAccessModal from "@/components/ui/LiveAccessModal";
 import TiltCard from "@/components/ui/TiltCard";
@@ -19,10 +20,10 @@ const projects: Project[] = [
     description:
       "A modern, animated developer portfolio showcasing projects, skills, and services.",
     longDescription:
-      "A fully responsive personal portfolio built with Next.js 14 and TypeScript. Features smooth scroll animations powered by Framer Motion, a dynamic project showcase with filtering, an interactive contact form, and a perfect Lighthouse score. Deployed continuously on Vercel.",
+      "A fully responsive personal portfolio built with React and TypeScript. Features smooth scroll animations powered by Framer Motion, a dynamic project showcase with filtering, an interactive contact form, and a perfect Lighthouse score. Deployed continuously on OrbitexInd.",
     gradient: "from-violet-600 via-purple-600 to-indigo-700",
     iconBg: "bg-violet-500/20",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tags: ["OrbitexInd", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Portfolios",
     liveUrl: "https://satvikrokadeportfolio.vercel.app",
     githubUrl: "#",
@@ -34,7 +35,7 @@ const projects: Project[] = [
       "Dynamic project showcase",
       "Interactive contact form",
       "SEO & performance optimized",
-      "Vercel continuous deployment",
+      "OrbitexInd continuous deployment",
     ],
   },
   {
@@ -46,7 +47,7 @@ const projects: Project[] = [
       "A polished personal portfolio website for Samarth Pawar, built with modern web technologies. Features fluid scroll animations, a projects showcase, skills section, and a fully responsive design — presenting the developer's work and experience in a compelling visual format.",
     gradient: "from-rose-500 via-pink-500 to-fuchsia-600",
     iconBg: "bg-rose-500/20",
-    tags: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    tags: ["React", "Tailwind CSS", "Framer Motion", "OrbitexInd"],
     category: "Portfolios",
     liveUrl: "https://portfolio-samarth-pawar.vercel.app",
     githubUrl: "#",
@@ -58,7 +59,7 @@ const projects: Project[] = [
       "Skills & experience section",
       "Fully responsive design",
       "Clean, minimal UI",
-      "Deployed on Vercel",
+      "Deployed on OrbitexInd",
     ],
   },
   {
@@ -154,7 +155,7 @@ const projects: Project[] = [
       "Motorcycle spec showcase",
       "Responsive gallery section",
       "Performance optimized",
-      "Deployed on Vercel",
+      "Deployed on OrbitexInd",
     ],
   },
   {
@@ -168,10 +169,10 @@ const projects: Project[] = [
     iconBg: "bg-purple-500/20",
     tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
     category: "Web Apps",
-    liveUrl: "https://brave98git.github.io/WizardZ/",
+    liveUrl: "https://wizardzco.vercel.app",
     githubUrl: "https://brave98git.github.io/WizardZ/",
     year: "2025",
-    thumbnail: thumb("https://brave98git.github.io/WizardZ/"),
+    thumbnail: thumb("https://wizardzco.vercel.app"),
     features: [
       "Magic-themed interactive UI",
       "Card flip & reveal animations",
@@ -211,10 +212,10 @@ const projects: Project[] = [
     description:
       "AI-powered chatbot that helps citizens navigate and understand government documents instantly.",
     longDescription:
-      "Government Document Assist is an intelligent conversational AI built to simplify complex government paperwork for everyday citizens. Users can upload or paste documents and receive plain-language explanations, step-by-step guidance, and quick answers to compliance questions. Powered by a modern LLM backend and deployed on Vercel for sub-second response times.",
+      "Government Document Assist is an intelligent conversational AI built to simplify complex government paperwork for everyday citizens. Users can upload or paste documents and receive plain-language explanations, step-by-step guidance, and quick answers to compliance questions. Powered by a modern LLM backend and deployed on OrbitexInd for sub-second response times.",
     gradient: "from-blue-600 via-blue-500 to-indigo-600",
     iconBg: "bg-blue-500/20",
-    tags: ["AI", "Chatbot", "Next.js", "LLM"],
+    tags: ["AI", "Chatbot", "OrbitexInd", "LLM"],
     category: "AI Projects",
     liveUrl: "https://chatbot-1-orpin-one.vercel.app/",
     githubUrl: "#",
@@ -225,7 +226,7 @@ const projects: Project[] = [
       "Step-by-step compliance guidance",
       "Instant AI-powered Q&A",
       "Supports multiple document types",
-      "Fast Vercel edge deployment",
+      "Fast OrbitexInd edge deployment",
       "Accessible, mobile-friendly UI",
     ],
   },
@@ -301,7 +302,7 @@ const Portfolio = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="section-tag">Portfolio</span>
+          <span className="section-tag">Our Work</span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-5">
             Recent <span className="text-gradient">Work</span>
           </h2>
@@ -333,7 +334,7 @@ const Portfolio = () => {
               {activeCategory === cat && (
                 <motion.span
                   layoutId="filter-pill"
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600 to-purple-600"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-500 to-blue-600"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -367,80 +368,80 @@ const Portfolio = () => {
                   glowColor="rgba(124,58,237,0.25)"
                   intensity={6}
                 >
-                {/* Project thumbnail */}
-                <div
-                  className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
-                >
-                  {/* Screenshot image or gradient fallback */}
-                  {project.thumbnail ? (
-                    <Image
-                      src={project.thumbnail}
-                      alt={`${project.title} preview`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      unoptimized
-                    />
-                  ) : (
-                    <>
-                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
-                      <div className="absolute bottom-2 -left-4 w-24 h-24 rounded-full bg-black/20" />
-                    </>
-                  )}
-                  {/* Hover overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center gap-3"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.25 }}
+                  {/* Project thumbnail */}
+                  <div
+                    className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
                   >
-                    <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
-                      <Eye size={16} className="text-white" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
-                      onClick={(e) => { e.stopPropagation(); }}>
-                      <Github size={16} className="text-white" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
-                      onClick={(e) => { e.stopPropagation(); handleLiveClick(project.liveUrl, project.title); }}>
-                      <ExternalLink size={16} className="text-white" />
-                    </div>
-                  </motion.div>
-
-                  {/* Category badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-[10px] font-semibold">
-                    {project.category}
-                  </div>
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white/70 text-[10px]">
-                    {project.year}
-                  </div>
-                </div>
-
-                {/* Card body */}
-                <div className="p-5">
-                  <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5 group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-500 dark:text-gray-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-400 dark:text-gray-500">
-                        +{project.tags.length - 4}
-                      </span>
+                    {/* Screenshot image or gradient fallback */}
+                    {project.thumbnail ? (
+                      <Image
+                        src={project.thumbnail}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        unoptimized
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
+                        <div className="absolute bottom-2 -left-4 w-24 h-24 rounded-full bg-black/20" />
+                      </>
                     )}
+                    {/* Hover overlay */}
+                    <motion.div
+                      className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center gap-3"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                        <HiEye size={16} className="text-white" />
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                        onClick={(e) => { e.stopPropagation(); }}>
+                        <FaGithub size={16} className="text-white" />
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                        onClick={(e) => { e.stopPropagation(); handleLiveClick(project.liveUrl, project.title); }}>
+                        <HiArrowTopRightOnSquare size={16} className="text-white" />
+                      </div>
+                    </motion.div>
+
+                    {/* Category badge */}
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-[10px] font-semibold">
+                      {project.category}
+                    </div>
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white/70 text-[10px]">
+                      {project.year}
+                    </div>
                   </div>
-                </div>
+
+                  {/* Card body */}
+                  <div className="p-5">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
+                      OrbitexInd {project.title}
+                    </h3>
+                    <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-500 dark:text-gray-400"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {project.tags.length > 4 && (
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-400 dark:text-gray-500">
+                          +{project.tags.length - 4}
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </TiltCard>
               </motion.div>
             ))}
@@ -459,7 +460,7 @@ const Portfolio = () => {
             href="#contact"
             className="text-sm text-gray-500 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors font-medium"
           >
-            Want to see more? Let&apos;s talk about your project →
+            Want to see more? Let&apos;s talk about your project <HiArrowLongRight className="inline ml-1" />
           </a>
         </motion.div>
       </div>

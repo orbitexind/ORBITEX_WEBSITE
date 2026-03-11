@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, FileText, Minimize2, Maximize2 } from "lucide-react";
+import { HiXMark, HiDocumentText, HiMiniMinusSmall, HiArrowsPointingOut } from "react-icons/hi2";
 
 const CHATBOT_URL = "https://chatbot-1-orpin-one.vercel.app/";
 
@@ -46,7 +46,7 @@ const GovChatbot = () => {
                 aria-label="Close tooltip"
                 className="w-5 h-5 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 flex items-center justify-center transition-colors ml-1"
               >
-                <X size={10} className="text-gray-400" />
+                <HiXMark size={10} className="text-gray-400" />
               </button>
               {/* Arrow */}
               <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-white dark:bg-[#111827] border-r border-b border-gray-200 dark:border-white/10 rotate-[-45deg]" />
@@ -80,7 +80,7 @@ const GovChatbot = () => {
         >
           {/* Ping ring */}
           <span className="absolute inset-0 rounded-full bg-blue-400 opacity-30 animate-ping" />
-          <FileText size={24} className="text-white relative z-10" />
+          <HiDocumentText size={24} className="text-white relative z-10" />
         </motion.button>
       </div>
 
@@ -103,26 +103,25 @@ const GovChatbot = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 28 }}
-              className={`fixed z-[70] flex flex-col rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.45)] border border-white/10 bg-[#0f172a] transition-all duration-300 ${
-                expanded
-                  ? "inset-4 sm:inset-8"
-                  : "bottom-6 right-6 w-[calc(100vw-3rem)] sm:w-[420px] h-[600px] sm:h-[620px]"
-              }`}
+              className={`fixed z-[70] flex flex-col rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.45)] border border-white/10 bg-[#0f172a] transition-all duration-300 ${expanded
+                ? "inset-4 sm:inset-8"
+                : "bottom-6 right-6 w-[calc(100vw-3rem)] sm:w-[420px] h-[600px] sm:h-[620px]"
+                }`}
               style={
                 !expanded
                   ? {
-                      bottom:
-                        "max(1.5rem, calc(1.5rem + env(safe-area-inset-bottom)))",
-                      right:
-                        "max(1.5rem, calc(1.5rem + env(safe-area-inset-right)))",
-                    }
+                    bottom:
+                      "max(1.5rem, calc(1.5rem + env(safe-area-inset-bottom)))",
+                    right:
+                      "max(1.5rem, calc(1.5rem + env(safe-area-inset-right)))",
+                  }
                   : undefined
               }
             >
               {/* Header */}
               <div className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-800 shrink-0">
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                  <FileText size={16} className="text-white" />
+                  <HiDocumentText size={16} className="text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-white text-sm font-semibold leading-tight truncate">
@@ -139,9 +138,9 @@ const GovChatbot = () => {
                     className="w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                   >
                     {expanded ? (
-                      <Minimize2 size={13} className="text-white" />
+                      <HiMiniMinusSmall size={13} className="text-white" />
                     ) : (
-                      <Maximize2 size={13} className="text-white" />
+                      <HiArrowsPointingOut size={13} className="text-white" />
                     )}
                   </button>
                   <button
@@ -152,7 +151,7 @@ const GovChatbot = () => {
                     aria-label="Close chatbot"
                     className="w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                   >
-                    <X size={14} className="text-white" />
+                    <HiXMark size={14} className="text-white" />
                   </button>
                 </div>
               </div>

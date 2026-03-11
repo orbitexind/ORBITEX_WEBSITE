@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Github, CheckCircle } from "lucide-react";
+import { HiXMark, HiArrowTopRightOnSquare, HiCheckBadge } from "react-icons/hi2";
+import { FaGithub } from "react-icons/fa";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,7 @@ interface ProjectModalProps {
 }
 
 const tagColors: Record<string, string> = {
-  "Next.js": "bg-gray-100 dark:bg-black/40 text-gray-800 dark:text-white border-gray-300 dark:border-white/20",
+  "OrbitexInd": "bg-gray-100 dark:bg-black/40 text-gray-800 dark:text-white border-gray-300 dark:border-white/20",
   React: "bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-500/30",
   TypeScript: "bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-500/30",
   "Node.js": "bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-300 dark:border-green-500/30",
@@ -107,10 +108,10 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                   {project.id === 1
                     ? "🎨"
                     : project.id === 2
-                    ? "♻️"
-                    : project.id === 3
-                    ? "🎤"
-                    : "☁️"}
+                      ? "♻️"
+                      : project.id === 3
+                        ? "🎤"
+                        : "☁️"}
                 </div>
                 {/* Close button */}
                 <button
@@ -118,7 +119,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white/80 hover:text-white transition-colors"
                   aria-label="Close modal"
                 >
-                  <X size={18} />
+                  <HiXMark size={18} />
                 </button>
                 {/* Year badge */}
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/40 text-white/70 text-xs font-medium">
@@ -147,14 +148,14 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                       className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-all"
                       aria-label="View on GitHub"
                     >
-                      <Github size={16} />
+                      <FaGithub size={16} />
                     </a>
                     <button
                       onClick={() => onLiveClick(project.liveUrl, project.title)}
                       disabled={!project.liveUrl || project.liveUrl === "#"}
                       className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
                     >
-                      <ExternalLink size={14} />
+                      <HiArrowTopRightOnSquare size={14} />
                       Live Demo
                     </button>
                   </div>
@@ -176,7 +177,7 @@ const ProjectModal = ({ project, onClose, onLiveClick }: ProjectModalProps) => {
                         key={feature}
                         className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
                       >
-                        <CheckCircle
+                        <HiCheckBadge
                           size={14}
                           className="text-violet-400 shrink-0"
                         />

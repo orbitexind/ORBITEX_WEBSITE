@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Mail, User, Lock, ShieldCheck } from "lucide-react";
+import { HiXMark, HiArrowTopRightOnSquare, HiEnvelope, HiUser, HiLockClosed, HiShieldCheck } from "react-icons/hi2";
 
 interface LiveAccessModalProps {
   projectTitle: string;
@@ -126,7 +126,7 @@ const LiveAccessModal = ({
               <div className="relative px-6 pt-6 pb-4 border-b border-gray-200 dark:border-white/8">
                 <div className="flex items-start gap-3">
                   <div className="w-11 h-11 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0">
-                    <Lock size={18} className="text-violet-400" />
+                    <HiLockClosed size={18} className="text-violet-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
@@ -146,7 +146,7 @@ const LiveAccessModal = ({
                   className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
                   aria-label="Close"
                 >
-                  <X size={16} />
+                  <HiXMark size={16} />
                 </button>
               </div>
 
@@ -159,7 +159,7 @@ const LiveAccessModal = ({
                     className="text-center py-6"
                   >
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4">
-                      <ShieldCheck size={28} className="text-emerald-400" />
+                      <HiShieldCheck size={28} className="text-emerald-400" />
                     </div>
                     <p className="text-gray-900 dark:text-white font-semibold text-lg">
                       Access granted!
@@ -176,7 +176,7 @@ const LiveAccessModal = ({
                         Your Name
                       </label>
                       <div className="relative">
-                        <User
+                        <HiUser
                           size={14}
                           className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
                         />
@@ -199,7 +199,7 @@ const LiveAccessModal = ({
                         Email Address
                       </label>
                       <div className="relative">
-                        <Mail
+                        <HiEnvelope
                           size={14}
                           className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
                         />
@@ -231,7 +231,7 @@ const LiveAccessModal = ({
                       type="submit"
                       className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white text-sm font-semibold transition-all"
                     >
-                      <ExternalLink size={15} />
+                      <HiArrowTopRightOnSquare size={15} />
                       Access Live Demo
                     </button>
                   </form>

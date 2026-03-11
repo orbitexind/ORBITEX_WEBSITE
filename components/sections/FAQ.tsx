@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { HiChevronDown, HiChatBubbleLeftRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 
 const faqs = [
@@ -111,7 +111,7 @@ const FAQ = () => {
                   transition={{ duration: 0.25 }}
                   className="shrink-0"
                 >
-                  <ChevronDown
+                  <HiChevronDown
                     size={18}
                     className={cn(
                       "transition-colors",
@@ -157,7 +157,7 @@ const FAQ = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-all"
           >
-            <MessageCircle size={16} />
+            <HiChatBubbleLeftRight size={16} />
             Chat on WhatsApp
           </a>
         </motion.div>

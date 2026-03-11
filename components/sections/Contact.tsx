@@ -3,17 +3,21 @@
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Github,
-  Linkedin,
-  Twitter,
-  Youtube,
-  CheckCircle,
-  Loader2,
-} from "lucide-react";
+  HiEnvelope,
+  HiPhone,
+  HiMapPin,
+  HiPaperAirplane,
+  HiCheckBadge,
+  HiArrowPath,
+  HiStar,
+  HiArrowLongRight
+} from "react-icons/hi2";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube
+} from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
 type FormState = "idle" | "loading" | "success" | "error";
@@ -36,21 +40,21 @@ const initialForm: FormData = {
 
 const contactInfo = [
   {
-    icon: Mail,
+    icon: HiEnvelope,
     label: "Email",
     value: "orbitexind@gmail.com",
     href: "mailto:orbitexind@gmail.com",
     gradient: "from-violet-500 to-purple-600",
   },
   {
-    icon: Phone,
+    icon: HiPhone,
     label: "Phone / WhatsApp",
     value: "+91 94228 80355",
     href: "tel:+919422880355",
     gradient: "from-cyan-500 to-blue-600",
   },
   {
-    icon: MapPin,
+    icon: HiStar,
     label: "Location",
     value: "Maharashtra, India — Remote Worldwide",
     href: "#",
@@ -59,10 +63,10 @@ const contactInfo = [
 ];
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter / X" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: FaGithub, href: "#", label: "GitHub" },
+  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  { icon: FaTwitter, href: "#", label: "Twitter / X" },
+  { icon: FaYoutube, href: "#", label: "YouTube" },
 ];
 
 const budgets = [
@@ -278,7 +282,7 @@ const Contact = () => {
                   className="flex flex-col items-center justify-center text-center py-10 gap-5"
                 >
                   <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
-                    <CheckCircle size={28} className="text-emerald-400" />
+                    <HiCheckBadge size={28} className="text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -433,12 +437,12 @@ const Contact = () => {
                   >
                     {formState === "loading" ? (
                       <>
-                        <Loader2 size={18} className="animate-spin" />
+                        <HiArrowPath size={18} className="animate-spin" />
                         Sending…
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
+                        <HiPaperAirplane size={16} />
                         Send Message
                       </>
                     )}

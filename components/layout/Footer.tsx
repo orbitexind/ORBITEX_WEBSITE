@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Youtube, ArrowUp } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+import { HiArrowLongUp, HiArrowLongRight, HiHeart } from "react-icons/hi2";
 
 const footerLinks = {
   Services: [
@@ -12,7 +13,7 @@ const footerLinks = {
   ],
   Navigation: [
     { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Work", href: "#portfolio" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Pricing", href: "#pricing" },
   ],
@@ -24,10 +25,10 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter / X" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: FaGithub, href: "#", label: "GitHub" },
+  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  { icon: FaTwitter, href: "#", label: "Twitter / X" },
+  { icon: FaYoutube, href: "#", label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -59,7 +60,7 @@ const Footer = () => {
             href="#contact"
             className="shrink-0 px-7 py-3 rounded-full bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold text-sm transition-all hover:shadow-[0_0_24px_rgba(14,165,233,0.5)] active:scale-95"
           >
-            Start a Conversation →
+            Start a Conversation <HiArrowLongRight className="inline ml-1" />
           </a>
         </motion.div>
 
@@ -68,15 +69,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="#home" className="inline-flex items-center gap-2.5 mb-4">
-              <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center shadow-[0_0_18px_rgba(14,165,233,0.6)]">
-                <span className="text-white text-[13px] font-black tracking-tighter select-none">O</span>
-              </div>
-              <span className="text-lg font-bold">
-                <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
-                  Orbitex
-                </span>
-                <span className="text-sky-400">.</span>
-              </span>
+              <img 
+                src="/logo.png" 
+                alt="Orbitex Logo" 
+                className="h-10 w-auto object-contain"
+              />
             </a>
             <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed max-w-xs">
               Crafting digital experiences that inspire, convert, and scale.
@@ -122,16 +119,15 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 dark:text-gray-600 text-sm">
-            © {new Date().getFullYear()} Orbitex. All rights reserved. Built
-            with Next.js & ❤️
+            © {new Date().getFullYear()} OrbitexInd. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors group"
           >
             Back to top
-              <span className="w-7 h-7 rounded-full bg-gray-100 dark:bg-white/5 group-hover:bg-sky-100 dark:group-hover:bg-sky-500/20 border border-gray-200 dark:border-white/8 flex items-center justify-center transition-all">
-              <ArrowUp size={12} />
+            <span className="w-7 h-7 rounded-full bg-gray-100 dark:bg-white/5 group-hover:bg-sky-100 dark:group-hover:bg-sky-500/20 border border-gray-200 dark:border-white/8 flex items-center justify-center transition-all">
+              <HiArrowLongUp size={12} />
             </span>
           </button>
         </div>

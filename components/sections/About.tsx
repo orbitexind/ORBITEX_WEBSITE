@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, CheckCircle2, Sparkles } from "lucide-react";
+import { HiMapPin, HiCheckBadge, HiSparkles, HiBriefcase, HiStar, HiChatBubbleOvalLeft, HiGlobeAlt } from "react-icons/hi2";
 import GlowButton from "@/components/ui/GlowButton";
 
 const skills = [
   { name: "Android Development", percent: 90, color: "from-emerald-500 to-green-500" },
-  { name: "Web Dev (React / Next.js)", percent: 88, color: "from-cyan-500 to-blue-500" },
+  { name: "Web Dev (React / OrbitexInd)", percent: 88, color: "from-cyan-500 to-blue-500" },
   { name: "Python & AI/ML", percent: 85, color: "from-violet-500 to-pink-500" },
   { name: "Java & Desktop Apps", percent: 82, color: "from-orange-500 to-amber-500" },
   { name: "UI/UX Design", percent: 80, color: "from-pink-500 to-rose-500" },
@@ -15,7 +15,7 @@ const skills = [
 ];
 
 const techTags = [
-  "Android (Java/Kotlin)", "Flutter", "React", "Next.js", "TypeScript",
+  "Android (Java/Kotlin)", "Flutter", "React", "OrbitexInd", "TypeScript",
   "Python", "Node.js", "Tailwind CSS", "Firebase", "MongoDB",
   "PostgreSQL", "OpenAI", "Framer Motion", "Java",
 ];
@@ -77,29 +77,27 @@ const About = () => {
             {/* Avatar */}
             <div className="flex flex-col items-center gap-4">
               <div className="relative inline-flex items-center justify-center">
-                {/* Outer glow */}
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 blur-2xl" />
-                {/* Rotating ring */}
-                <motion.div
-                  className="absolute -inset-2 rounded-full"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, #7c3aed, #06b6d4, #7c3aed)",
-                    opacity: 0.4,
-                  }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                />
-                {/* Avatar circle */}
-                <div className="relative w-48 h-48 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-500">
-                  <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#0f0f1a] flex flex-col items-center justify-center gap-1">
-                    <span className="text-5xl font-extrabold bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent tracking-tighter">
-                      OI
-                    </span>
-                    <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
-                      Team
-                    </span>
-                  </div>
+                {/* Avatar circle replacement - 3D Rotating Rocket */}
+                <div className="relative w-80 h-40 flex items-center justify-center mb-8">
+                  <motion.div
+                    className="relative w-64 h-64"
+                    initial={{ rotateY: 360 }}
+                    animate={{ rotateY: 0 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    style={{ transformStyle: "preserve-3d" }}
+                  >
+                    <img 
+                      src="/logo.png" 
+                      alt="3D Rocket Logo" 
+                      className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]"
+                    />
+                    {/* Shadow below */}
+                    <motion.div 
+                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 h-3 bg-violet-500/20 blur-md rounded-full"
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </motion.div>
                 </div>
               </div>
               {/* Floating badge — below avatar, not overlapping */}
@@ -108,7 +106,8 @@ const About = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-500 dark:text-emerald-400 text-xs font-semibold backdrop-blur-sm flex items-center gap-1.5"
               >
-                <Sparkles size={12} /> Available for Hire
+                <HiSparkles size={12} />
+                Available for Hire
               </motion.div>
             </div>
 
@@ -116,8 +115,8 @@ const About = () => {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Orbitex</h3>
               <p className="flex items-center gap-1.5 text-gray-500 text-sm justify-center lg:justify-start">
-                <MapPin size={13} className="text-violet-400" />
-                Maharashtra, India • Remote Worldwide
+                <HiMapPin size={16} className="text-sky-500" />
+                Indapur, Maharashtra, India • Remote Worldwide
               </p>
             </div>
 
@@ -134,7 +133,7 @@ const About = () => {
             <ul className="space-y-2 w-full">
               {highlights.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                  <CheckCircle2 size={15} className="text-violet-400 shrink-0 mt-0.5" />
+                  <HiCheckBadge size={14} className="text-sky-500" />
                   {item}
                 </li>
               ))}
@@ -223,16 +222,18 @@ const About = () => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { emoji: "💼", value: "50+", label: "Projects Done" },
-                { emoji: "⭐", value: "30+", label: "5-Star Reviews" },
-                { emoji: "☕", value: "3,000+", label: "Coffees Consumed" },
-                { emoji: "🌍", value: "20+", label: "Countries Served" },
-              ].map((stat) => (
+                { label: "Projects Done", value: "50+", icon: HiBriefcase, color: "text-blue-500", bg: "bg-blue-500/10" },
+                { label: "5-Star Reviews", value: "30+", icon: HiStar, color: "text-amber-500", bg: "bg-amber-500/10" },
+                { label: "Coffees Consumed", value: "3,000+", icon: HiChatBubbleOvalLeft, color: "text-rose-500", bg: "bg-rose-500/10" },
+                { label: "Countries Served", value: "20+", icon: HiGlobeAlt, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+              ].map((stat, i) => (
                 <div
-                  key={stat.label}
+                  key={i}
                   className="p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/5 shadow-sm dark:shadow-none flex items-center gap-3"
                 >
-                  <span className="text-2xl">{stat.emoji}</span>
+                  <div className={`w-10 h-10 rounded-xl ${stat.bg} ${stat.color} flex items-center justify-center shrink-0`}>
+                    <stat.icon size={20} />
+                  </div>
                   <div>
                     <div className="font-bold text-gray-900 dark:text-white text-base leading-none">
                       {stat.value}

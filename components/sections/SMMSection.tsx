@@ -2,32 +2,32 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { IconType } from "react-icons";
 import {
-  PenLine,
-  User,
-  Film,
-  BarChart2,
-  Bot,
-  Target,
-  TrendingUp,
-  MessageCircle,
-  CalendarDays,
-  Shield,
-  Clock,
-  Sparkles,
-  Mic,
-  Search,
-  CheckCircle,
-  Megaphone,
-  Check,
-  X,
-  RefreshCw,
-  Crown,
-  Layers,
-  ExternalLink,
-  Star,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+  HiPencilSquare,
+  HiUser,
+  HiFilm,
+  HiChartBar,
+  HiWrenchScrewdriver,
+  HiArrowsPointingIn,
+  HiArrowTrendingUp,
+  HiChatBubbleLeftRight,
+  HiCalendarDays,
+  HiShieldCheck,
+  HiClock,
+  HiSparkles,
+  HiMicrophone,
+  HiMagnifyingGlass,
+  HiCheckBadge,
+  HiMegaphone,
+  HiCheck,
+  HiXMark,
+  HiArrowPath,
+  HiSquares2X2,
+  HiArrowTopRightOnSquare,
+  HiStar,
+  HiArrowLongRight
+} from "react-icons/hi2";
 import TiltCard from "@/components/ui/TiltCard";
 import GlowButton from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
@@ -35,7 +35,7 @@ import { cn } from "@/lib/utils";
 // ─── Service highlight cards ──────────────────────────────────────
 const smmServices = [
   {
-    icon: PenLine,
+    icon: HiPencilSquare,
     title: "Content Creation",
     tag: "Posts & Reels",
     color: "from-violet-500 to-purple-600",
@@ -52,7 +52,7 @@ const smmServices = [
     ],
   },
   {
-    icon: User,
+    icon: HiUser,
     title: "Account Management",
     tag: "Daily Handling",
     color: "from-sky-500 to-blue-600",
@@ -69,7 +69,7 @@ const smmServices = [
     ],
   },
   {
-    icon: Film,
+    icon: HiFilm,
     title: "Video & Motion Graphics",
     tag: "Reels & Animations",
     color: "from-red-500 to-orange-500",
@@ -86,7 +86,7 @@ const smmServices = [
     ],
   },
   {
-    icon: BarChart2,
+    icon: HiChartBar,
     title: "Analytics & Reporting",
     tag: "Insights & Growth",
     color: "from-cyan-500 to-teal-500",
@@ -103,7 +103,7 @@ const smmServices = [
     ],
   },
   {
-    icon: Bot,
+    icon: HiWrenchScrewdriver,
     title: "AI & Automation",
     tag: "Smart Tools",
     color: "from-indigo-500 to-violet-600",
@@ -120,7 +120,7 @@ const smmServices = [
     ],
   },
   {
-    icon: Target,
+    icon: HiArrowsPointingIn,
     title: "Lead Generation & DMs",
     tag: "Growth & Conversions",
     color: "from-amber-500 to-orange-500",
@@ -142,244 +142,244 @@ const smmServices = [
 const smmModules: {
   id: string;
   name: string;
-  icon: LucideIcon;
+  icon: IconType;
   color: string;
   glow: string;
   options: { tier: string; price: string; desc: string }[];
 }[] = [
-  {
-    id: "account-mgmt",
-    name: "Account Management",
-    icon: User,
-    color: "from-blue-500 to-cyan-500",
-    glow: "rgba(6,182,212,0.18)",
-    options: [
-      { tier: "Basic (Shared)", price: "₹2,000/mo", desc: "Junior team member handles accounts part-time — posting, monitoring & responses across 1-2 platforms. Ideal for startups with simple needs." },
-      { tier: "Dedicated", price: "₹4,000/mo", desc: "Dedicated expert full-time: faster responses, strategy input & proactive engagement on up to 3-4 platforms." },
-    ],
-  },
-  {
-    id: "content-creation",
-    name: "Content Creation",
-    icon: PenLine,
-    color: "from-violet-500 to-purple-600",
-    glow: "rgba(124,58,237,0.18)",
-    options: [
-      { tier: "12 Posts/mo", price: "₹5,000/mo", desc: "12 high-quality posts/month — graphics, captions & Reels scripts tailored to your brand voice." },
-      { tier: "16 Posts/mo", price: "₹7,000/mo", desc: "16 posts/month with more variety and platform optimization." },
-      { tier: "20 Posts/mo", price: "₹9,000/mo", desc: "20 posts/month including advanced visuals and trending formats." },
-      { tier: "Unlimited Posts", price: "₹12,000/mo", desc: "No cap on custom posts — perfect for high-volume brands needing daily activity." },
-    ],
-  },
-  {
-    id: "curated-content",
-    name: "Curated Content",
-    icon: Search,
-    color: "from-teal-500 to-emerald-500",
-    glow: "rgba(20,184,166,0.18)",
-    options: [
-      { tier: "Any Volume", price: "₹1,500/mo", desc: "Professional sourcing, adaptation & integration of trending/relevant content (memes, industry news) to boost engagement without full custom creation." },
-    ],
-  },
-  {
-    id: "content-calendar",
-    name: "Content Calendar",
-    icon: CalendarDays,
-    color: "from-amber-500 to-orange-500",
-    glow: "rgba(245,158,11,0.18)",
-    options: [
-      { tier: "Basic", price: "₹1,000/mo", desc: "Simple monthly plan with 10-15 post ideas, basic hashtags, and posting schedule." },
-      { tier: "Detailed", price: "₹2,000/mo", desc: "In-depth calendar with 20+ ideas, theme planning, and 2 strategy check-ins." },
-      { tier: "Advanced", price: "₹3,000/mo", desc: "Comprehensive plan including seasonal trends, competitor-inspired themes, and detailed timelines." },
-      { tier: "AI-Optimized", price: "₹4,000/mo", desc: "AI-driven calendar with auto-suggested best posting times, performance predictions, and dynamic adjustments." },
-    ],
-  },
-  {
-    id: "dm-management",
-    name: "DM Management",
-    icon: MessageCircle,
-    color: "from-pink-500 to-rose-500",
-    glow: "rgba(236,72,153,0.18)",
-    options: [
-      { tier: "Basic", price: "₹3,000/mo", desc: "Manual DM handling (up to 30 min/day), quick replies, and basic lead capture." },
-      { tier: "Advanced", price: "₹5,000/mo", desc: "Deeper engagement with personalized responses, conversation tracking, and conversion-focused follow-ups." },
-      { tier: "AI Automated", price: "₹6,000/mo", desc: "AI-powered chatbot + human oversight for 24/7 responses, auto-replies, and smart lead qualification." },
-    ],
-  },
-  {
-    id: "video-editing",
-    name: "Video Editing",
-    icon: Film,
-    color: "from-red-500 to-orange-600",
-    glow: "rgba(239,68,68,0.18)",
-    options: [
-      { tier: "30-Sec Videos", price: "₹1,000 each", desc: "Short Reels or Stories videos with script, editing, music & captions. Available in bundles of 1-4/mo." },
-      { tier: "60-Sec Videos", price: "₹1,500 each", desc: "Longer format videos for storytelling, tutorials, or product demos with full editing. Bundles of 1-4/mo." },
-    ],
-  },
-  {
-    id: "motion-graphics",
-    name: "Motion Graphics",
-    icon: Sparkles,
-    color: "from-indigo-500 to-violet-600",
-    glow: "rgba(99,102,241,0.18)",
-    options: [
-      { tier: "4 Pieces/mo", price: "₹3,500/mo", desc: "Animated text overlays, transitions, or simple infographics for Reels." },
-      { tier: "8 Pieces/mo", price: "₹6,000/mo", desc: "Higher volume for dynamic posts and Stories." },
-      { tier: "12+ Pieces/mo", price: "₹8,000/mo", desc: "Unlimited-scale motion assets for premium visual content." },
-    ],
-  },
-  {
-    id: "analytics",
-    name: "Analytics & Reporting",
-    icon: BarChart2,
-    color: "from-cyan-500 to-blue-600",
-    glow: "rgba(6,182,212,0.18)",
-    options: [
-      { tier: "Basic Monthly", price: "₹1,500/mo", desc: "Standard end-of-month report with key metrics — reach, engagement, growth." },
-      { tier: "Bi-Weekly", price: "₹2,500/mo", desc: "More frequent updates for quicker insights and faster adjustments." },
-      { tier: "Weekly", price: "₹3,500/mo", desc: "Detailed weekly dashboards with trends, recommendations, and performance deep-dives." },
-    ],
-  },
-  {
-    id: "competitor-analysis",
-    name: "Competitor Analysis",
-    icon: TrendingUp,
-    color: "from-lime-500 to-green-600",
-    glow: "rgba(132,204,22,0.18)",
-    options: [
-      { tier: "Basic", price: "₹2,000/mo", desc: "Monthly overview of 2-3 competitors' posting patterns, engagement, and top content." },
-      { tier: "Advanced", price: "₹3,500/mo", desc: "In-depth benchmarking — content themes, hashtags, and performance gaps." },
-      { tier: "In-Depth", price: "₹5,000/mo", desc: "Comprehensive AI-assisted analysis with SWOT, trend spotting, and actionable strategy recommendations." },
-    ],
-  },
-  {
-    id: "crisis-management",
-    name: "Crisis Management",
-    icon: Shield,
-    color: "from-red-600 to-rose-700",
-    glow: "rgba(220,38,38,0.18)",
-    options: [
-      { tier: "Basic", price: "₹4,000/mo", desc: "Monitoring + alert system for negative mentions with simple response templates." },
-      { tier: "Advanced", price: "₹6,000/mo", desc: "Proactive reputation handling, full response strategy, escalation protocols, and post-crisis review." },
-    ],
-  },
-  {
-    id: "lead-gen",
-    name: "Lead Generation",
-    icon: Target,
-    color: "from-yellow-500 to-amber-600",
-    glow: "rgba(234,179,8,0.18)",
-    options: [
-      { tier: "Standard", price: "₹2,500/mo", desc: "Targeted lead capture via optimized CTAs, forms in Stories/posts, polls, and follow-up funnels." },
-    ],
-  },
-  {
-    id: "community-scheduling",
-    name: "Community Scheduling",
-    icon: Clock,
-    color: "from-sky-500 to-blue-500",
-    glow: "rgba(14,165,233,0.18)",
-    options: [
-      { tier: "Standard", price: "₹1,000/mo", desc: "Automated publishing, scheduling across platforms, and basic engagement queuing." },
-    ],
-  },
-  {
-    id: "ai-automation",
-    name: "AI Automation Complete",
-    icon: Bot,
-    color: "from-violet-600 to-indigo-600",
-    glow: "rgba(124,58,237,0.18)",
-    options: [
-      { tier: "Full Suite", price: "₹10,000/mo", desc: "Full AI suite: auto-posting, content suggestions, chatbots, sentiment analysis, and workflow automation." },
-    ],
-  },
-  {
-    id: "strategy-session",
-    name: "1-on-1 Strategy Session",
-    icon: Mic,
-    color: "from-emerald-500 to-teal-600",
-    glow: "rgba(16,185,129,0.18)",
-    options: [
-      { tier: "Per Session", price: "₹500 / session", desc: "45-60 min personalized strategy call with an expert — one-off or as an add-on to any plan." },
-    ],
-  },
-];
+    {
+      id: "account-mgmt",
+      name: "Account Management",
+      icon: HiUser,
+      color: "from-blue-500 to-cyan-500",
+      glow: "rgba(6,182,212,0.18)",
+      options: [
+        { tier: "Basic (Shared)", price: "₹2,000/mo", desc: "Junior team member handles accounts part-time — posting, monitoring & responses across 1-2 platforms. Ideal for startups with simple needs." },
+        { tier: "Dedicated", price: "₹4,000/mo", desc: "Dedicated expert full-time: faster responses, strategy input & proactive engagement on up to 3-4 platforms." },
+      ],
+    },
+    {
+      id: "content-creation",
+      name: "Content Creation",
+      icon: HiPencilSquare,
+      color: "from-violet-500 to-purple-600",
+      glow: "rgba(124,58,237,0.18)",
+      options: [
+        { tier: "12 Posts/mo", price: "₹5,000/mo", desc: "12 high-quality posts/month — graphics, captions & Reels scripts tailored to your brand voice." },
+        { tier: "16 Posts/mo", price: "₹7,000/mo", desc: "16 posts/month with more variety and platform optimization." },
+        { tier: "20 Posts/mo", price: "₹9,000/mo", desc: "20 posts/month including advanced visuals and trending formats." },
+        { tier: "Unlimited Posts", price: "₹12,000/mo", desc: "No cap on custom posts — perfect for high-volume brands needing daily activity." },
+      ],
+    },
+    {
+      id: "curated-content",
+      name: "Curated Content",
+      icon: HiMagnifyingGlass,
+      color: "from-teal-500 to-emerald-500",
+      glow: "rgba(20,184,166,0.18)",
+      options: [
+        { tier: "Any Volume", price: "₹1,500/mo", desc: "Professional sourcing, adaptation & integration of trending/relevant content (memes, industry news) to boost engagement without full custom creation." },
+      ],
+    },
+    {
+      id: "content-calendar",
+      name: "Content Calendar",
+      icon: HiCalendarDays,
+      color: "from-amber-500 to-orange-500",
+      glow: "rgba(245,158,11,0.18)",
+      options: [
+        { tier: "Basic", price: "₹1,000/mo", desc: "Simple monthly plan with 10-15 post ideas, basic hashtags, and posting schedule." },
+        { tier: "Detailed", price: "₹2,000/mo", desc: "In-depth calendar with 20+ ideas, theme planning, and 2 strategy check-ins." },
+        { tier: "Advanced", price: "₹3,000/mo", desc: "Comprehensive plan including seasonal trends, competitor-inspired themes, and detailed timelines." },
+        { tier: "AI-Optimized", price: "₹4,000/mo", desc: "AI-driven calendar with auto-suggested best posting times, performance predictions, and dynamic adjustments." },
+      ],
+    },
+    {
+      id: "dm-management",
+      name: "DM Management",
+      icon: HiChatBubbleLeftRight,
+      color: "from-pink-500 to-rose-500",
+      glow: "rgba(236,72,153,0.18)",
+      options: [
+        { tier: "Basic", price: "₹3,000/mo", desc: "Manual DM handling (up to 30 min/day), quick replies, and basic lead capture." },
+        { tier: "Advanced", price: "₹5,000/mo", desc: "Deeper engagement with personalized responses, conversation tracking, and conversion-focused follow-ups." },
+        { tier: "AI Automated", price: "₹6,000/mo", desc: "AI-powered chatbot + human oversight for 24/7 responses, auto-replies, and smart lead qualification." },
+      ],
+    },
+    {
+      id: "video-editing",
+      name: "Video Editing",
+      icon: HiFilm,
+      color: "from-red-500 to-orange-600",
+      glow: "rgba(239,68,68,0.18)",
+      options: [
+        { tier: "30-Sec Videos", price: "₹1,000 each", desc: "Short Reels or Stories videos with script, editing, music & captions. Available in bundles of 1-4/mo." },
+        { tier: "60-Sec Videos", price: "₹1,500 each", desc: "Longer format videos for storytelling, tutorials, or product demos with full editing. Bundles of 1-4/mo." },
+      ],
+    },
+    {
+      id: "motion-graphics",
+      name: "Motion Graphics",
+      icon: HiSparkles,
+      color: "from-indigo-500 to-violet-600",
+      glow: "rgba(99,102,241,0.18)",
+      options: [
+        { tier: "4 Pieces/mo", price: "₹3,500/mo", desc: "Animated text overlays, transitions, or simple infographics for Reels." },
+        { tier: "8 Pieces/mo", price: "₹6,000/mo", desc: "Higher volume for dynamic posts and Stories." },
+        { tier: "12+ Pieces/mo", price: "₹8,000/mo", desc: "Unlimited-scale motion assets for premium visual content." },
+      ],
+    },
+    {
+      id: "analytics",
+      name: "Analytics & Reporting",
+      icon: HiChartBar,
+      color: "from-cyan-500 to-blue-600",
+      glow: "rgba(6,182,212,0.18)",
+      options: [
+        { tier: "Basic Monthly", price: "₹1,500/mo", desc: "Standard end-of-month report with key metrics — reach, engagement, growth." },
+        { tier: "Bi-Weekly", price: "₹2,500/mo", desc: "More frequent updates for quicker insights and faster adjustments." },
+        { tier: "Weekly", price: "₹3,500/mo", desc: "Detailed weekly dashboards with trends, recommendations, and performance deep-dives." },
+      ],
+    },
+    {
+      id: "competitor-analysis",
+      name: "Competitor Analysis",
+      icon: HiArrowTrendingUp,
+      color: "from-lime-500 to-green-600",
+      glow: "rgba(132,204,22,0.18)",
+      options: [
+        { tier: "Basic", price: "₹2,000/mo", desc: "Monthly overview of 2-3 competitors' posting patterns, engagement, and top content." },
+        { tier: "Advanced", price: "₹3,500/mo", desc: "In-depth benchmarking — content themes, hashtags, and performance gaps." },
+        { tier: "In-Depth", price: "₹5,000/mo", desc: "Comprehensive AI-assisted analysis with SWOT, trend spotting, and actionable strategy recommendations." },
+      ],
+    },
+    {
+      id: "crisis-management",
+      name: "Crisis Management",
+      icon: HiShieldCheck,
+      color: "from-red-600 to-rose-700",
+      glow: "rgba(220,38,38,0.18)",
+      options: [
+        { tier: "Basic", price: "₹4,000/mo", desc: "Monitoring + alert system for negative mentions with simple response templates." },
+        { tier: "Advanced", price: "₹6,000/mo", desc: "Proactive reputation handling, full response strategy, escalation protocols, and post-crisis review." },
+      ],
+    },
+    {
+      id: "lead-gen",
+      name: "Lead Generation",
+      icon: HiArrowsPointingIn,
+      color: "from-yellow-500 to-amber-600",
+      glow: "rgba(234,179,8,0.18)",
+      options: [
+        { tier: "Standard", price: "₹2,500/mo", desc: "Targeted lead capture via optimized CTAs, forms in Stories/posts, polls, and follow-up funnels." },
+      ],
+    },
+    {
+      id: "community-scheduling",
+      name: "Community Scheduling",
+      icon: HiClock,
+      color: "from-sky-500 to-blue-500",
+      glow: "rgba(14,165,233,0.18)",
+      options: [
+        { tier: "Standard", price: "₹1,000/mo", desc: "Automated publishing, scheduling across platforms, and basic engagement queuing." },
+      ],
+    },
+    {
+      id: "ai-automation",
+      name: "AI Automation Complete",
+      icon: HiWrenchScrewdriver,
+      color: "from-violet-600 to-indigo-600",
+      glow: "rgba(124,58,237,0.18)",
+      options: [
+        { tier: "Full Suite", price: "₹10,000/mo", desc: "Full AI suite: auto-posting, content suggestions, chatbots, sentiment analysis, and workflow automation." },
+      ],
+    },
+    {
+      id: "strategy-session",
+      name: "1-on-1 Strategy Session",
+      icon: HiMicrophone,
+      color: "from-emerald-500 to-teal-600",
+      glow: "rgba(16,185,129,0.18)",
+      options: [
+        { tier: "Per Session", price: "₹500 / session", desc: "45-60 min personalized strategy call with an expert — one-off or as an add-on to any plan." },
+      ],
+    },
+  ];
 
 // ─── Bundle packages ──────────────────────────────────────────────
 const smmPackages: {
-  id: string; name: string; icon: LucideIcon; tagline: string;
+  id: string; name: string; icon: IconType; tagline: string;
   priceINR: string; priceUSD: string;
   color: string; glow: string; popular: boolean;
   includes: string[]; excludes: string[];
 }[] = [
-  {
-    id: "smm-starter",
-    name: "Starter",
-    icon: Sparkles,
-    tagline: "For small businesses starting social",
-    priceINR: "₹8,000/mo",
-    priceUSD: "$95/mo",
-    color: "from-cyan-500 to-teal-500",
-    glow: "rgba(6,182,212,0.22)",
-    popular: false,
-    includes: [
-      "1 platform managed",
-      "12 posts/month",
-      "Shared account manager",
-      "Basic content calendar",
-      "Monthly analytics report",
-    ],
-    excludes: [
-      "Video editing / Reels",
-      "AI automation",
-      "DM management",
-    ],
-  },
-  {
-    id: "smm-growth",
-    name: "Growth",
-    icon: TrendingUp,
-    tagline: "Best for growing brands on social media",
-    priceINR: "₹18,000/mo",
-    priceUSD: "$215/mo",
-    color: "from-violet-500 to-purple-600",
-    glow: "rgba(124,58,237,0.38)",
-    popular: true,
-    includes: [
-      "2–3 platforms managed",
-      "20 posts/month",
-      "Dedicated account manager",
-      "4 Reels / videos per month",
-      "Detailed content calendar",
-      "Bi-weekly analytics report",
-      "DM management included",
-    ],
-    excludes: [],
-  },
-  {
-    id: "smm-pro",
-    name: "Pro",
-    icon: Crown,
-    tagline: "Full-scale SMM for established brands",
-    priceINR: "₹35,000/mo",
-    priceUSD: "$420/mo",
-    color: "from-amber-500 to-orange-500",
-    glow: "rgba(245,158,11,0.22)",
-    popular: false,
-    includes: [
-      "4+ platforms managed",
-      "Unlimited posts/month",
-      "Dedicated account manager",
-      "8 Reels + motion graphics",
-      "AI-optimized content calendar",
-      "Weekly analytics & reporting",
-      "AI automation full suite",
-      "Lead generation & DMs",
-    ],
-    excludes: [],
-  },
-];
+    {
+      id: "smm-starter",
+      name: "Starter",
+      icon: HiSparkles,
+      tagline: "For small businesses starting social",
+      priceINR: "₹8,000/mo",
+      priceUSD: "$95/mo",
+      color: "from-cyan-500 to-teal-500",
+      glow: "rgba(6,182,212,0.22)",
+      popular: false,
+      includes: [
+        "1 platform managed",
+        "12 posts/month",
+        "Shared account manager",
+        "Basic content calendar",
+        "Monthly analytics report",
+      ],
+      excludes: [
+        "Video editing / Reels",
+        "AI automation",
+        "DM management",
+      ],
+    },
+    {
+      id: "smm-growth",
+      name: "Growth",
+      icon: HiArrowTrendingUp,
+      tagline: "Best for growing brands on social media",
+      priceINR: "₹18,000/mo",
+      priceUSD: "$215/mo",
+      color: "from-violet-500 to-purple-600",
+      glow: "rgba(124,58,237,0.38)",
+      popular: true,
+      includes: [
+        "2–3 platforms managed",
+        "20 posts/month",
+        "Dedicated account manager",
+        "4 Reels / videos per month",
+        "Detailed content calendar",
+        "Bi-weekly analytics report",
+        "DM management included",
+      ],
+      excludes: [],
+    },
+    {
+      id: "smm-pro",
+      name: "Pro",
+      icon: HiStar,
+      tagline: "Full-scale SMM for established brands",
+      priceINR: "₹35,000/mo",
+      priceUSD: "$420/mo",
+      color: "from-amber-500 to-orange-500",
+      glow: "rgba(245,158,11,0.22)",
+      popular: false,
+      includes: [
+        "4+ platforms managed",
+        "Unlimited posts/month",
+        "Dedicated account manager",
+        "8 Reels + motion graphics",
+        "AI-optimized content calendar",
+        "Weekly analytics & reporting",
+        "AI automation full suite",
+        "Lead generation & DMs",
+      ],
+      excludes: [],
+    },
+  ];
 
 // ─── SMM Client Results ──────────────────────────────────────────
 const smmClientResults = [
@@ -409,7 +409,7 @@ const smmClientResults = [
     color: "from-amber-400 to-orange-500",
     glow: "rgba(245,158,11,0.28)",
     quote:
-      "We handed over our page and within 3 days of Orbitex managing our content, we had 25+ new customers ordering directly through our Instagram DMs — people who had never heard of us before. The visuals, captions and posting strategy were immediately impactful. Our page finally looks and converts like a real premium brand.",
+      "We handed over our page and within 3 days of OrbitexInd managing our content, we had 25+ new customers ordering directly through our Instagram DMs — people who had never heard of us before. The visuals, captions and posting strategy were immediately impactful. Our page finally looks and converts like a real premium brand.",
   },
 ];
 
@@ -505,7 +505,7 @@ const SMMSection = () => {
                 </div>
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                    <HiStar key={i} size={12} className="fill-amber-400 text-amber-400" />
                   ))}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
@@ -518,7 +518,7 @@ const SMMSection = () => {
                   className={`inline-flex items-center gap-1.5 text-sm font-bold bg-gradient-to-r ${client.color} bg-clip-text text-transparent hover:opacity-75 transition-opacity`}
                 >
                   {client.handle}
-                  <ExternalLink size={12} className="text-gray-400 shrink-0" />
+                  <HiArrowTopRightOnSquare size={12} className="text-gray-400 shrink-0" />
                 </a>
                 <div className="text-xs text-gray-500 mt-0.5">{client.role}</div>
               </div>
@@ -532,14 +532,14 @@ const SMMSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center justify-center gap-2 mb-14 overflow-x-auto pb-1 -mx-2 px-2"
+          className="flex items-center md:justify-center gap-2 mb-14 overflow-x-auto pb-2 pt-1 px-4 md:-mx-2 md:px-2 scrollbar-hide"
         >
           {(
             [
-              { id: "services", Icon: Layers, label: "What We Offer" },
-              { id: "packages", Icon: Megaphone, label: "SMM Packages" },
-              { id: "pricing", Icon: BarChart2, label: "Build a Plan" },
-            ] as { id: SMMTab; Icon: LucideIcon; label: string }[]
+              { id: "services", Icon: HiSquares2X2, label: "What We Offer" },
+              { id: "packages", Icon: HiMegaphone, label: "SMM Packages" },
+              { id: "pricing", Icon: HiChartBar, label: "Build a Plan" },
+            ] as { id: SMMTab; Icon: IconType; label: string }[]
           ).map((tab) => (
             <button
               key={tab.id}
@@ -631,7 +631,7 @@ const SMMSection = () => {
                               key={f}
                               className="flex items-center gap-2.5 text-sm text-gray-700 dark:text-gray-300"
                             >
-                              <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+                              <HiCheckBadge size={14} className="text-emerald-400 shrink-0" />
                               {f}
                             </li>
                           ))}
@@ -702,25 +702,25 @@ const SMMSection = () => {
                         </div>
                         <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
                           <span className="flex items-center gap-1.5">
-                            <CalendarDays size={13} className="text-gray-500" />
+                            <HiCalendarDays size={13} className="text-gray-500" />
                             Monthly Plan
                           </span>
                           <span className="flex items-center gap-1.5">
-                            <RefreshCw size={13} className="text-gray-500" />
+                            <HiArrowPath size={13} className="text-gray-500" />
                             Cancel anytime
                           </span>
                         </div>
                         <div className="mb-6">
                           {pkg.popular ? (
                             <GlowButton href="#contact" variant="primary" className="w-full justify-center">
-                              Get Started →
+                              Get Started <HiArrowLongRight size={14} className="inline ml-1" />
                             </GlowButton>
                           ) : (
                             <a
                               href="#contact"
                               className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-sky-400 dark:hover:border-white/30 hover:bg-sky-50 dark:hover:bg-white/5 transition-all duration-300"
                             >
-                              Get Started →
+                              Get Started <HiArrowLongRight size={14} className="inline ml-1" />
                             </a>
                           )}
                         </div>
@@ -731,13 +731,13 @@ const SMMSection = () => {
                         <ul className="space-y-2.5 mb-4">
                           {pkg.includes.map((feat) => (
                             <li key={feat} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
-                              <Check size={14} className={cn("shrink-0 mt-0.5", pkg.popular ? "text-sky-400" : "text-emerald-400")} />
+                              <HiCheck size={14} className={cn("shrink-0 mt-0.5", pkg.popular ? "text-sky-400" : "text-emerald-400")} />
                               {feat}
                             </li>
                           ))}
                           {pkg.excludes.map((feat) => (
                             <li key={feat} className="flex items-start gap-2.5 text-sm text-gray-600">
-                              <X size={14} className="shrink-0 mt-0.5 text-red-700/60" />
+                              <HiXMark size={14} className="shrink-0 mt-0.5 text-red-700/60" />
                               {feat}
                             </li>
                           ))}
@@ -835,7 +835,7 @@ const SMMSection = () => {
           className="mt-12 text-center"
         >
           <GlowButton href="#contact" variant="primary" size="lg">
-            <Megaphone size={16} className="inline mr-2 -mt-0.5" />
+            <HiMegaphone size={16} className="inline mr-2 -mt-0.5" />
             Build a custom SMM plan
           </GlowButton>
         </motion.div>

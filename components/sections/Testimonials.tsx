@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { HiChevronLeft, HiChevronRight, HiMiniChatBubbleLeftEllipsis, HiStar } from "react-icons/hi2";
 
 const testimonials = [
   {
@@ -13,7 +13,7 @@ const testimonials = [
     avatar: "RM",
     avatarGradient: "from-violet-500 to-purple-600",
     stars: 5,
-    text: "Orbitex built our business website in just 4 days. The design is modern, loads super fast, and our clients keep complimenting it. The team was responsive on WhatsApp throughout and delivered exactly what we discussed. Will definitely hire again!",
+    text: "OrbitexInd built our business website in just 4 days. The design is modern, loads super fast, and our clients keep complimenting it. The team was responsive on WhatsApp throughout and delivered exactly what we discussed. Will definitely hire again!",
     project: "Startup Business Website",
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     avatar: "PS",
     avatarGradient: "from-cyan-500 to-blue-600",
     stars: 5,
-    text: "I needed a complete college project with documentation and presentation in a week. Orbitex delivered a fully working Android app with clean code and all documents. The team explained every part so I could present it confidently. Highly recommended for college projects!",
+    text: "I needed a complete college project with documentation and presentation in a week. OrbitexInd delivered a fully working Android app with clean code and all documents. The team explained every part so I could present it confidently. Highly recommended for college projects!",
     project: "Android College Project + Docs",
   },
   {
@@ -35,7 +35,7 @@ const testimonials = [
     avatar: "AJ",
     avatarGradient: "from-emerald-500 to-green-600",
     stars: 5,
-    text: "I wanted a simple Android app for my shop to manage inventory and orders. Orbitex built it in a week at a very affordable price. Even after delivery they helped me with a few small changes without any extra charge. Very professional and reliable.",
+    text: "I wanted a simple Android app for my shop to manage inventory and orders. OrbitexInd built it in a week at a very affordable price. Even after delivery they helped me with a few small changes without any extra charge. Very professional and reliable.",
     project: "Shop Inventory Android App",
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     avatar: "SK",
     avatarGradient: "from-amber-500 to-orange-600",
     stars: 5,
-    text: "We needed an AI chatbot for our customer support that could answer queries in both English and Marathi. Orbitex understood our requirement perfectly and delivered a smart, working chatbot in just 10 days. Our team is saving hours every week now.",
+    text: "We needed an AI chatbot for our customer support that could answer queries in both English and Marathi. OrbitexInd understood our requirement perfectly and delivered a smart, working chatbot in just 10 days. Our team is saving hours every week now.",
     project: "Bilingual AI Customer Chatbot",
   },
   {
@@ -57,7 +57,7 @@ const testimonials = [
     avatar: "NP",
     avatarGradient: "from-pink-500 to-rose-600",
     stars: 5,
-    text: "Orbitex helped me build a complete data analysis dashboard for my internship project in Python. The visualizations were excellent and my manager was impressed. The team also explained the code clearly so I could present it myself. Great value for money!",
+    text: "OrbitexInd helped me build a complete data analysis dashboard for my internship project in Python. The visualizations were excellent and my manager was impressed. The team also explained the code clearly so I could present it myself. Great value for money!",
     project: "Python Data Analysis Dashboard",
   },
   {
@@ -68,7 +68,7 @@ const testimonials = [
     avatar: "PP",
     avatarGradient: "from-yellow-400 to-orange-500",
     stars: 5,
-    text: "We approached Orbitex to build a professional website for our solar business and the result exceeded our expectations. The site clearly presents our services, project portfolio and contact details in a clean, trustworthy layout. Our clients now find us easily online and the enquiries have noticeably increased since launch. The team was prompt, understood our industry requirements without much back-and-forth, and delivered on time. Highly satisfied with the quality and professionalism.",
+    text: "We approached OrbitexInd to build a professional website for our solar business and the result exceeded our expectations. The site clearly presents our services, project portfolio and contact details in a clean, trustworthy layout. Our clients now find us easily online and the enquiries have noticeably increased since launch. The team was prompt, understood our industry requirements without much back-and-forth, and delivered on time. Highly satisfied with the quality and professionalism.",
     project: "Business Website — PPD Solar Pvt. Limited",
   },
 ];
@@ -149,13 +149,13 @@ const Testimonials = () => {
 
               {/* Large quote mark */}
               <div className="absolute top-6 right-8 opacity-10">
-                <Quote size={80} className="text-violet-400 rotate-180" />
+                <HiMiniChatBubbleLeftEllipsis size={80} className="text-violet-400 rotate-180" />
               </div>
 
               {/* Stars */}
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(testimonials[current].stars)].map((_, i) => (
-                  <Star
+                  <HiStar
                     key={i}
                     size={16}
                     className="fill-amber-400 text-amber-400"
@@ -206,14 +206,14 @@ const Testimonials = () => {
             className="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-violet-400 dark:hover:border-violet-500/40 shadow-sm dark:shadow-none transition-all z-10 hidden md:flex"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={18} />
+            <HiChevronLeft size={18} />
           </button>
           <button
             onClick={() => { pauseAuto(); next(); }}
             className="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-violet-400 dark:hover:border-violet-500/40 shadow-sm dark:shadow-none transition-all z-10 hidden md:flex"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={18} />
+            <HiChevronRight size={18} />
           </button>
         </div>
 
@@ -225,7 +225,7 @@ const Testimonials = () => {
             className="md:hidden w-9 h-9 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={16} />
+            <HiChevronLeft size={16} />
           </button>
 
           {/* Dots */}
@@ -239,11 +239,10 @@ const Testimonials = () => {
                 style={{ width: current === i ? 24 : 8 }}
               >
                 <span
-                  className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                    current === i
-                      ? "bg-violet-500"
-                      : "bg-white/20 hover:bg-white/40"
-                  }`}
+                  className={`absolute inset-0 rounded-full transition-colors duration-300 ${current === i
+                    ? "bg-violet-500"
+                    : "bg-white/20 hover:bg-white/40"
+                    }`}
                 />
               </button>
             ))}
@@ -255,7 +254,7 @@ const Testimonials = () => {
             className="md:hidden w-9 h-9 rounded-full bg-white dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={16} />
+            <HiChevronRight size={16} />
           </button>
         </div>
 
@@ -272,11 +271,10 @@ const Testimonials = () => {
               <button
                 key={t.id}
                 onClick={() => { pauseAuto(); setCurrent(i); }}
-                className={`w-8 h-8 rounded-full bg-gradient-to-br ${t.avatarGradient} border-2 transition-all ${
-                  current === i
-                    ? "border-violet-500 scale-110 z-10"
-                    : "border-gray-100 dark:border-[#030712] opacity-60 hover:opacity-100"
-                } text-white text-[9px] font-bold flex items-center justify-center`}
+                className={`w-8 h-8 rounded-full bg-gradient-to-br ${t.avatarGradient} border-2 transition-all ${current === i
+                  ? "border-violet-500 scale-110 z-10"
+                  : "border-gray-100 dark:border-[#030712] opacity-60 hover:opacity-100"
+                  } text-white text-[9px] font-bold flex items-center justify-center`}
               >
                 {t.avatar}
               </button>
