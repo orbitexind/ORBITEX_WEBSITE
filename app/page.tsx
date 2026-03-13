@@ -5,6 +5,7 @@ import Services from "@/components/sections/Services";
 import Pricing from "@/components/sections/Pricing";
 import SMMSection from "@/components/sections/SMMSection";
 import About from "@/components/sections/About";
+import Portfolio from "@/components/sections/Portfolio";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <Pricing />
       <SMMSection />
       <About />
+      <Portfolio />
       <Testimonials />
       <FAQ />
       <Contact />

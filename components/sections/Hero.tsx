@@ -3,8 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { HiArrowLongDown, HiArrowLongRight, HiSparkles, HiChatBubbleLeftRight } from "react-icons/hi2";
-import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { ArrowDown, ArrowRight, Github, Linkedin, Twitter, Sparkles, MessageCircle } from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 import TiltCard from "@/components/ui/TiltCard";
 
@@ -16,10 +15,10 @@ const stats = [
 ];
 
 const socials = [
-  { icon: FaGithub, href: "#", label: "GitHub" },
-  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-  { icon: FaTwitter, href: "#", label: "Twitter" },
-  { icon: HiChatBubbleLeftRight, href: "https://wa.me/919422880355", label: "WhatsApp" },
+  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: MessageCircle, href: "https://wa.me/919422880355", label: "WhatsApp" },
 ];
 
 const Hero = () => {
@@ -120,10 +119,10 @@ const Hero = () => {
 
         {/* Floating 3D diamond shapes */}
         {[
-          { w: 14, h: 14, left: "11%", top: "22%", delay: 0, color: "rgba(139,92,246,0.55)" },
+          { w: 14, h: 14, left: "11%", top: "22%", delay: 0,   color: "rgba(139,92,246,0.55)" },
           { w: 10, h: 10, left: "83%", top: "18%", delay: 0.9, color: "rgba(6,182,212,0.5)" },
           { w: 15, h: 15, left: "87%", top: "65%", delay: 1.6, color: "rgba(167,139,250,0.45)" },
-          { w: 8, h: 8, left: "8%", top: "72%", delay: 0.4, color: "rgba(34,211,238,0.45)" },
+          { w: 8,  h: 8,  left: "8%",  top: "72%", delay: 0.4, color: "rgba(34,211,238,0.45)" },
           { w: 12, h: 12, left: "60%", top: "10%", delay: 1.2, color: "rgba(196,181,253,0.5)" },
         ].map((shape, i) => (
           <motion.div
@@ -156,7 +155,7 @@ const Hero = () => {
       {/* ─── Main content ─── */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 container mx-auto px-4 sm:px-6 max-w-5xl text-center pt-32 sm:pt-40 md:pt-48 pb-10 sm:pb-0"
+        className="relative z-10 container mx-auto px-4 sm:px-6 max-w-5xl text-center pt-20 pb-10 sm:pt-24 sm:pb-0"
       >
         {/* Availability badge */}
         <motion.div
@@ -170,7 +169,7 @@ const Hero = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
           </span>
           Available for new projects
-          <HiSparkles size={13} className="text-violet-400" />
+          <Sparkles size={13} className="text-violet-400" />
         </motion.div>
 
         {/* Headline */}
@@ -216,13 +215,6 @@ const Hero = () => {
               2200,
               "UI/UX Designer",
               2200,
-              "3D - Web Developer",
-              2200,
-              "3D - Android Developer",
-              2200,
-              "MERN Stack Developer",
-              2200,
-
             ]}
             wrapper="span"
             speed={52}
@@ -251,10 +243,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full px-2 sm:px-0"
         >
           <GlowButton href="https://wa.me/919422880355" variant="primary" size="lg" className="w-full sm:w-auto">
-            <HiChatBubbleLeftRight size={16} className="inline mr-2 -mt-0.5" /> WhatsApp Us
+            <MessageCircle size={16} className="inline mr-2 -mt-0.5" /> WhatsApp Us
           </GlowButton>
-          <GlowButton href="#services" variant="secondary" size="lg" className="w-full sm:w-auto">
-            View Services <HiArrowLongRight size={16} className="inline ml-1.5 -mt-0.5" />
+          <GlowButton href="#portfolio" variant="secondary" size="lg" className="w-full sm:w-auto">
+            View Our Work <ArrowRight size={16} className="inline ml-1.5 -mt-0.5" />
           </GlowButton>
         </motion.div>
 
@@ -329,7 +321,7 @@ const Hero = () => {
         >
           <span className="w-1 h-3 rounded-full bg-violet-400/80" />
         </motion.div>
-        <HiArrowLongDown size={20} />
+        <ArrowDown size={14} />
       </motion.a>
     </section>
   );

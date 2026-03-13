@@ -15,54 +15,6 @@ const thumb = (url: string) =>
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: "Demo 1",
-    description:
-      "A modern, animated developer portfolio showcasing projects, skills, and services.",
-    longDescription:
-      "A fully responsive personal portfolio built with React and TypeScript. Features smooth scroll animations powered by Framer Motion, a dynamic project showcase with filtering, an interactive contact form, and a perfect Lighthouse score. Deployed continuously on OrbitexInd.",
-    gradient: "from-violet-600 via-purple-600 to-indigo-700",
-    iconBg: "bg-violet-500/20",
-    tags: ["OrbitexInd", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Portfolios",
-    liveUrl: "https://satvikrokadeportfolio.vercel.app",
-    githubUrl: "#",
-    year: "2024",
-    thumbnail: thumb("https://satvikrokadeportfolio.vercel.app"),
-    features: [
-      "Smooth Framer Motion animations",
-      "Fully responsive design",
-      "Dynamic project showcase",
-      "Interactive contact form",
-      "SEO & performance optimized",
-      "OrbitexInd continuous deployment",
-    ],
-  },
-  {
-    id: 2,
-    title: "Demo 2",
-    description:
-      "A sleek, modern developer portfolio for Samarth Pawar with smooth animations and an elegant layout.",
-    longDescription:
-      "A polished personal portfolio website for Samarth Pawar, built with modern web technologies. Features fluid scroll animations, a projects showcase, skills section, and a fully responsive design — presenting the developer's work and experience in a compelling visual format.",
-    gradient: "from-rose-500 via-pink-500 to-fuchsia-600",
-    iconBg: "bg-rose-500/20",
-    tags: ["React", "Tailwind CSS", "Framer Motion", "OrbitexInd"],
-    category: "Portfolios",
-    liveUrl: "https://portfolio-samarth-pawar.vercel.app",
-    githubUrl: "#",
-    year: "2025",
-    thumbnail: thumb("https://portfolio-samarth-pawar.vercel.app"),
-    features: [
-      "Smooth scroll animations",
-      "Projects showcase grid",
-      "Skills & experience section",
-      "Fully responsive design",
-      "Clean, minimal UI",
-      "Deployed on OrbitexInd",
-    ],
-  },
-  {
     id: 3,
     title: "Waste Management Platform",
     description:
@@ -232,7 +184,7 @@ const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Portfolios", "Web Apps", "AI Projects", "3D Websites"];
+const categories = ["All", "Web Apps", "AI Projects", "3D Websites"];
 
 const containerVariants = {
   hidden: { opacity: 0 },

@@ -2,23 +2,22 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { IconType } from "react-icons";
+import type { LucideIcon } from "lucide-react";
 import {
-  HiCheck,
-  HiXMark,
-  HiPhone,
-  HiGlobeAlt,
-  HiCpuChip,
-  HiWrench,
-  HiClock,
-  HiArrowPath,
-  HiBolt,
-  HiStar,
-  HiAcademicCap,
-  HiCreditCard,
-  HiHandRaised,
-  HiArrowLongRight
-} from "react-icons/hi2";
+  Check,
+  X,
+  Smartphone,
+  Globe,
+  Brain,
+  Wrench,
+  Clock,
+  RefreshCw,
+  Zap,
+  Star,
+  Crown,
+  CreditCard,
+  Handshake,
+} from "lucide-react";
 import GlowButton from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +25,7 @@ type Tab = "packages" | "services";
 type Currency = "INR" | "USD";
 
 const mobilePackages: {
-  id: string; name: string; icon: IconType; tagline: string;
+  id: string; name: string; icon: LucideIcon; tagline: string;
   delivery: string; revisions: string; priceUSD: string; priceINR: string;
   color: string; glow: string; popular: boolean;
   includes: string[]; excludes: string[];
@@ -34,7 +33,7 @@ const mobilePackages: {
   {
     id: "basic",
     name: "Starter App",
-    icon: HiBolt,
+    icon: Zap,
     tagline: "Ideal for MVPs & small businesses",
     delivery: "3 Days",
     revisions: "2 Revisions",
@@ -57,7 +56,7 @@ const mobilePackages: {
   {
     id: "standard",
     name: "Business App",
-    icon: HiStar,
+    icon: Star,
     tagline: "Professional Android for businesses",
     delivery: "5–7 Days",
     revisions: "3 Revisions",
@@ -80,7 +79,7 @@ const mobilePackages: {
   {
     id: "premium",
     name: "Full App Solution",
-    icon: HiAcademicCap,
+    icon: Crown,
     tagline: "Android + iOS, store-ready delivery",
     delivery: "10–14 Days",
     revisions: "15–20 Revisions",
@@ -106,7 +105,7 @@ const serviceGroups = [
   {
     id: "web",
     label: "Web Development",
-    icon: HiGlobeAlt,
+    icon: Globe,
     color: "from-cyan-500 to-blue-600",
     iconBg: "bg-cyan-500/15 border-cyan-500/25",
     iconColor: "text-cyan-400",
@@ -120,7 +119,7 @@ const serviceGroups = [
   {
     id: "ai",
     label: "AI & Data",
-    icon: HiCpuChip,
+    icon: Brain,
     color: "from-violet-500 to-purple-600",
     iconBg: "bg-violet-500/15 border-violet-500/25",
     iconColor: "text-violet-400",
@@ -134,7 +133,7 @@ const serviceGroups = [
   {
     id: "android",
     label: "Android & Support",
-    icon: HiWrench,
+    icon: Wrench,
     color: "from-emerald-500 to-green-600",
     iconBg: "bg-emerald-500/15 border-emerald-500/25",
     iconColor: "text-emerald-400",
@@ -229,14 +228,14 @@ const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center md:justify-center gap-2 mb-14 overflow-x-auto pb-2 pt-1 px-4 md:-mx-2 md:px-2 scrollbar-hide"
+          className="flex items-center justify-center gap-2 mb-14 overflow-x-auto pb-1 -mx-2 px-2 scrollbar-hide"
         >
           {([
-            { id: "packages", Icon: HiPhone, label: "App Packages" },
-            { id: "services", Icon: HiWrench, label: "Service Rates" },
-          ] as { id: Tab; Icon: IconType; label: string }[]
+              { id: "packages", Icon: Smartphone, label: "App Packages" },
+              { id: "services", Icon: Wrench, label: "Service Rates" },
+            ] as { id: Tab; Icon: LucideIcon; label: string }[]
           ).map((tab) => (
-            <button
+              <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
@@ -281,49 +280,49 @@ const Pricing = () => {
                 {mobilePackages.map((pkg) => {
                   const PkgIcon = pkg.icon;
                   return (
-                    <motion.div
-                      key={pkg.id}
-                      variants={cardVariants}
-                      whileHover={{ y: pkg.popular ? -4 : -6 }}
-                      className={cn(
-                        "relative rounded-3xl overflow-hidden transition-all duration-300 border",
-                        pkg.popular
-                          ? "border-sky-500/50 bg-gradient-to-b from-sky-100/80 to-white dark:from-sky-950/60 dark:to-[#0a0a14]"
-                          : "border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
-                      )}
-                      style={{
-                        transform: pkg.popular ? "scale(1.02)" : undefined,
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 50px ${pkg.glow}, 0 8px 40px rgba(0,0,0,0.5)`;
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLDivElement).style.boxShadow = "";
-                      }}
-                    >
-                      {/* Top gradient bar */}
-                      <div className={`h-1 w-full bg-gradient-to-r ${pkg.color}`} />
+                  <motion.div
+                    key={pkg.id}
+                    variants={cardVariants}
+                    whileHover={{ y: pkg.popular ? -4 : -6 }}
+                    className={cn(
+                      "relative rounded-3xl overflow-hidden transition-all duration-300 border",
+                      pkg.popular
+                        ? "border-sky-500/50 bg-gradient-to-b from-sky-100/80 to-white dark:from-sky-950/60 dark:to-[#0a0a14]"
+                        : "border-gray-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
+                    )}
+                    style={{
+                      transform: pkg.popular ? "scale(1.02)" : undefined,
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 50px ${pkg.glow}, 0 8px 40px rgba(0,0,0,0.5)`;
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = "";
+                    }}
+                  >
+                    {/* Top gradient bar */}
+                    <div className={`h-1 w-full bg-gradient-to-r ${pkg.color}`} />
 
-                      {/* Popular badge */}
-                      {pkg.popular && (
-                        <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-sky-600 text-white text-[10px] font-bold tracking-wider uppercase">
-                          Most Popular
-                        </div>
-                      )}
+                    {/* Popular badge */}
+                    {pkg.popular && (
+                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-sky-600 text-white text-[10px] font-bold tracking-wider uppercase">
+                        Most Popular
+                      </div>
+                    )}
 
-                      <div className="p-7 md:p-8">
-                        {/* Icon + name */}
-                        <div className="mb-4">
-                          <div className={`mb-3 w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${pkg.color}`}>
-                            <PkgIcon size={20} className="text-white" />
-                          </div>
-                          <div className="font-bold text-gray-900 dark:text-white text-xl">
-                            {pkg.name}
-                          </div>
-                          <div className="text-gray-500 text-sm mt-0.5">
-                            {pkg.tagline}
-                          </div>
+                    <div className="p-7 md:p-8">
+                      {/* Icon + name */}
+                      <div className="mb-4">
+                        <div className={`mb-3 w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${pkg.color}`}>
+                          <PkgIcon size={20} className="text-white" />
                         </div>
+                        <div className="font-bold text-gray-900 dark:text-white text-xl">
+                          {pkg.name}
+                        </div>
+                        <div className="text-gray-500 text-sm mt-0.5">
+                          {pkg.tagline}
+                        </div>
+                      </div>
 
                       {/* Price */}
                       <div className="mb-5">
@@ -340,11 +339,11 @@ const Pricing = () => {
                       {/* Meta: delivery + revisions */}
                       <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
                         <span className="flex items-center gap-1.5">
-                          <HiClock size={13} className="text-gray-500" />
+                          <Clock size={13} className="text-gray-500" />
                           {pkg.delivery}
                         </span>
                         <span className="flex items-center gap-1.5">
-                          <HiArrowPath size={13} className="text-gray-500" />
+                          <RefreshCw size={13} className="text-gray-500" />
                           {pkg.revisions}
                         </span>
                       </div>
@@ -357,55 +356,55 @@ const Pricing = () => {
                             variant="primary"
                             className="w-full justify-center"
                           >
-                              Get Started <HiArrowLongRight size={14} className="inline ml-1" />
-                            </GlowButton>
-                          ) : (
-                            <a
-                              href="#contact"
-                              className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-sky-400 dark:hover:border-white/30 hover:bg-sky-50 dark:hover:bg-white/5 transition-all duration-300"
-                            >
-                              Get Started <HiArrowLongRight size={14} className="inline ml-1" />
-                            </a>
-                          )}
-                        </div>
-
-                        {/* Divider */}
-                        <div className="w-full h-px bg-gray-200 dark:bg-white/8 mb-5" />
-
-                        {/* Includes */}
-                        <p className="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-600 font-semibold mb-3">
-                          Includes
-                        </p>
-                        <ul className="space-y-2.5 mb-4">
-                          {pkg.includes.map((feat) => (
-                            <li
-                              key={feat}
-                              className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300"
-                            >
-                              <HiCheck
-                                size={14}
-                                className={cn(
-                                  "shrink-0 mt-0.5",
-                                  pkg.popular
-                                    ? "text-sky-400"
-                                    : "text-emerald-400"
-                                )}
-                              />
-                              {feat}
-                            </li>
-                          ))}
-                          {pkg.excludes.map((feat) => (
-                            <li
-                              key={feat}
-                              className="flex items-start gap-2.5 text-sm text-gray-600"
-                            >
-                              <HiXMark size={14} className="shrink-0 mt-0.5 text-red-700/60" />
-                              {feat}
-                            </li>
-                          ))}
-                        </ul>
+                            Get Started â†’
+                          </GlowButton>
+                        ) : (
+                          <a
+                            href="#contact"
+                            className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-sky-400 dark:hover:border-white/30 hover:bg-sky-50 dark:hover:bg-white/5 transition-all duration-300"
+                          >
+                            Get Started â†’
+                          </a>
+                        )}
                       </div>
-                    </motion.div>
+
+                      {/* Divider */}
+                      <div className="w-full h-px bg-gray-200 dark:bg-white/8 mb-5" />
+
+                      {/* Includes */}
+                      <p className="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-600 font-semibold mb-3">
+                        Includes
+                      </p>
+                      <ul className="space-y-2.5 mb-4">
+                        {pkg.includes.map((feat) => (
+                          <li
+                            key={feat}
+                            className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300"
+                          >
+                            <Check
+                              size={14}
+                              className={cn(
+                                "shrink-0 mt-0.5",
+                                pkg.popular
+                                  ? "text-sky-400"
+                                  : "text-emerald-400"
+                              )}
+                            />
+                            {feat}
+                          </li>
+                        ))}
+                        {pkg.excludes.map((feat) => (
+                          <li
+                            key={feat}
+                            className="flex items-start gap-2.5 text-sm text-gray-600"
+                          >
+                            <X size={14} className="shrink-0 mt-0.5 text-red-700/60" />
+                            {feat}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
                   );
                 })}
               </motion.div>
@@ -495,9 +494,9 @@ const Pricing = () => {
           className="mt-14 grid grid-cols-1 xs:grid-cols-3 md:grid-cols-3 gap-3 sm:gap-4"
         >
           {[
-            { Icon: HiHandRaised, text: "Free discovery call" },
-            { Icon: HiCreditCard, text: "50% upfront, 50% on delivery" },
-            { Icon: HiArrowPath, text: "Unlimited scope clarification" },
+            { Icon: Handshake, text: "Free discovery call" },
+            { Icon: CreditCard, text: "50% upfront, 50% on delivery" },
+            { Icon: RefreshCw, text: "Unlimited scope clarification" },
           ].map(({ Icon: GuaranteeIcon, text }) => (
             <div
               key={text}
@@ -522,9 +521,9 @@ const Pricing = () => {
           Need something custom?{" "}
           <a
             href="#contact"
-            className="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2 decoration-sky-500/40"
+              className="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2 decoration-sky-500/40"
           >
-            Let&apos;s build a custom quote for your project <HiArrowLongRight size={14} className="inline ml-1" />
+            Let&apos;s build a custom quote for your project â†’
           </a>
         </motion.p>
       </div>
