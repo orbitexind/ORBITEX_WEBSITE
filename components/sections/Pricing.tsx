@@ -31,76 +31,76 @@ const mobilePackages: {
   color: string; glow: string; popular: boolean;
   includes: string[]; excludes: string[];
 }[] = [
-    {
-      id: "basic",
-      name: "Starter App",
-      icon: HiBolt,
-      tagline: "Ideal for MVPs & small businesses",
-      delivery: "3 Days",
-      revisions: "2 Revisions",
-      priceUSD: "$25 – $40",
-      priceINR: "₹2,000 – ₹3,500",
-      color: "from-cyan-500 to-teal-500",
-      glow: "rgba(6,182,212,0.22)",
-      popular: false,
-      includes: [
-        "Functional Android app",
-        "Basic UI design",
-        "Essential features",
-      ],
-      excludes: [
-        "Functional iOS app",
-        "App submission",
-        "Ad integration",
-      ],
-    },
-    {
-      id: "standard",
-      name: "Business App",
-      icon: HiStar,
-      tagline: "Professional Android for businesses",
-      delivery: "5–7 Days",
-      revisions: "3 Revisions",
-      priceUSD: "$80 – $120",
-      priceINR: "₹6,500 – ₹10,000",
-      color: "from-violet-500 to-purple-600",
-      glow: "rgba(124,58,237,0.38)",
-      popular: true,
-      includes: [
-        "Functional Android app",
-        "Modern UI/UX design",
-        "Splash screen & app icon",
-        "Database integration",
-        "User login & auth",
-        "API connectivity",
-        "Source code included",
-      ],
-      excludes: [],
-    },
-    {
-      id: "premium",
-      name: "Full App Solution",
-      icon: HiAcademicCap,
-      tagline: "Android + iOS, store-ready delivery",
-      delivery: "10–14 Days",
-      revisions: "15–20 Revisions",
-      priceUSD: "$200 – $350+",
-      priceINR: "₹16,000 – ₹28,000+",
-      color: "from-amber-500 to-orange-500",
-      glow: "rgba(245,158,11,0.22)",
-      popular: false,
-      includes: [
-        "Functional Android app",
-        "Functional iOS app (Flutter)",
-        "App design & branding",
-        "Splash screen & app icon",
-        "App submission (both stores)",
-        "Ad network integration",
-        "Source code included",
-      ],
-      excludes: [],
-    },
-  ];
+  {
+    id: "basic",
+    name: "Starter App",
+    icon: HiBolt,
+    tagline: "Ideal for MVPs & small businesses",
+    delivery: "3 Days",
+    revisions: "2 Revisions",
+    priceUSD: "$25 – $40",
+    priceINR: "₹8,000 – ₹12,000",
+    color: "from-cyan-500 to-teal-500",
+    glow: "rgba(6,182,212,0.22)",
+    popular: false,
+    includes: [
+      "Functional Android app",
+      "Basic UI design",
+      "Essential features",
+    ],
+    excludes: [
+      "Functional iOS app",
+      "App submission",
+      "Ad integration",
+    ],
+  },
+  {
+    id: "standard",
+    name: "Business App",
+    icon: HiStar,
+    tagline: "Professional Android for businesses",
+    delivery: "5–7 Days",
+    revisions: "3 Revisions",
+    priceUSD: "$80 – $120",
+    priceINR: "₹10,000 – ₹20,000",
+    color: "from-violet-500 to-purple-600",
+    glow: "rgba(124,58,237,0.38)",
+    popular: true,
+    includes: [
+      "Functional Android app",
+      "Modern UI/UX design",
+      "Splash screen & app icon",
+      "Database integration",
+      "User login & auth",
+      "API connectivity",
+      "Source code included",
+    ],
+    excludes: [],
+  },
+  {
+    id: "premium",
+    name: "Full App Solution",
+    icon: HiAcademicCap,
+    tagline: "Android + iOS, store-ready delivery",
+    delivery: "10–14 Days",
+    revisions: "15–20 Revisions",
+    priceUSD: "$200 – $350+",
+    priceINR: "₹16,000 – ₹28,000+",
+    color: "from-amber-500 to-orange-500",
+    glow: "rgba(245,158,11,0.22)",
+    popular: false,
+    includes: [
+      "Functional Android app",
+      "Functional iOS app (Flutter)",
+      "App design & branding",
+      "Splash screen & app icon",
+      "App submission (both stores)",
+      "Ad network integration",
+      "Source code included",
+    ],
+    excludes: [],
+  },
+];
 
 const serviceGroups = [
   {
@@ -325,38 +325,38 @@ const Pricing = () => {
                           </div>
                         </div>
 
-                        {/* Price */}
-                        <div className="mb-5">
-                          <div
-                            className={`text-3xl font-extrabold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}
+                      {/* Price */}
+                      <div className="mb-5">
+                        <div
+                          className={`text-3xl font-extrabold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}
+                        >
+                          {currency === "INR" ? pkg.priceINR : pkg.priceUSD}
+                        </div>
+                        <div className="text-gray-500 text-sm mt-0.5">
+                          {currency === "INR" ? `USD ${pkg.priceUSD}` : `INR ${pkg.priceINR}`}
+                        </div>
+                      </div>
+
+                      {/* Meta: delivery + revisions */}
+                      <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
+                        <span className="flex items-center gap-1.5">
+                          <HiClock size={13} className="text-gray-500" />
+                          {pkg.delivery}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <HiArrowPath size={13} className="text-gray-500" />
+                          {pkg.revisions}
+                        </span>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="mb-6">
+                        {pkg.popular ? (
+                          <GlowButton
+                            href="#contact"
+                            variant="primary"
+                            className="w-full justify-center"
                           >
-                            {currency === "INR" ? pkg.priceINR : pkg.priceUSD}
-                          </div>
-                          <div className="text-gray-500 text-sm mt-0.5">
-                            {currency === "INR" ? `â‰ˆ ${pkg.priceUSD}` : `â‰ˆ ${pkg.priceINR}`}
-                          </div>
-                        </div>
-
-                        {/* Meta: delivery + revisions */}
-                        <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
-                          <span className="flex items-center gap-1.5">
-                            <HiClock size={13} className="text-gray-500" />
-                            {pkg.delivery}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <HiArrowPath size={13} className="text-gray-500" />
-                            {pkg.revisions}
-                          </span>
-                        </div>
-
-                        {/* CTA */}
-                        <div className="mb-6">
-                          {pkg.popular ? (
-                            <GlowButton
-                              href="#contact"
-                              variant="primary"
-                              className="w-full justify-center"
-                            >
                               Get Started <HiArrowLongRight size={14} className="inline ml-1" />
                             </GlowButton>
                           ) : (

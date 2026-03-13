@@ -253,8 +253,8 @@ const Hero = () => {
           <GlowButton href="https://wa.me/919422880355" variant="primary" size="lg" className="w-full sm:w-auto">
             <HiChatBubbleLeftRight size={16} className="inline mr-2 -mt-0.5" /> WhatsApp Us
           </GlowButton>
-          <GlowButton href="#portfolio" variant="secondary" size="lg" className="w-full sm:w-auto">
-            View Our Work <HiArrowLongRight size={16} className="inline ml-1.5 -mt-0.5" />
+          <GlowButton href="#services" variant="secondary" size="lg" className="w-full sm:w-auto">
+            View Services <HiArrowLongRight size={16} className="inline ml-1.5 -mt-0.5" />
           </GlowButton>
         </motion.div>
 
