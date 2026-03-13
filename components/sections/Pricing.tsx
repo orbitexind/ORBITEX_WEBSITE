@@ -38,7 +38,7 @@ const mobilePackages: {
     delivery: "3 Days",
     revisions: "2 Revisions",
     priceUSD: "$25 – $40",
-    priceINR: "₹2,000 – ₹3,500",
+    priceINR: "₹8,000 – ₹12,000",
     color: "from-cyan-500 to-teal-500",
     glow: "rgba(6,182,212,0.22)",
     popular: false,
@@ -61,7 +61,7 @@ const mobilePackages: {
     delivery: "5–7 Days",
     revisions: "3 Revisions",
     priceUSD: "$80 – $120",
-    priceINR: "₹6,500 – ₹10,000",
+    priceINR: "₹10,000 – ₹20,000",
     color: "from-violet-500 to-purple-600",
     glow: "rgba(124,58,237,0.38)",
     popular: true,
@@ -332,7 +332,7 @@ const Pricing = () => {
                           {currency === "INR" ? pkg.priceINR : pkg.priceUSD}
                         </div>
                         <div className="text-gray-500 text-sm mt-0.5">
-                          {currency === "INR" ? `â‰ˆ ${pkg.priceUSD}` : `â‰ˆ ${pkg.priceINR}`}
+                          {currency === "INR" ? `USD ${pkg.priceUSD}` : `INR ${pkg.priceINR}`}
                         </div>
                       </div>
 

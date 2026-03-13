@@ -12,7 +12,6 @@ const footerLinks = {
   ],
   Navigation: [
     { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Pricing", href: "#pricing" },
   ],

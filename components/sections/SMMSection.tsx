@@ -698,7 +698,7 @@ const SMMSection = () => {
                           <div className={`text-3xl font-extrabold bg-gradient-to-r ${pkg.color} bg-clip-text text-transparent`}>
                             {pkg.priceINR}
                           </div>
-                          <div className="text-gray-500 text-sm mt-0.5">≈ {pkg.priceUSD}</div>
+                          <div className="text-gray-500 text-sm mt-0.5">USD {pkg.priceUSD}</div>
                         </div>
                         <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
                           <span className="flex items-center gap-1.5">
