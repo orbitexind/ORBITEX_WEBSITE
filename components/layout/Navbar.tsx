@@ -119,37 +119,48 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileOpen((prev) => !prev)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors"
-            aria-label="Toggle menu"
-            aria-expanded={mobileOpen}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {mobileOpen ? (
-                <motion.span
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={20} />
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={20} />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </button>
+          {/* Mobile menu button and Theme toggle */}
+          <div className="flex md:hidden items-center gap-2 sm:gap-3">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-all duration-300"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            )}
+            <button
+              onClick={() => setMobileOpen((prev) => !prev)}
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {mobileOpen ? (
+                  <motion.span
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X size={20} />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu size={20} />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -182,6 +193,35 @@ const Navbar = () => {
                   </span>
                 </motion.a>
               ))}
+
+              {/* Theme Toggle within Mobile drawer */}
+              {mounted && (
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.06 + 0.1 }}
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="mt-2 flex items-center justify-between px-5 py-4 rounded-2xl bg-gray-50/50 dark:bg-white/5 border border-gray-200/50 dark:border-white/[0.05] text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                      theme === "dark" ? "bg-amber-500/10 text-amber-500" : "bg-violet-500/10 text-violet-500"
+                    }`}>
+                      {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                    </div>
+                    <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+                  </div>
+                  <div className={`w-12 h-6 rounded-full p-1 transition-colors duration-300 ${
+                    theme === "dark" ? "bg-amber-500/20" : "bg-violet-500/20"
+                  }`}>
+                    <motion.div 
+                      animate={{ x: theme === "dark" ? 24 : 0 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      className={`w-4 h-4 rounded-full ${theme === "dark" ? "bg-white shadow-sm" : "bg-white shadow-sm"}`}
+                    />
+                  </div>
+                </motion.div>
+              )}
             </nav>
 
             {/* Mobile CTA */}
