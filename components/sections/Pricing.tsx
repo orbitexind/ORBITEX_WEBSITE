@@ -212,8 +212,8 @@ const Pricing = () => {
                 className={cn(
                   "px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300",
                   currency === c
-                    ? "bg-sky-600 text-white shadow-lg"
-                    : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                    ? "bg-sky-600 text-white shadow-lg shadow-sky-500/20"
+                    : "text-gray-500 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-300"
                 )}
               >
                 {c === "INR" ? "₹ INR" : "$ USD"}
@@ -242,7 +242,7 @@ const Pricing = () => {
                 "relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap min-h-[44px]",
                 activeTab === tab.id
                   ? "text-white"
-                  : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                  : "text-gray-500 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-300"
               )}
             >
               {activeTab === tab.id && (
@@ -356,14 +356,14 @@ const Pricing = () => {
                             variant="primary"
                             className="w-full justify-center"
                           >
-                            Get Started â†’
+                            Get Started →
                           </GlowButton>
                         ) : (
                           <a
                             href="#contact"
                             className="w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-white/15 text-gray-600 dark:text-gray-300 hover:border-sky-400 dark:hover:border-white/30 hover:bg-sky-50 dark:hover:bg-white/5 transition-all duration-300"
                           >
-                            Get Started â†’
+                            Get Started →
                           </a>
                         )}
                       </div>
@@ -523,7 +523,7 @@ const Pricing = () => {
             href="#contact"
               className="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2 decoration-sky-500/40"
           >
-            Let&apos;s build a custom quote for your project â†’
+            Let&apos;s build a custom quote for your project →
           </a>
         </motion.p>
       </div>

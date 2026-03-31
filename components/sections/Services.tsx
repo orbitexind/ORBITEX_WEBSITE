@@ -149,7 +149,7 @@ const Services = () => {
                 style={{ perspective: "1200px" }}
               >
                 <TiltCard
-                  className="group relative p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-violet-300 dark:hover:border-white/15 overflow-hidden cursor-default shadow-sm dark:shadow-none transition-[border-color,box-shadow] duration-300 h-full"
+                  className="group relative p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/8 hover:border-sky-300 dark:hover:border-white/15 overflow-hidden cursor-default shadow-sm hover:shadow-xl hover:shadow-sky-500/10 dark:shadow-none transition-all duration-300 h-full"
                   glowColor={service.glow}
                   intensity={8}
                 >

@@ -67,18 +67,14 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#home" className="inline-flex items-center gap-2.5 mb-4">
-              <div className="relative w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center shadow-[0_0_18px_rgba(14,165,233,0.6)]">
-                <span className="text-white text-[13px] font-black tracking-tighter select-none">O</span>
-              </div>
-              <span className="text-lg font-bold">
-                <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
-                  Orbitex
-                </span>
-                <span className="text-sky-400">.</span>
-              </span>
+            <a href="#home" className="inline-flex items-center gap-2 mb-4 group transition-all">
+              <img 
+                src="/logo.png" 
+                alt="Orbitex Logo" 
+                className="h-12 md:h-14 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform"
+              />
             </a>
-            <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
               Crafting digital experiences that inspire, convert, and scale.
               Available for freelance work worldwide.
             </p>
@@ -121,7 +117,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 dark:text-gray-600 text-sm">
+          <p className="text-gray-700 dark:text-gray-500 text-sm">
             © {new Date().getFullYear()} Orbitex. All rights reserved. Built
             with Next.js & ❤️
           </p>

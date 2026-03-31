@@ -162,7 +162,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sky-400/30 bg-sky-400/8 text-sky-300 text-sm font-medium mb-8 backdrop-blur-sm"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sky-400/30 bg-sky-100 dark:bg-sky-400/8 text-sky-600 dark:text-sky-300 text-sm font-medium mb-8 backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -207,6 +207,7 @@ const Hero = () => {
               2200,
               "Full-Stack Web Developer",
               2200,
+
               "AI & Chatbot Builder",
               2200,
               "Python Developer",
@@ -217,7 +218,7 @@ const Hero = () => {
             wrapper="span"
             speed={52}
             repeat={Infinity}
-            className="font-medium text-violet-300"
+            className="font-medium text-violet-600 dark:text-violet-300"
           />
         </motion.div>
 
