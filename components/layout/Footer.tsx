@@ -118,8 +118,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-700 dark:text-gray-500 text-sm">
-            © {new Date().getFullYear()} Orbitex. All rights reserved. Built
-            with Next.js & ❤️
+            © {new Date().getFullYear()} Team Orbitex. All rights reserved. 
           </p>
           <button
             onClick={scrollToTop}
