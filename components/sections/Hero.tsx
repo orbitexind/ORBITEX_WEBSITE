@@ -207,8 +207,7 @@ const Hero = () => {
               2200,
               "Full-Stack Web Developer",
               2200,
-              "Social Media Manager",
-              2200,
+
               "AI & Chatbot Builder",
               2200,
               "Python Developer",
