@@ -6,7 +6,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 's0.wordpress.com',
-        pathname: '/**',
+        pathname: '/**'
         
       },
     ],

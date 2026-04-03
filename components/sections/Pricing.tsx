@@ -37,7 +37,7 @@ const mobilePackages: {
     tagline: "Ideal for MVPs & small businesses",
     delivery: "3 Days",
     revisions: "2 Revisions",
-    priceUSD: "$25 – $40",
+    priceUSD: "$100 – $150",
     priceINR: "₹8,000 – ₹12,000",
     color: "from-cyan-500 to-teal-500",
     glow: "rgba(6,182,212,0.22)",
@@ -60,7 +60,7 @@ const mobilePackages: {
     tagline: "Professional Android for businesses",
     delivery: "5–7 Days",
     revisions: "3 Revisions",
-    priceUSD: "$80 – $120",
+    priceUSD: "$125 – $250",
     priceINR: "₹10,000 – ₹20,000",
     color: "from-violet-500 to-purple-600",
     glow: "rgba(124,58,237,0.38)",
@@ -110,10 +110,10 @@ const serviceGroups = [
     iconBg: "bg-cyan-500/15 border-cyan-500/25",
     iconColor: "text-cyan-400",
     services: [
-      { name: "Website Development", price: "₹6,000 – ₹10,000", maintenance: "₹500 – ₹1,500/mo" },
-      { name: "E-Commerce Website Setup", price: "₹12,000 – ₹60,000", maintenance: "₹1,500 – ₹3,000/mo" },
-      { name: "Full-Stack Web Application", price: "₹12,000 – ₹30,000", maintenance: "₹2,000 – ₹5,000/mo" },
-      { name: "Java Desktop Applications", price: "₹6,000 – ₹30,000", maintenance: "₹1,000 – ₹2,500/mo" },
+      { name: "Website Development", priceINR: "₹6,000 – ₹10,000", priceUSD: "$75 – $125", maintenanceINR: "₹500 – ₹1,500/mo", maintenanceUSD: "$7 – $20/mo" },
+      { name: "E-Commerce Website Setup", priceINR: "₹12,000 – ₹60,000", priceUSD: "$150 – $750", maintenanceINR: "₹1,500 – ₹3,000/mo", maintenanceUSD: "$20 – $40/mo" },
+      { name: "Full-Stack Web Application", priceINR: "₹12,000 – ₹30,000", priceUSD: "$150 – $375", maintenanceINR: "₹2,000 – ₹5,000/mo", maintenanceUSD: "$25 – $65/mo" },
+      { name: "Java Desktop Applications", priceINR: "₹6,000 – ₹30,000", priceUSD: "$75 – $375", maintenanceINR: "₹1,000 – ₹2,500/mo", maintenanceUSD: "$12 – $30/mo" },
     ],
   },
   {
@@ -124,10 +124,10 @@ const serviceGroups = [
     iconBg: "bg-violet-500/15 border-violet-500/25",
     iconColor: "text-violet-400",
     services: [
-      { name: "Chatbot Development", price: "₹8,000 – ₹50,000", maintenance: "₹1,500 – ₹4,000/mo" },
-      { name: "Data Analysis & Dashboard", price: "₹3,000 – ₹20,000", maintenance: "₹500 – ₹1,500/mo" },
-      { name: "AI / Machine Learning Solutions", price: "₹10,000 – ₹30,000", maintenance: "₹2,000 – ₹5,000/mo" },
-      { name: "College Project & Documentation", price: "₹3,000 – ₹20,000", maintenance: null },
+      { name: "Chatbot Development", priceINR: "₹8,000 – ₹50,000", priceUSD: "$100 – $625", maintenanceINR: "₹1,500 – ₹4,000/mo", maintenanceUSD: "$20 – $50/mo" },
+      { name: "Data Analysis & Dashboard", priceINR: "₹3,000 – ₹20,000", priceUSD: "$40 – $250", maintenanceINR: "₹500 – ₹1,500/mo", maintenanceUSD: "$7 – $20/mo" },
+      { name: "AI / Machine Learning Solutions", priceINR: "₹10,000 – ₹30,000", priceUSD: "$125 – $375", maintenanceINR: "₹2,000 – ₹5,000/mo", maintenanceUSD: "$25 – $65/mo" },
+      { name: "College Project & Documentation", priceINR: "₹3,000 – ₹20,000", priceUSD: "$40 – $250", maintenanceINR: null, maintenanceUSD: null },
     ],
   },
   {
@@ -138,12 +138,12 @@ const serviceGroups = [
     iconBg: "bg-emerald-500/15 border-emerald-500/25",
     iconColor: "text-emerald-400",
     services: [
-      { name: "Android Basic App", price: "₹5,000 – ₹15,000", maintenance: "₹500 – ₹1,500/mo" },
-      { name: "Custom Android Application", price: "₹15,000 – ₹50,000", maintenance: "₹1,500 – ₹4,000/mo" },
-      { name: "UI/UX Design for Android", price: "₹3,000 – ₹12,000", maintenance: null },
-      { name: "App Bug Fixing & Optimization", price: "₹500 – ₹5,000 / task", maintenance: null },
-      { name: "API Integration & Backend", price: "₹3,000 – ₹15,000", maintenance: "₹800 – ₹2,000/mo" },
-      { name: "App Publishing on Google Play", price: "₹1,000 – ₹5,000", maintenance: null },
+      { name: "Android Basic App", priceINR: "₹5,000 – ₹15,000", priceUSD: "$65 – $190", maintenanceINR: "₹500 – ₹1,500/mo", maintenanceUSD: "$7 – $20/mo" },
+      { name: "Custom Android Application", priceINR: "₹15,000 – ₹50,000", priceUSD: "$190 – $625", maintenanceINR: "₹1,500 – ₹4,000/mo", maintenanceUSD: "$20 – $50/mo" },
+      { name: "UI/UX Design for Android", priceINR: "₹3,000 – ₹12,000", priceUSD: "$40 – $150", maintenanceINR: null, maintenanceUSD: null },
+      { name: "App Bug Fixing & Optimization", priceINR: "₹500 – ₹5,000 / task", priceUSD: "$7 – $65 / task", maintenanceINR: null, maintenanceUSD: null },
+      { name: "API Integration & Backend", priceINR: "₹3,000 – ₹15,000", priceUSD: "$40 – $190", maintenanceINR: "₹800 – ₹2,000/mo", maintenanceUSD: "$10 – $25/mo" },
+      { name: "App Publishing on Google Play", priceINR: "₹1,000 – ₹5,000", priceUSD: "$15 – $65", maintenanceINR: null, maintenanceUSD: null },
     ],
   },
 ];
@@ -467,11 +467,11 @@ const Pricing = () => {
                             <span
                               className={`text-sm font-bold bg-gradient-to-r ${group.color} bg-clip-text text-transparent`}
                             >
-                              {svc.price}
+                              {currency === "INR" ? (svc as any).priceINR : (svc as any).priceUSD}
                             </span>
-                            {svc.maintenance && (
+                            {(currency === "INR" ? (svc as any).maintenanceINR : (svc as any).maintenanceUSD) && (
                               <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/8 text-gray-500 font-medium">
-                                Maintenance: {svc.maintenance}
+                                Maintenance: {currency === "INR" ? (svc as any).maintenanceINR : (svc as any).maintenanceUSD}
                               </span>
                             )}
                           </div>
